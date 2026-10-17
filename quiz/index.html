@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose Your Execution Path · Glow Up with Amanda</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#10172e;
+    --bg-2:#161e3a;
+    --bg-3:#0a1024;
+    --ink:#f5f0ff;
+    --ink-soft:rgba(245,240,255,0.72);
+    --ink-faint:rgba(245,240,255,0.5);
+    --pink:#ff6bc1;
+    --purple:#b26bff;
+    --cyan:#6bd5ff;
+    --mint:#8effd5;
+    --lime:#d4ff00;
+    --holo:linear-gradient(135deg,#c78fff 0%,#ff8ad1 50%,#8effd5 100%);
+    --holo-2:linear-gradient(135deg,#ff6bc1,#b26bff,#6bd5ff);
+    --card:rgba(255,255,255,0.04);
+    --card-hover:rgba(255,255,255,0.07);
+    --border:rgba(178,107,255,0.22);
+    --border-strong:rgba(178,107,255,0.45);
+  }
+  html,body{height:100%}
+  body{
+    font-family:'Nunito',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(255,107,193,0.18) 0%, transparent 45%),
+      radial-gradient(ellipse at 80% 15%, rgba(107,213,255,0.15) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 90%, rgba(178,107,255,0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 10% 80%, rgba(107,140,255,0.12) 0%, transparent 45%);
+    pointer-events:none;
+    z-index:0;
+    animation:aurora 20s ease-in-out infinite alternate;
+  }
+  @keyframes aurora{
+    0%{transform:translate(0,0) scale(1)}
+    50%{transform:translate(-10px,15px) scale(1.05)}
+    100%{transform:translate(10px,-10px) scale(1)}
+  }
+
+  body::after{
+    content:'';
+    position:fixed;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(178,107,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(178,107,255,0.04) 1px, transparent 1px);
+    background-size:60px 60px;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .stars{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+  .star{
+    position:absolute;
+    width:2px;height:2px;
+    background:#fff;
+    border-radius:50%;
+    box-shadow:0 0 6px 1px rgba(255,255,255,0.9);
+    animation:twinkle 4s ease-in-out infinite;
+  }
+  .star.lg{width:3px;height:3px;box-shadow:0 0 10px 2px rgba(255,200,255,0.9)}
+  .star.pink{background:#ff6bc1;box-shadow:0 0 8px 2px rgba(255,107,193,0.8)}
+  .star.cyan{background:#6bd5ff;box-shadow:0 0 8px 2px rgba(107,213,255,0.8)}
+  @keyframes twinkle{
+    0%,100%{opacity:0.2;transform:scale(0.8)}
+    50%{opacity:1;transform:scale(1.3)}
+  }
+
+  .wrap{
+    position:relative;
+    z-index:2;
+    max-width:720px;
+    margin:0 auto;
+    padding:48px 24px 80px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .brand-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:32px;
+  }
+  .brand-sparkle{
+    font-size:16px;
+    background:var(--holo);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:shimmer 3s ease-in-out infinite;
+  }
+  @keyframes shimmer{
+    0%,100%{filter:hue-rotate(0deg) brightness(1)}
+    50%{filter:hue-rotate(30deg) brightness(1.2)}
+  }
+  .brand-txt{
+    font-family:'DM Mono',monospace;
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+
+  .progress-outer{
+    margin-bottom:40px;
+    display:none;
+  }
+  .progress-outer.show{display:block}
+  .progress-label{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+    font-family:'DM Mono',monospace;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+  .progress-bar{
+    height:4px;
+    background:rgba(255,255,255,0.06);
+    border-radius:100px;
+    overflow:hidden;
+    position:relative;
+  }
+  .progress-fill{
+    height:100%;
+    background:var(--holo);
+    border-radius:100px;
+    transition:width .5s cubic-bezier(.34,1.56,.64,1);
+    box-shadow:0 0 12px rgba(178,107,255,0.6);
+  }
+
+  .screen{display:none;animation:fadeIn .5s ease-out}
+  .screen.active{display:block}
+  @keyframes fadeIn{
+    from{opacity:0;transform:translateY(12px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  .intro-eyebrow{
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    text-align:center;
+    margin-bottom:16px;
+    background:var(--holo);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font-weight:500;
+  }
+  .intro-title{
+    font-family:'Poppins',sans-serif;
+    font-weight:900;
+    font-size:clamp(32px,5.5vw,52px);
+    text-align:center;
+    line-height:1.1;
+    margin-bottom:18px;
+    letter-spacing:-0.5px;
+  }
+  .intro-title em{
+    font-style:italic;
+    background:var(--holo);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .intro-sub{
+    text-align:center;
+    font-size:16px;
+    line-height:1.7;
+    color:var(--ink-soft);
+    max-width:560px;
+    margin:0 auto 36px;
+  }
+  .intro-meta{
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    margin-bottom:40px;
+    flex-wrap:wrap;
+  }
+  .intro-meta-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:'DM Mono',monospace;
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    padding:8px 14px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:100px;
+  }
+  .intro-meta-item span{
+    color:var(--pink);
+    font-size:12px;
+  }
+  .intro-cta{
+    display:block;
+    width:100%;
+    max-width:320px;
+    margin:0 auto;
+    padding:18px 32px;
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:15px;
+    letter-spacing:0.5px;
+    color:#fff;
+    background:var(--holo);
+    border:none;
+    border-radius:100px;
+    cursor:pointer;
+    transition:all .3s;
+    box-shadow:0 8px 32px rgba(178,107,255,0.4),inset 0 1px 0 rgba(255,255,255,0.3);
+    position:relative;
+    overflow:hidden;
+  }
+  .intro-cta::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,rgba(255,255,255,0.2),transparent);
+    pointer-events:none;
+  }
+  .intro-cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 40px rgba(178,107,255,0.55),inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+
+  .q-num{
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--pink);
+    margin-bottom:14px;
+    font-weight:500;
+  }
+  .q-title{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:clamp(24px,4vw,34px);
+    line-height:1.25;
+    margin-bottom:32px;
+    letter-spacing:-0.3px;
+  }
+  .options{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:32px;
+  }
+  .option{
+    padding:20px 22px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    cursor:pointer;
+    transition:all .2s;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-align:left;
+    font-family:'Nunito',sans-serif;
+    color:var(--ink);
+    font-size:15px;
+    line-height:1.5;
+    position:relative;
+    overflow:hidden;
+  }
+  .option::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:var(--holo);
+    opacity:0;
+    transition:opacity .2s;
+    pointer-events:none;
+  }
+  .option:hover{
+    background:var(--card-hover);
+    border-color:var(--border-strong);
+    transform:translateX(4px);
+  }
+  .option.selected{
+    border-color:transparent;
+    background:linear-gradient(var(--bg-2),var(--bg-2)) padding-box,var(--holo) border-box;
+    border:1.5px solid transparent;
+    box-shadow:0 8px 32px rgba(178,107,255,0.25);
+  }
+  .option-dot{
+    width:22px;
+    height:22px;
+    min-width:22px;
+    border-radius:50%;
+    border:2px solid rgba(178,107,255,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all .2s;
+    flex-shrink:0;
+  }
+  .option.selected .option-dot{
+    border-color:transparent;
+    background:var(--holo);
+    box-shadow:0 0 12px rgba(255,107,193,0.6);
+  }
+  .option.selected .option-dot::after{
+    content:'';
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#fff;
+  }
+  .option-text{flex:1;position:relative;z-index:1}
+
+  .nav-row{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .btn-back{
+    background:none;
+    border:1px solid var(--border);
+    color:var(--ink-soft);
+    padding:14px 26px;
+    border-radius:100px;
+    font-family:'Nunito',sans-serif;
+    font-weight:600;
+    font-size:13px;
+    cursor:pointer;
+    transition:all .2s;
+  }
+  .btn-back:hover:not(:disabled){
+    border-color:var(--border-strong);
+    color:var(--ink);
+  }
+  .btn-back:disabled{
+    opacity:0.3;
+    cursor:not-allowed;
+  }
+  .btn-next{
+    padding:14px 32px;
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:14px;
+    color:#fff;
+    background:var(--holo);
+    border:none;
+    border-radius:100px;
+    cursor:pointer;
+    transition:all .3s;
+    box-shadow:0 6px 24px rgba(178,107,255,0.35);
+    letter-spacing:0.3px;
+  }
+  .btn-next:hover:not(:disabled){
+    transform:translateY(-1px);
+    box-shadow:0 10px 32px rgba(178,107,255,0.5);
+  }
+  .btn-next:disabled{
+    opacity:0.35;
+    cursor:not-allowed;
+    box-shadow:none;
+  }
+
+  .result-eyebrow{
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    text-align:center;
+    margin-bottom:12px;
+    color:var(--ink-faint);
+  }
+  .result-hero{
+    text-align:center;
+    margin-bottom:40px;
+  }
+  .result-label{
+    font-family:'DM Mono',monospace;
+    font-size:10px;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--pink);
+    margin-bottom:14px;
+    font-weight:500;
+  }
+  .result-title{
+    font-family:'Poppins',sans-serif;
+    font-weight:900;
+    font-size:clamp(32px,5vw,46px);
+    line-height:1.1;
+    margin-bottom:20px;
+    background:var(--holo);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    letter-spacing:-0.5px;
+  }
+  .result-desc{
+    font-size:16px;
+    line-height:1.75;
+    color:var(--ink-soft);
+    max-width:560px;
+    margin:0 auto 28px;
+  }
+
+  .section-hdr{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:16px;
+    margin-top:32px;
+  }
+  .section-ico{
+    width:28px;height:28px;
+    border-radius:50%;
+    background:rgba(178,107,255,0.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+  }
+  .section-lbl{
+    font-family:'DM Mono',monospace;
+    font-size:10px;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--purple);
+    font-weight:500;
+  }
+
+  .why-list{
+    list-style:none;
+    margin-bottom:8px;
+  }
+  .why-item{
+    padding:14px 18px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    margin-bottom:10px;
+    font-size:14px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    display:flex;
+    gap:12px;
+  }
+  .why-spark{
+    color:var(--pink);
+    flex-shrink:0;
+  }
+
+  .resource-card{
+    padding:22px;
+    background:linear-gradient(135deg,rgba(178,107,255,0.08),rgba(107,213,255,0.05));
+    border:1px solid var(--border-strong);
+    border-radius:16px;
+    margin-bottom:14px;
+    position:relative;
+    overflow:hidden;
+  }
+  .resource-card.primary{
+    border:1.5px solid transparent;
+    background:linear-gradient(var(--bg-2),var(--bg-2)) padding-box,var(--holo) border-box;
+    box-shadow:0 12px 40px rgba(178,107,255,0.2);
+  }
+  .resource-card.primary::before{
+    content:'';
+    position:absolute;
+    top:-30px;
+    right:-30px;
+    width:120px;
+    height:120px;
+    background:radial-gradient(circle,rgba(255,107,193,0.15),transparent 70%);
+    pointer-events:none;
+  }
+  .resource-tag-row{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    margin-bottom:10px;
+  }
+  .resource-tag{
+    display:inline-block;
+    font-family:'DM Mono',monospace;
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:100px;
+    background:rgba(255,107,193,0.15);
+    color:var(--pink);
+    font-weight:500;
+  }
+  .resource-card.primary .resource-tag{
+    background:var(--holo);
+    color:#fff;
+  }
+  .resource-where{
+    font-family:'DM Mono',monospace;
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:100px;
+    font-weight:600;
+    background:rgba(142,255,213,0.12);
+    color:var(--mint);
+  }
+  .resource-name{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:20px;
+    margin-bottom:8px;
+    line-height:1.25;
+  }
+  .resource-desc{
+    font-size:13.5px;
+    line-height:1.65;
+    color:var(--ink-soft);
+  }
+
+  .next-note{
+    margin-top:18px;
+    padding:16px 18px;
+    border-radius:14px;
+    background:rgba(107,213,255,0.06);
+    border:1px dashed rgba(107,213,255,0.3);
+    font-size:13.5px;
+    line-height:1.65;
+    color:var(--ink-soft);
+  }
+  .next-note strong{color:var(--cyan)}
+
+  .result-cta-row{
+    margin-top:40px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .result-cta{
+    display:block;
+    width:100%;
+    padding:18px 28px;
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:15px;
+    color:#fff;
+    background:var(--holo);
+    border:none;
+    border-radius:100px;
+    cursor:pointer;
+    transition:all .3s;
+    box-shadow:0 8px 32px rgba(178,107,255,0.4),inset 0 1px 0 rgba(255,255,255,0.25);
+    text-align:center;
+    text-decoration:none;
+    letter-spacing:0.3px;
+  }
+  .result-cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 40px rgba(178,107,255,0.55),inset 0 1px 0 rgba(255,255,255,0.35);
+  }
+  .result-retake{
+    background:none;
+    border:1px solid var(--border);
+    color:var(--ink-soft);
+    padding:14px 28px;
+    border-radius:100px;
+    font-family:'Nunito',sans-serif;
+    font-weight:600;
+    font-size:13px;
+    cursor:pointer;
+    transition:all .2s;
+  }
+  .result-retake:hover{
+    border-color:var(--border-strong);
+    color:var(--ink);
+  }
+  .result-subtitle{
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:22px;
+    margin-top:-8px;
+    opacity:0.85;
+  }
+  .result-copy{
+    padding:16px 28px;
+    font-family:'Nunito',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    color:var(--ink);
+    background:rgba(255,255,255,0.08);
+    border:1.5px solid var(--border-strong);
+    border-radius:100px;
+    cursor:pointer;
+    transition:all .2s;
+    letter-spacing:0.2px;
+  }
+  .result-copy:hover{
+    background:rgba(255,255,255,0.14);
+    transform:translateY(-1px);
+    box-shadow:0 6px 20px rgba(178,107,255,0.2);
+  }
+  .copy-toast{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:linear-gradient(135deg,#9b6dc8 0%,#e8829e 100%);
+    color:#fff;
+    padding:14px 24px;
+    border-radius:100px;
+    font-family:'Nunito',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:0.3px;
+    box-shadow:0 12px 36px rgba(155,109,200,0.45);
+    opacity:0;
+    pointer-events:none;
+    transition:all .4s cubic-bezier(.34,1.56,.64,1);
+    z-index:100;
+    max-width:90vw;
+    text-align:center;
+  }
+  .copy-toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+
+  .foot{
+    margin-top:auto;
+    padding-top:40px;
+    text-align:center;
+  }
+  .foot-brand{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-bottom:4px;
+  }
+  .foot-brand em{
+    font-style:italic;
+    background:var(--holo);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .foot-sub{
+    font-family:'DM Mono',monospace;
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+
+  @media(max-width:640px){
+    .wrap{padding:32px 18px 60px}
+    .option{padding:16px 18px;font-size:14px}
+    .nav-row{flex-direction:column-reverse;gap:10px}
+    .btn-back,.btn-next{width:100%}
+    .intro-meta{gap:8px}
+  }
+
+  /* ===== Glow Up additions ===== */
+  .gem-links{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+  .gem-link{
+    display:block;
+    padding:11px 16px;
+    border-radius:12px;
+    background:rgba(142,255,213,0.08);
+    border:1px solid rgba(142,255,213,0.3);
+    color:var(--mint);
+    font-weight:700;
+    font-size:13px;
+    text-decoration:none;
+    transition:all .2s;
+  }
+  .gem-link:hover{background:rgba(142,255,213,0.16);transform:translateY(-1px)}
+  .inside-line{
+    margin-top:14px;padding-top:12px;
+    border-top:1px dashed var(--border);
+    font-size:12.5px;line-height:1.6;color:var(--ink-soft);
+  }
+  .inside-line-lbl{
+    font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--pink);display:block;margin-bottom:4px;
+  }
+  .resource-card.paid{
+    border:1.5px solid transparent;
+    background:linear-gradient(var(--bg-3),var(--bg-3)) padding-box,var(--holo-2) border-box;
+    box-shadow:0 12px 40px rgba(255,107,193,0.18);
+  }
+  .resource-card.paid .resource-tag{background:var(--holo-2);color:#fff}
+  .resource-where.paid{background:rgba(255,107,193,0.14);color:var(--pink)}
+  .paid-note{
+    margin-top:14px;padding:14px 16px;border-radius:12px;
+    background:rgba(255,255,255,0.04);border:1px dashed rgba(255,138,209,0.35);
+    font-size:12.5px;line-height:1.65;color:var(--ink-soft);
+  }
+  .paid-cta{
+    display:block;margin-top:14px;padding:14px 20px;border-radius:100px;
+    background:var(--holo-2);color:#fff;font-weight:800;font-size:14px;
+    text-align:center;text-decoration:none;
+    box-shadow:0 8px 28px rgba(255,107,193,0.35),inset 0 1px 0 rgba(255,255,255,0.25);
+    transition:all .25s;
+  }
+  .paid-cta:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(255,107,193,0.5)}
+  .result-cta.secondary{
+    background:transparent;color:var(--ink);
+    border:1.5px solid var(--border-strong);
+    box-shadow:none;
+  }
+  .result-cta.secondary:hover{background:rgba(178,107,255,0.1);box-shadow:none}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="wrap">
+
+  <div class="brand-row">
+    <span class="brand-sparkle">✦</span>
+    <span class="brand-txt">Glow Up with Amanda</span>
+    <span class="brand-sparkle">✦</span>
+  </div>
+
+  <div class="progress-outer" id="progress-outer">
+    <div class="progress-label">
+      <span id="progress-step">Question 1 of 6</span>
+      <span id="progress-pct">17%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill" style="width:17%"></div>
+    </div>
+  </div>
+
+  <!-- Intro Screen -->
+  <div class="screen active" id="screen-intro">
+    <div class="intro-eyebrow">✦ Your Start Here Diagnostic ✦</div>
+    <h1 class="intro-title">Choose Your<br><em>Execution Path</em></h1>
+    <p class="intro-sub">Six questions. One personalized path. Instead of opening every free training inside Glow Up with Amanda at once, you'll leave with the ONE classroom to open first, the free gem to grab, and where that path goes deeper inside Spiritual Business Skool.</p>
+    <div class="intro-meta">
+      <div class="intro-meta-item"><span>◷</span>Takes 4 minutes</div>
+      <div class="intro-meta-item"><span>✦</span>6 questions</div>
+      <div class="intro-meta-item"><span>◈</span>Custom path</div>
+    </div>
+    <button class="intro-cta" onclick="startQuiz()">Start the Diagnostic →</button>
+  </div>
+
+  <div id="q-container"></div>
+
+  <!-- Results Screen -->
+  <div class="screen" id="screen-result">
+    <div class="result-hero">
+      <div class="result-label">You Are</div>
+      <h1 class="result-title" id="result-title"></h1>
+      <div class="result-subtitle" id="result-subtitle"></div>
+      <p class="result-desc" id="result-desc"></p>
+    </div>
+
+    <div class="section-hdr">
+      <div class="section-ico">💎</div>
+      <div class="section-lbl">Why this path fits you</div>
+    </div>
+    <ul class="why-list" id="why-list"></ul>
+
+    <div class="section-hdr">
+      <div class="section-ico">✦</div>
+      <div class="section-lbl">Start here · free, in this community</div>
+    </div>
+    <div id="primary-resource"></div>
+    <div class="next-note" id="next-note"></div>
+
+    <div class="section-hdr">
+      <div class="section-ico">◈</div>
+      <div class="section-lbl">Supporting resource</div>
+    </div>
+    <div id="secondary-resource"></div>
+
+    <div class="section-hdr">
+      <div class="section-ico">🚪</div>
+      <div class="section-lbl">Where this path goes deeper</div>
+    </div>
+    <div id="inside-resource"></div>
+
+    <div class="result-cta-row">
+      <a class="result-cta" href="https://www.skool.com/glowup/classroom" target="_blank" rel="noopener noreferrer">Open the Glow Up classroom →</a>
+      <a class="result-cta secondary" href="https://www.skool.com/amanda/plans" target="_blank" rel="noopener noreferrer">See what's inside Spiritual Business Skool →</a>
+      <button class="result-copy" id="btn-copy-result" onclick="copyResult()">📋 Copy My Result</button>
+      <button class="result-retake" onclick="resetQuiz()">← Retake the quiz</button>
+    </div>
+    <div class="copy-toast" id="copy-toast">✦ Copied. Paste into your Day 3 Shiny Object prompt inside the Start Here mini course.</div>
+  </div>
+
+  <div class="foot">
+    <div class="foot-brand">✦ Glow Up with <em>Amanda</em> ✦</div>
+    <div class="foot-sub">The free side of Spiritual Business Skool</div>
+  </div>
+
+</div>
+
+<script>
+
+/* ============================================================
+   QUIZ DATA: Glow Up with Amanda (the free community).
+   No pricing anywhere in this file. Tier names are fine.
+
+   Every result has three layers:
+     1. A primary path → a FREE classroom inside Glow Up, plus the
+        free gem to grab (free gems may be linked; paid gems are
+        named only, never linked).
+     2. A supporting resource (also free, or the 1:1 audit).
+     3. Where it goes deeper → the paid classroom inside
+        Spiritual Business Skool, linked to the plans page only.
+
+   Primary paths (archetypes) → the Glow Up classroom they open:
+     FB = The Foundation Builder → Skool Setup, Growth & Monetization
+     AR = The Architect         → Claude AI (artifacts)
+     LH = The Lighthouse        → Claude AI (content systems)
+     CL = The Closer            → The Audit Method (kickoff training)
+     AL = The Alchemist         → Claude AI (artifacts)
+     HS = The Host              → Skool Setup, Growth & Monetization (growth)
+     AM = The Amplifier         → Meta Ads
+
+   Supporting resources (flags):
+     ALIGN    = Human Design x Kabbalistic Astrology
+     SYSTEM   = Claude AI (the tool stack)
+     POSITION = Skool Setup, Growth & Monetization (Growth Boost)
+     CONVERT  = The Audit Method (kickoff training)
+     EYES     = 1:1 Strategy Audit
+     TOOLS    = Tools & Platform Library
+============================================================ */
+
+const LINKS = {
+  classroom: "https://www.skool.com/glowup/classroom",
+  plans:     "https://www.skool.com/amanda/plans",
+  audit:     "https://cal.com/amanda-fielding-smith-ljdz7y/strategy-audit-open",
+  playbook:  "https://aefieldi.github.io/freegift/",
+  kickoff:   "https://www.youtube.com/watch?v=tRn2AauOC5g",
+  setup:     "https://aefieldi.github.io/skoolfromscratch/",
+  launch7:   "https://claude.ai/public/artifacts/a7c65313-8f14-4d1a-89f0-9d802572a45e",
+  treasureMap: "https://claude.ai/public/artifacts/c409a795-c312-4358-956a-a4bea5969c06",
+  ytGuide:   "https://claude.ai/public/artifacts/823a5817-e4e6-4921-b330-67895856efe8",
+  rules10:   "https://claude.ai/public/artifacts/88e5f2ee-ebbe-47c9-bcf1-dc2131985c00",
+  planners:  "https://claude.ai/public/artifacts/83a81580-361d-415f-8161-b0a28d1079ba",
+  eight:     "https://claude.ai/public/artifacts/08788b51-5f51-467c-b18d-6ca3af973f1c",
+  growthBoost: "https://claude.ai/public/artifacts/f1e9ce28-af27-4833-8337-17179780e394",
+  fourStages: "https://aefieldi.github.io/4-stages-of-ads/",
+  scorecard: "https://claude.ai/public/artifacts/8339baef-07da-4983-afd5-1a1b1f180d42",
+  trafficSheet: "https://aefieldi.github.io/BTS/traffic-engagement-cheat-sheet/",
+  northNode: "https://claude.ai/public/artifacts/8dcc6c6e-37ee-4427-966b-1fe0ffb5a80d",
+  librarising: "https://aefieldi.github.io/librarising/"
+};
+
+const questions = [
+  {
+    q: "Where are you with your Skool community right now?",
+    opts: [
+      { t: "I don't have one yet",                                w: { FB: 4 } },
+      { t: "It's set up but it's quiet",                          w: { LH: 3, HS: 1 } },
+      { t: "I have members but engagement is low",                w: { HS: 3, POSITION: 2 } },
+      { t: "It's active and I'm ready to scale it",               w: { AM: 2, HS: 1, EYES: 3, TOOLS: 2 } }
+    ]
+  },
+  {
+    q: "What do you actually want to sell in the next 90 days?",
+    opts: [
+      { t: "A recurring membership",                              w: { HS: 3, LH: 1 } },
+      { t: "High-ticket 1:1, a paid audit or a reading that turns into a client", w: { CL: 4, CONVERT: 2 } },
+      { t: "Mini offers and digital products",                    w: { AL: 3, AR: 1 } },
+      { t: "An AI product I haven't built yet (or I'm still figuring it out)", w: { AR: 4, FB: 1 } }
+    ]
+  },
+  {
+    q: "What's the bottleneck that's actually stopping you?",
+    opts: [
+      { t: "Nobody knows I exist. I need eyeballs",               w: { LH: 4 } },
+      { t: "People see me but don't buy. I need a better offer",  w: { CL: 2, AL: 2, EYES: 2 } },
+      { t: "I don't have the foundation built yet",               w: { FB: 3, AR: 1 } },
+      { t: "I'm doing all the things and nothing feels aligned",  w: { ALIGN: 4 } }
+    ]
+  },
+  {
+    q: "How are people finding you right now?",
+    opts: [
+      { t: "Organic content, and it's actually working",          w: { LH: 1, AM: 2, TOOLS: 2 } },
+      { t: "Mostly word of mouth and my DMs",                     w: { SYSTEM: 3, CL: 1 } },
+      { t: "Skool's discovery and Growth Boost are sending people my way", w: { POSITION: 3, HS: 1 } },
+      { t: "Honestly, they're not. I'm starting from scratch",    w: { FB: 2, LH: 2 } }
+    ]
+  },
+  {
+    q: "How do you feel about showing up on content?",
+    opts: [
+      { t: "I love it, I just need a repeatable system",          w: { LH: 2, SYSTEM: 1 } },
+      { t: "I'll do it, but I need it to be efficient",           w: { AL: 1, SYSTEM: 2, TOOLS: 2 } },
+      { t: "I'd rather pay for traffic than post every day",      w: { AM: 4 } },
+      { t: "I want to show up in a way that actually feels like me", w: { ALIGN: 4 } }
+    ]
+  },
+  {
+    q: "If you could only pick ONE win in the next 30 days, it would be:",
+    opts: [
+      { t: "My first (or next) paying member inside my Skool",    w: { HS: 2, LH: 2 } },
+      { t: "My next high-ticket client signed",                   w: { CL: 3, CONVERT: 3 } },
+      { t: "A finished offer or asset I can actually sell",       w: { AL: 3, AR: 1 } },
+      { t: "Finally having my foundation set up and ready to grow", w: { FB: 3 } }
+    ]
+  }
+];
+
+/* ============================================================
+   PRIMARY PATH DEFINITIONS
+   resource  = the free classroom + what to watch first
+   gems      = free gems (linked). Keep this list to free gems only.
+   inside    = the paid classroom inside Spiritual Business Skool
+============================================================ */
+
+const paths = {
+  FB: {
+    name: "The Foundation Builder",
+    subtitle: "The Build-From-Scratch Path",
+    classroom: "Skool Setup, Growth & Monetization",
+    desc: "You don't have your Skool set up yet, or the foundation feels wobbly enough that everything you build on top of it wobbles too. The free classroom walks you through the setup in the order I actually do it, and the launch video shows you how to open the doors without a single course. You're not behind. You're at the beginning, which is the only place anyone has ever started.",
+    why: [
+      "Setup first, in order. Plan, monetization model, about page, plugins, then the three C's: community, classroom, calendar.",
+      "You're getting your foundation built rather than getting thrown straight into content for a community that doesn't exist yet.",
+      "The guides are click-through checklists, so you're customizing instead of staring at a blank page."
+    ],
+    resource: {
+      tag: "Watch first",
+      where: "Free · Glow Up classroom",
+      name: "Skool Setup, Growth & Monetization",
+      desc: "Start with \"How To Set Up Your Skool Community From Scratch\" and then \"Launch Your Skool Community in 7 Days (without a single course)\". Both free, both in the classroom, with the gem that goes with each one underneath the video."
+    },
+    gems: [
+      { label: "Soul-Aligned Skool Setup Guide", url: LINKS.setup },
+      { label: "7-Day Spiritual Skool Launch Guide", url: LINKS.launch7 }
+    ],
+    inside: {
+      name: "Skool Launch Challenge",
+      desc: "The 7-day version with templates for every step, plus the Skool Glow Up Gems (about page, pinned post and engagement templates). Launch in 7 days without wanting to unalive yourself."
+    },
+    next: "Once your Skool is live, come back and retake the quiz. Your bottleneck moves from building to being seen, and your path should move with it."
+  },
+  AR: {
+    name: "The Architect",
+    subtitle: "The Build-The-Offer Path",
+    classroom: "Claude AI",
+    desc: "You want to sell something you haven't made yet, or you're still deciding what it even is. You don't need more theory, you need to go end to end on one thing and come out the other side with something real. The Claude AI classroom shows you how I build artifacts in an afternoon, and how one artifact becomes the whole front end of a Skool.",
+    why: [
+      "You're stuck at 'what do I actually sell', which is a build problem, not a marketing problem. Nothing downstream works until this is answered.",
+      "An artifact beats a course: it's interactive, it feels premium, and people actually finish it. You can build your first one in 20 minutes.",
+      "Once you've built one, the pattern repeats. This is the skill, not the single product."
+    ],
+    resource: {
+      tag: "Watch first",
+      where: "Free · Glow Up classroom",
+      name: "Claude AI: artifacts & content systems",
+      desc: "Start with \"How I'd Grow a Skool From $0 in 2026 (Claude Artifacts)\" and grab the Skool Treasure Map underneath it. Then \"I Built 32 Claude Artifacts in 1 Weekend\" for the exact build workflow."
+    },
+    gems: [
+      { label: "The Skool Treasure Map", url: LINKS.treasureMap },
+      { label: "Claude Just Killed Daily Planners (example artifact)", url: LINKS.planners }
+    ],
+    inside: {
+      name: "Claude Community Maxxing",
+      desc: "The 90-minute workshop: ideate, create, deliver and promote your first or next AI digital product with Claude, start to finish. Unlock it here in the classroom, or it's included inside Spiritual Business Skool with the AI Marketing Treasure Chest (36+ done-for-you artifacts)."
+    },
+    next: "Once your offer exists, come back and take this quiz again. Your bottleneck will have moved, and your path should move with it."
+  },
+  LH: {
+    name: "The Lighthouse",
+    subtitle: "The Visibility Path",
+    classroom: "Claude AI",
+    desc: "You already have (or are close to having) the foundation. What you need now is sustainable visibility that actually fills your community. No hustle, no burnout, no generic content hamster wheel. The content systems in the Claude AI classroom are how I stay everywhere in a few hours a week.",
+    why: [
+      "Your bottleneck is being seen, not convincing. These trainings are built to solve exactly that across YouTube, Instagram and TikTok.",
+      "It's a system, not a launch you recover from. You don't rise to your goals, you fall to the level of your systems.",
+      "One YouTube video with one artifact underneath it can grow a Skool on autopilot. That's the whole funnel, and it takes ten minutes to set up."
+    ],
+    resource: {
+      tag: "Watch first",
+      where: "Free · Glow Up classroom",
+      name: "Claude AI: artifacts & content systems",
+      desc: "Start with \"10 Marketing Rules I'd Break if I Started Over Today\", then \"You're 10 Minutes Away From a YouTube + Skool Funnel\" and \"30 Days of YouTube Content in 30 Minutes With Poppy AI\". The gem under each one is the thing to actually use."
+    },
+    gems: [
+      { label: "The YouTube Video Guide That Grows Your Skool on Autopilot", url: LINKS.ytGuide },
+      { label: "10 Marketing Rules I'd Break: Interactive Video Guide", url: LINKS.rules10 }
+    ],
+    inside: {
+      name: "Visibility by Design Challenge",
+      desc: "28 days of daily marketing and visibility in alignment with your design, across Instagram, YouTube, TikTok and Skool, with the artifacts to make each day faster. Plus Astrology x Visibility and the Content Alchemy Studio."
+    },
+    next: "Pick ONE platform for the next 30 days. Omnipresence comes from repurposing one thing, not from making four."
+  },
+  CL: {
+    name: "The Closer",
+    subtitle: "The High-Ticket Path",
+    classroom: "The Audit Method",
+    desc: "You want high-ticket clients, not a thousand-person audience. You already have the skill. What's missing is the ask around it: one paid 60-minute audit or reading that turns into a 90-day client, booked from content and DMs instead of free clarity calls. That's The Audit Method, and the kickoff training is free in this classroom.",
+    why: [
+      "A paid audit flips the dynamic. They've already invested, so the call is a confirmation, not a convincing session.",
+      "You don't need a launch, a funnel or a 47-step sequence. You need the three questions that pick your audit, and the one line at the end of the call.",
+      "It's the exact system I'm running in my own business right now, receipts in the video."
+    ],
+    resource: {
+      tag: "Watch first",
+      where: "Free · Glow Up classroom",
+      name: "The Audit Method: kickoff training",
+      desc: "The full 60-minute masterclass: which audit or reading you'd sell, how to promote it in 30 days of short-form without selling every day, and the one line that turns the audit into the client. Watch it, then name your audit in the comments of the START HERE post."
+    },
+    gems: [
+      { label: "Watch the kickoff training on YouTube", url: LINKS.kickoff }
+    ],
+    inside: {
+      name: "The Audit Method (13-step classroom)",
+      desc: "The templates and the full 13-step build: your highlights, your 30-day audit promo plan, the DM flow, the call flow and the ask. Plus the 5 Day Client Challenge for the finite challenge that signs them."
+    },
+    next: "When you want eyes on your offer before you launch it, the <strong>1:1 Strategy Audit</strong> is how I do it with people. Limited availability."
+  },
+  AL: {
+    name: "The Alchemist",
+    subtitle: "The Plug-and-Play Tools Path",
+    classroom: "Claude AI",
+    desc: "You don't need more strategy, you need finished, branded, ready-to-use assets you can deploy this week. Lead magnets, client tools, mini offers, classroom content. Your leverage point is speed-to-asset, and that's exactly what Claude artifacts are for.",
+    why: [
+      "You want to ship finished things fast, not sit in planning for another month.",
+      "Mini offers and digital products are your sweet spot, and an artifact can be a freebie one month and a paid mini offer the next. Same tool, different positioning.",
+      "Artifacts are the single best thing I've used to grow my own community, because they get you cheaper signups than almost anything else."
+    ],
+    resource: {
+      tag: "Watch first",
+      where: "Free · Glow Up classroom",
+      name: "Claude AI: artifacts & content systems",
+      desc: "Start with \"I Built 32 Claude Artifacts in 1 Weekend (Your First Artifact in 20 Minutes)\". Open the daily tracker underneath it to see what an artifact can be, then build your own version of it."
+    },
+    gems: [
+      { label: "Claude Just Killed Daily Planners (example artifact)", url: LINKS.planners },
+      { label: "The Ultimate A to Z Spiritual Business Marketing Playbook", url: LINKS.playbook }
+    ],
+    inside: {
+      name: "AI Marketing Treasure Chest",
+      desc: "36+ done-for-you artifacts and skills you can host inside your own Skool, use with clients, or run as lead magnets and mini offers. Each one has its own module with a tutorial. Plus the Premium Skills Treasure Chest."
+    },
+    next: "One artifact solves one clear problem for one specific person. That specificity is the whole reason it converts."
+  },
+  HS: {
+    name: "The Host",
+    subtitle: "The Membership Growth Path",
+    classroom: "Skool Setup, Growth & Monetization",
+    desc: "You're selling a membership, which means you're not just selling someone on joining. You're selling them on taking the action that gets them a result, month after month. The growth and monetization trainings in the free classroom are the exact moves that added members and raised my MRR, with the receipts.",
+    why: [
+      "A membership is a monthly bill, so you have to consistently help people move toward where they want to go, not just get them in the door.",
+      "Pricing is a lever most people never pull. The $8 model, the low-to-high-ticket ladder, and when to raise the floor are all in the free classroom.",
+      "Growth Boost only pops off when your positioning is nailed. The 93-members-in-10-days video shows the setup and what it cost."
+    ],
+    resource: {
+      tag: "Watch first",
+      where: "Free · Glow Up classroom",
+      name: "Skool Setup, Growth & Monetization",
+      desc: "Start with \"$8 Is the New FREE Community on Skool\" and then \"How I Added 93 Skool Members in 10 Days (Growth Boost)\". The guide under each video is the model and the setup, step by step."
+    },
+    gems: [
+      { label: "$8 Is the New Free: Low to High Ticket Scaling Guide", url: LINKS.eight },
+      { label: "Skool Growth Boost: 93 Members in 10 Days", url: LINKS.growthBoost }
+    ],
+    inside: {
+      name: "Create Your Own Infinite Challenge",
+      desc: "The in-Skool challenge you build once that keeps onboarding, re-engaging and delivering results on repeat. Plus the Skool Glow Up Gems for engagement and positioning."
+    },
+    next: "Pair growth with retention. More members only matters if the ones you have stay, so look at your engagement before you look at your ads."
+  },
+  AM: {
+    name: "The Amplifier",
+    subtitle: "The Paid Traffic Path",
+    classroom: "Meta Ads",
+    desc: "You have an offer that works and a community that's alive. You're past the point where the constraint is 'what do I sell' and squarely at 'how do I get more of the right people in front of it, every single day, without posting my way there.' That's a paid traffic problem, and it has a paid traffic answer. About half of my own signups come from Meta ads.",
+    why: [
+      "You'd rather buy qualified attention than manufacture it daily, and at your stage that's the correct trade.",
+      "Ads work when the offer already converts. Yours does, so you're not paying to find out whether it does.",
+      "There's an order to it. Run the four campaign stages in sequence and you stop wasting money on ads to a page that doesn't convert."
+    ],
+    resource: {
+      tag: "Watch first",
+      where: "Free · Glow Up classroom",
+      name: "Meta Ads",
+      desc: "Start with \"Meta Ads for Skool Communities: The Order Nobody Teaches\" and grab the 4 Stages guide underneath it. Then run the readiness scorecard before you spend a dollar."
+    },
+    gems: [
+      { label: "4 Stages of Ads to Your Skool", url: LINKS.fourStages },
+      { label: "Facebook Ads Readiness Scorecard", url: LINKS.scorecard },
+      { label: "The Ultimate Traffic + Engagement Campaign Cheat Sheet", url: LINKS.trafficSheet }
+    ],
+    inside: {
+      name: "Ads By Design",
+      desc: "The full paid traffic system behind how I get about half my own growth from paid social: campaign structure, creative, the ad templates and the numbers to watch."
+    },
+    next: "Ads amplify what already works. If your offer isn't converting organically yet, fix that first, then come back here."
+  }
+};
+
+/* ============================================================
+   SUPPORTING RESOURCE DEFINITIONS
+============================================================ */
+
+const secondaries = {
+  ALIGN: {
+    tag: "Alignment layer",
+    where: "Free · Glow Up classroom",
+    name: "Human Design x Kabbalistic Astrology",
+    desc: "Why you're really here and how to build a business that serves your soul's purpose. Your design decides how you should market, sell and rest. Kabbalah decides how you make space for what you want. Because strategy without alignment is just hustle in a prettier outfit, and it burns you out the same way.",
+    gems: [
+      { label: "North Node Business Simulator", url: LINKS.northNode },
+      { label: "Confessions of a Libra Rising: Survival Guide", url: LINKS.librarising }
+    ],
+    inside: "CEO Oracle GPT (plug in your full chart, get real-time business strategy) and Your Online Persona with Human Design. Both unlockable here, both included inside Spiritual Business Skool."
+  },
+  SYSTEM: {
+    tag: "Systems layer",
+    where: "Free · Glow Up classroom",
+    name: "Claude AI: the tool stack",
+    desc: "If you're selling anything from your DMs, you need systems so the boring manual stuff stops being your job. \"8 AI 'Secrets' 99% of People Don't Know\" is my exact tool stack: Claude as the engine, Poppy for content, Fathom for calls, repurpose.io to be everywhere at once.",
+    gems: [
+      { label: "The Ultimate A to Z Spiritual Business Marketing Playbook", url: LINKS.playbook }
+    ],
+    inside: "The AI DM Assistant & Growth Lab (tell it what they said, get your next 1 to 3 replies) and The DM Selling Guide, comment keyword to booked call."
+  },
+  POSITION: {
+    tag: "Positioning layer",
+    where: "Free · Glow Up classroom",
+    name: "Skool Setup, Growth & Monetization: Growth Boost",
+    desc: "Skool is literally running ads to grow our communities, but for that to pop off for you, your positioning has to be nailed. The Growth Boost video shows exactly how I set it up, what it cost, and what I'd change.",
+    gems: [
+      { label: "Skool Growth Boost: 93 Members in 10 Days", url: LINKS.growthBoost },
+      { label: "Soul-Aligned Skool Setup Guide (about page template inside)", url: LINKS.setup }
+    ],
+    inside: "Skool Glow Up Gems (about page, pinned post and engagement templates) and Find Your Online Persona with Human Design."
+  },
+  CONVERT: {
+    tag: "Conversion engine",
+    where: "Free · Glow Up classroom",
+    name: "The Audit Method: kickoff training",
+    desc: "One paid 60-minute audit or reading that turns into a 90-day client. Instead of a free clarity call or a webinar, you get paid to go deep with someone once, which positions you as the guide before you ever make the bigger offer.",
+    gems: [
+      { label: "Watch the kickoff training on YouTube", url: LINKS.kickoff }
+    ],
+    inside: "The 13-step Audit Method classroom with every template, and the 5 Day Client Challenge for the finite challenge that signs high-ticket clients."
+  },
+  EYES: {
+    tag: "Outside perspective",
+    where: "Book a call",
+    name: "1:1 Strategy Audit",
+    desc: "For experts with an audience and proven client results who want someone to look over everything they're doing and tell them the next one to three moves. I go through your offers, content and community before we ever get on the call, and you leave with your #1 bottleneck, your next 3 moves for the next 90 days, the replay and my full notes. Limited availability.",
+    gems: [
+      { label: "Book your Strategy Audit", url: LINKS.audit }
+    ],
+    inside: "Say yes on the call and your audit applies to the 90-day container. Spiritual Business Skool, every tier, comes with it."
+  },
+  TOOLS: {
+    tag: "Leverage layer",
+    where: "Unlock · Glow Up classroom",
+    name: "Tools & Platform Library",
+    desc: "Your complete spiritual business arsenal: templates, prompts, guides and AI tools in one place. Unlock it here in the classroom, or it's included inside Spiritual Business Skool. The free version is the A to Z Playbook: every free gem and training I've made, sorted by what you're working on.",
+    gems: [
+      { label: "The Ultimate A to Z Spiritual Business Marketing Playbook", url: LINKS.playbook }
+    ],
+    inside: "The Premium Skills Treasure Chest (skills, artifacts, trackers, dashboards, build-your-own tools) and the Premium+ Q&A, where you submit your question and watch it answered on the call."
+  }
+};
+
+/* Tie-break order when two supporting flags score the same */
+const SECONDARY_ORDER = ['ALIGN','CONVERT','POSITION','SYSTEM','EYES','TOOLS'];
+const PRIMARY_ORDER   = ['FB','AR','LH','CL','AL','HS','AM'];
+
+/* If the supporting resource is the same training as the primary path,
+   fall through to the next one so the member gets two distinct things. */
+const DUPLICATES = { CL: 'CONVERT', HS: 'POSITION' };
+
+/* ============================================================
+   STATE
+============================================================ */
+
+let currentQ = 0;
+let answers = new Array(questions.length).fill(null);
+
+/* ============================================================
+   STAR FIELD
+============================================================ */
+
+function makeStars(){
+  const container = document.getElementById('stars');
+  const count = 60;
+  const variants = ['','lg','pink','cyan'];
+  for(let i=0;i<count;i++){
+    const s = document.createElement('div');
+    s.className = 'star ' + variants[Math.floor(Math.random()*variants.length)];
+    s.style.left = Math.random()*100 + '%';
+    s.style.top = Math.random()*100 + '%';
+    s.style.animationDelay = Math.random()*4 + 's';
+    s.style.animationDuration = (3 + Math.random()*3) + 's';
+    container.appendChild(s);
+  }
+}
+makeStars();
+
+/* ============================================================
+   QUIZ FLOW
+============================================================ */
+
+function startQuiz(){
+  document.getElementById('screen-intro').classList.remove('active');
+  document.getElementById('progress-outer').classList.add('show');
+  renderQuestion(0);
+}
+
+function renderQuestion(idx){
+  currentQ = idx;
+  const q = questions[idx];
+  const container = document.getElementById('q-container');
+
+  container.innerHTML = '';
+
+  const screen = document.createElement('div');
+  screen.className = 'screen active';
+  screen.id = 'screen-q' + idx;
+
+  screen.innerHTML = `
+    <div class="q-num">Question ${idx+1}</div>
+    <h2 class="q-title">${q.q}</h2>
+    <div class="options" id="opts-${idx}">
+      ${q.opts.map((o,i)=>`
+        <button class="option ${answers[idx]===i?'selected':''}" data-i="${i}">
+          <div class="option-dot"></div>
+          <div class="option-text">${o.t}</div>
+        </button>
+      `).join('')}
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" ${idx===0?'disabled':''} onclick="goBack()">← Back</button>
+      <button class="btn-next" id="btn-next-${idx}" ${answers[idx]===null?'disabled':''} onclick="goNext()">
+        ${idx===questions.length-1?'See My Path ✦':'Next →'}
+      </button>
+    </div>
+  `;
+  container.appendChild(screen);
+
+  document.querySelectorAll(`#opts-${idx} .option`).forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const i = parseInt(btn.getAttribute('data-i'));
+      answers[idx] = i;
+      document.querySelectorAll(`#opts-${idx} .option`).forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById(`btn-next-${idx}`).disabled = false;
+    });
+  });
+
+  updateProgress(idx);
+}
+
+function updateProgress(idx){
+  const pct = Math.round(((idx+1)/questions.length)*100);
+  document.getElementById('progress-step').textContent = `Question ${idx+1} of ${questions.length}`;
+  document.getElementById('progress-pct').textContent = pct + '%';
+  document.getElementById('progress-fill').style.width = pct + '%';
+}
+
+function goNext(){
+  if(answers[currentQ]===null) return;
+  if(currentQ < questions.length-1){
+    renderQuestion(currentQ+1);
+    window.scrollTo({top:0,behavior:'smooth'});
+  } else {
+    showResult();
+  }
+}
+
+function goBack(){
+  if(currentQ>0){
+    renderQuestion(currentQ-1);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+}
+
+/* ============================================================
+   SCORING
+============================================================ */
+
+function calculateResult(){
+  const scores = {};
+  PRIMARY_ORDER.forEach(k => scores[k] = 0);
+  SECONDARY_ORDER.forEach(k => scores[k] = 0);
+
+  answers.forEach((ansIdx, qIdx)=>{
+    if(ansIdx===null) return;
+    const w = questions[qIdx].opts[ansIdx].w;
+    Object.keys(w).forEach(k => { scores[k] = (scores[k]||0) + w[k]; });
+  });
+
+  // Highest-scoring primary. On a tie, the core fork decides it: what do you
+  // actually want to sell? (Question 2). PRIMARY_ORDER is only the last resort.
+  const topScore = Math.max.apply(null, PRIMARY_ORDER.map(k => scores[k]));
+  const tied = PRIMARY_ORDER.filter(k => scores[k] === topScore);
+  let primary;
+  if(tied.length === 1){
+    primary = tied[0];
+  } else {
+    const sellW = (answers[1] !== null && answers[1] !== undefined)
+      ? questions[1].opts[answers[1]].w
+      : {};
+    let best = tied[0], bestW = -1;
+    tied.forEach(k => { const v = sellW[k] || 0; if(v > bestW){ bestW = v; best = k; } });
+    primary = (bestW > 0) ? best : tied[0];
+  }
+
+  let secondary = SECONDARY_ORDER[0];
+  SECONDARY_ORDER.forEach(k => { if(scores[k] > scores[secondary]) secondary = k; });
+
+  if(DUPLICATES[primary] && secondary === DUPLICATES[primary]){
+    const rest = SECONDARY_ORDER.filter(k => k !== DUPLICATES[primary]);
+    let alt = rest[0];
+    rest.forEach(k => { if(scores[k] > scores[alt]) alt = k; });
+    secondary = alt;
+  }
+
+  return { primary, secondary, scores };
+}
+
+function gemLinks(gems){
+  if(!gems || !gems.length) return '';
+  return `<div class="gem-links">${gems.map(g =>
+    `<a class="gem-link" href="${g.url}" target="_blank" rel="noopener noreferrer">✦ ${g.label}</a>`
+  ).join('')}</div>`;
+}
+
+function showResult(){
+  document.getElementById('q-container').innerHTML = '';
+  document.getElementById('progress-outer').classList.remove('show');
+
+  const { primary, secondary } = calculateResult();
+  const p = paths[primary];
+  const s = secondaries[secondary];
+
+  window.__currentResult = { primary, secondary, p, s };
+
+  document.getElementById('result-title').textContent = p.name;
+  document.getElementById('result-subtitle').textContent = p.subtitle || '';
+  document.getElementById('result-desc').textContent = p.desc;
+
+  const whyList = document.getElementById('why-list');
+  whyList.innerHTML = p.why.map(w => `
+    <li class="why-item">
+      <span class="why-spark">✦</span>
+      <span>${w}</span>
+    </li>
+  `).join('');
+
+  document.getElementById('primary-resource').innerHTML = `
+    <div class="resource-card primary">
+      <div class="resource-tag-row">
+        <div class="resource-tag">${p.resource.tag}</div>
+        <div class="resource-where">${p.resource.where}</div>
+      </div>
+      <div class="resource-name">${p.resource.name}</div>
+      <div class="resource-desc">${p.resource.desc}</div>
+      ${gemLinks(p.gems)}
+    </div>
+  `;
+
+  document.getElementById('next-note').innerHTML = '✦ ' + (p.next || '');
+
+  document.getElementById('secondary-resource').innerHTML = `
+    <div class="resource-card">
+      <div class="resource-tag-row">
+        <div class="resource-tag">${s.tag}</div>
+        <div class="resource-where">${s.where}</div>
+      </div>
+      <div class="resource-name">${s.name}</div>
+      <div class="resource-desc">${s.desc}</div>
+      ${gemLinks(s.gems)}
+      ${s.inside ? `<div class="inside-line"><span class="inside-line-lbl">Goes deeper inside Spiritual Business Skool:</span> ${s.inside}</div>` : ''}
+    </div>
+  `;
+
+  document.getElementById('inside-resource').innerHTML = `
+    <div class="resource-card paid">
+      <div class="resource-tag-row">
+        <div class="resource-tag">Paid classroom</div>
+        <div class="resource-where paid">Inside Spiritual Business Skool</div>
+      </div>
+      <div class="resource-name">${p.inside.name}</div>
+      <div class="resource-desc">${p.inside.desc}</div>
+      <div class="paid-note">Everything in Glow Up with Amanda is free, and it's the real thing, not a teaser. The templates, the challenges, the live calls and the 13-step classrooms live inside Spiritual Business Skool. The plans page always has what's inside each tier and current availability.</div>
+      <a class="paid-cta" href="${LINKS.plans}" target="_blank" rel="noopener noreferrer">See the plans & what's inside →</a>
+    </div>
+  `;
+
+  document.getElementById('screen-result').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function copyResult(){
+  const r = window.__currentResult;
+  if (!r) return;
+
+  const strip = html => html.replace(/<[^>]*>/g,'');
+  const gemText = gems => (gems||[]).map(g => '  • ' + g.label + ' → ' + g.url).join('\n');
+
+  const text = `MY EXECUTION PATH: ${r.p.name} (${r.p.subtitle || ''})
+
+WHY THIS PATH FITS ME:
+${r.p.why.map(w => '• ' + w).join('\n')}
+
+START HERE (free, Glow Up classroom): ${r.p.resource.name}
+${r.p.resource.desc}
+${gemText(r.p.gems)}
+
+THEN: ${strip(r.p.next || '')}
+
+SUPPORTING RESOURCE: ${r.s.name}
+${r.s.desc}
+${gemText(r.s.gems)}
+
+WHERE IT GOES DEEPER (inside Spiritual Business Skool): ${r.p.inside.name}
+${r.p.inside.desc}
+Plans & what's inside → ${LINKS.plans}`;
+
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+
+    const toast = document.getElementById('copy-toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2600);
+
+    const btn = document.getElementById('btn-copy-result');
+    const original = btn.textContent;
+    btn.textContent = '✦ Copied!';
+    setTimeout(() => { btn.textContent = original; }, 2000);
+  } catch(e) {
+    console.error('Copy failed:', e);
+  }
+}
+
+function resetQuiz(){
+  answers = new Array(questions.length).fill(null);
+  currentQ = 0;
+  document.getElementById('screen-result').classList.remove('active');
+  document.getElementById('q-container').innerHTML = '';
+  document.getElementById('progress-outer').classList.remove('show');
+  document.getElementById('screen-intro').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

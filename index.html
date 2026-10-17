@@ -1,0 +1,2912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#10172e" />
+<title>Glow Up with Amanda · Start Here</title>
+<meta name="description" content="Your 7-day welcome course inside Glow Up with Amanda, the free side of Spiritual Business Skool." />
+
+<meta property="og:title" content="Glow Up with Amanda · Start Here" />
+<meta property="og:description" content="Your 7-day welcome course. The free side of Spiritual Business Skool." />
+<meta property="og:type" content="website" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E" />
+
+<!-- Speed up font load (component @imports from Google Fonts) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<style>
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #10172e;
+    color: #f5f0ff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  #loading {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+    background: #10172e;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity .4s ease;
+  }
+  #loading.hidden { opacity: 0; }
+  #loading .spark {
+    font-size: 42px;
+    background: linear-gradient(135deg,#c78fff 0%,#ff8ad1 50%,#8effd5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: spin 2.2s linear infinite;
+  }
+  #loading .label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245,240,255,0.5);
+    font-weight: 500;
+  }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,900&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  --bg: #10172e;
+  --bg-2: #161e3a;
+  --bg-3: #0a1024;
+  --ink: #f5f0ff;
+  --ink-soft: rgba(245,240,255,0.78);
+  --ink-faint: rgba(245,240,255,0.5);
+  --pink: #ff6bc1;
+  --pink-2: #ff8ad1;
+  --purple: #b26bff;
+  --purple-2: #c78fff;
+  --cyan: #6bd5ff;
+  --mint: #8effd5;
+  --lime: #d4ff00;
+  --cream: #f8f3ec;
+  --cream-2: #fdfaf4;
+  --ink-dark: #1a1530;
+  --holo: linear-gradient(135deg,#c78fff 0%,#ff8ad1 50%,#8effd5 100%);
+  --holo-2: linear-gradient(135deg,#ff6bc1,#b26bff,#6bd5ff);
+  --card: rgba(255,255,255,0.04);
+  --card-2: rgba(255,255,255,0.06);
+  --border: rgba(178,107,255,0.22);
+  --border-strong: rgba(178,107,255,0.4);
+}
+
+.app{
+  font-family:'Nunito',sans-serif;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  background:var(--bg);
+  color:var(--ink);
+  overflow:hidden;
+  position:relative;
+}
+
+.app::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(255,107,193,0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 0%, rgba(107,213,255,0.10) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 100%, rgba(178,107,255,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(107,140,255,0.08) 0%, transparent 45%);
+  pointer-events:none;
+  z-index:0;
+  animation:aurora 25s ease-in-out infinite alternate;
+}
+
+.app::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(178,107,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(178,107,255,0.04) 1px, transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+  z-index:0;
+}
+@keyframes aurora{
+  0%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(-8px,12px) scale(1.03)}
+  100%{transform:translate(8px,-8px) scale(1)}
+}
+
+.stars-bg{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.s-star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;box-shadow:0 0 6px 1px rgba(255,255,255,0.9);animation:twinkle 4s ease-in-out infinite}
+.s-star.lg{width:3px;height:3px;box-shadow:0 0 10px 2px rgba(255,200,255,0.9)}
+.s-star.pink{background:#ff6bc1;box-shadow:0 0 8px 2px rgba(255,107,193,0.7)}
+.s-star.cyan{background:#6bd5ff;box-shadow:0 0 8px 2px rgba(107,213,255,0.7)}
+.s-star.mint{background:#8effd5;box-shadow:0 0 8px 2px rgba(142,255,213,0.6)}
+@keyframes twinkle{
+  0%,100%{opacity:0.15;transform:scale(0.8)}
+  50%{opacity:0.9;transform:scale(1.3)}
+}
+
+/* ======== Celebration sparkles ======== */
+.celebration{position:fixed;inset:0;pointer-events:none;z-index:200}
+.celeb-spark{
+  position:absolute;width:6px;height:6px;border-radius:50%;
+  background:var(--holo);
+  box-shadow:0 0 16px 4px rgba(255,138,209,0.9);
+  animation:celeb-burst 1.5s cubic-bezier(.25,.9,.3,1) forwards;
+}
+@keyframes celeb-burst{
+  0%{opacity:0;transform:scale(0) rotate(0) translateY(0)}
+  20%{opacity:1;transform:scale(1.4) rotate(180deg) translateY(-40px)}
+  100%{opacity:0;transform:scale(0.5) rotate(720deg) translateY(-220px)}
+}
+
+/* ======== Reveal animation ======== */
+.reveal{
+  opacity:0;
+  animation:fadeup 0.55s cubic-bezier(.25,.9,.3,1) forwards;
+}
+@keyframes fadeup{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ======== Top Bar ======== */
+.topbar{
+  background:linear-gradient(135deg, rgba(255,107,193,0.12) 0%, rgba(178,107,255,0.15) 50%, rgba(107,213,255,0.12) 100%);
+  backdrop-filter:blur(12px);
+  padding:0 24px;
+  height:62px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-shrink:0;
+  border-bottom:1px solid var(--border);
+  position:relative;z-index:10;
+}
+.topbar::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%);pointer-events:none}
+.topbar-left{display:flex;align-items:center;gap:12px;position:relative;z-index:1}
+.topbar-icon{
+  width:38px;height:38px;border-radius:12px;background:var(--holo);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:#fff;
+  box-shadow:0 4px 16px rgba(178,107,255,0.4),inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.topbar-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;color:var(--ink);letter-spacing:0.2px}
+.topbar-title em{font-style:italic;background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.topbar-nav{display:flex;gap:28px;position:relative;z-index:1}
+.topbar-link{font-size:12px;color:var(--ink-faint);text-decoration:none;padding:20px 0;border-bottom:2px solid transparent;transition:all .15s;cursor:default;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.topbar-link.active{color:var(--ink);border-bottom-color:var(--pink)}
+.mobile-toggle{display:none;background:none;border:none;color:var(--ink);font-size:22px;cursor:pointer;padding:4px}
+
+/* ======== Layout ======== */
+.layout{flex:1;display:flex;overflow:hidden;position:relative;z-index:2}
+
+/* ======== Sidebar ======== */
+.sidebar{
+  width:300px;min-width:300px;
+  background:rgba(13,9,34,0.6);
+  backdrop-filter:blur(14px);
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+.side-header{
+  padding:24px 22px 20px;
+  background:linear-gradient(180deg, rgba(178,107,255,0.08) 0%, transparent 100%);
+  border-bottom:1px solid var(--border);
+}
+.side-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--pink);margin-bottom:8px;font-weight:500;
+}
+.side-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--ink);margin-bottom:16px;line-height:1.35}
+.side-prog-row{display:flex;align-items:center;gap:10px}
+.side-prog-bg{flex:1;height:6px;background:rgba(255,255,255,0.06);border-radius:100px;overflow:hidden;position:relative}
+.side-prog-fill{
+  height:100%;
+  background:var(--holo);
+  border-radius:100px;
+  transition:width .5s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 0 12px rgba(178,107,255,0.5);
+  position:relative;
+}
+.side-prog-fill.shimmer::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent);
+  animation:shimmer-pass 1.4s ease;
+}
+@keyframes shimmer-pass{
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(100%)}
+}
+.side-prog-pct{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:var(--ink-soft);min-width:34px;text-align:right}
+
+.side-list{flex:1;overflow-y:auto;padding:12px 12px 24px}
+.side-item{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 14px;border-radius:12px;
+  cursor:pointer;transition:all .15s;margin-bottom:3px;position:relative;
+}
+.side-item:hover{background:rgba(255,255,255,0.04)}
+.side-item.active{
+  background:linear-gradient(135deg, rgba(255,107,193,0.12), rgba(178,107,255,0.12));
+  border:1px solid var(--border);
+}
+.side-item-emoji{font-size:14px;flex-shrink:0;opacity:0.85}
+.side-item-title{flex:1;font-size:13px;color:var(--ink-soft);font-weight:500;line-height:1.35}
+.side-item.active .side-item-title{color:var(--ink);font-weight:700}
+.side-check{
+  width:22px;height:22px;min-width:22px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:all .25s;
+}
+.side-check.pending{border:2px solid rgba(178,107,255,0.35)}
+.side-check.done{
+  background:var(--holo);border:none;
+  box-shadow:0 2px 12px rgba(255,107,193,0.5), 0 0 20px rgba(178,107,255,0.3);
+  animation:check-pop .4s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes check-pop{
+  0%{transform:scale(0.7)}
+  60%{transform:scale(1.2)}
+  100%{transform:scale(1)}
+}
+
+/* ======== Main ======== */
+.main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.main-inner{max-width:820px;padding:36px 44px 80px}
+
+.lesson-meta-row{
+  display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap;
+}
+.lesson-num-badge{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;
+  background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  font-weight:500;text-transform:uppercase;
+}
+.lesson-mode-chip{
+  font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:1.6px;
+  text-transform:uppercase;font-weight:500;
+  padding:5px 11px;border-radius:50px;
+  border:1px solid;
+}
+.lesson-mode-chip.has-video{
+  color:var(--mint);border-color:rgba(142,255,213,0.35);
+  background:rgba(142,255,213,0.06);
+}
+.lesson-mode-chip.quick-day{
+  color:var(--pink-2);border-color:rgba(255,138,209,0.35);
+  background:rgba(255,138,209,0.06);
+}
+.lesson-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:24px}
+.lesson-title{
+  font-family:'Poppins',sans-serif;font-weight:900;
+  font-size:clamp(26px,3.2vw,38px);line-height:1.12;
+  color:var(--ink);letter-spacing:-0.4px;
+}
+.lesson-emoji{font-size:0.85em;margin-right:4px;display:inline-block;filter:drop-shadow(0 2px 10px rgba(178,107,255,0.4))}
+.accent-gradient{
+  background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  font-style:italic;font-weight:900;
+}
+.lesson-top-actions{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-top:6px}
+.lesson-done-top{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;font-weight:500;
+  padding:9px 16px;border-radius:50px;border:none;cursor:pointer;transition:all .2s;
+}
+.lesson-done-top.pending{background:rgba(255,255,255,0.04);color:var(--ink-soft);border:1px solid var(--border)}
+.lesson-done-top.pending:hover{background:rgba(255,255,255,0.08);border-color:var(--border-strong)}
+.lesson-done-top.complete{background:var(--holo);color:#fff;box-shadow:0 4px 16px rgba(178,107,255,0.4)}
+
+/* ======== Tabs ======== */
+.tabs{
+  display:flex;gap:6px;padding:4px;
+  background:rgba(13,9,34,0.5);
+  border:1px solid var(--border);
+  border-radius:14px;margin-bottom:32px;
+  backdrop-filter:blur(10px);
+  overflow-x:auto;
+}
+.tab{
+  display:flex;align-items:center;gap:6px;
+  padding:10px 18px;border:none;background:transparent;
+  color:var(--ink-faint);cursor:pointer;
+  font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;
+  border-radius:10px;transition:all .2s;
+  letter-spacing:0.2px;white-space:nowrap;
+}
+.tab:hover{color:var(--ink-soft);background:rgba(255,255,255,0.03)}
+.tab.active{
+  background:var(--holo);color:#fff;
+  box-shadow:0 3px 14px rgba(178,107,255,0.4), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.tab-icon{font-size:13px}
+.tab-label{font-size:13px}
+
+/* ======== Tab content ======== */
+.tab-content{animation:tab-fade .35s ease}
+@keyframes tab-fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.pane{display:flex;flex-direction:column;gap:16px}
+
+/* ======== Overview: description + hero callout ======== */
+.lesson-desc{
+  font-size:16px;line-height:1.85;color:var(--ink-soft);
+  padding:20px 22px;
+  background:rgba(255,255,255,0.035);
+  border-left:3px solid var(--purple);
+  border-radius:0 14px 14px 0;
+}
+
+.hero-callout{
+  position:relative;padding:32px 28px;margin:10px 0;
+  background:var(--cream);
+  color:var(--ink-dark);
+  border-radius:20px;
+  box-shadow:0 12px 48px rgba(178,107,255,0.25), 0 0 0 1px rgba(255,255,255,0.4) inset;
+  overflow:hidden;
+}
+.hero-callout::before{
+  content:'';position:absolute;top:-50%;right:-30%;
+  width:70%;height:200%;
+  background:radial-gradient(ellipse,rgba(255,107,193,0.15),transparent 70%);
+  pointer-events:none;
+}
+.hero-mark{
+  position:absolute;top:8px;left:18px;
+  font-family:'Fraunces',serif;font-size:80px;line-height:1;
+  color:var(--purple);opacity:0.22;font-weight:900;pointer-events:none;
+}
+.hero-text{
+  position:relative;z-index:1;
+  font-family:'Fraunces',serif;font-style:italic;font-weight:600;
+  font-size:clamp(18px,2.2vw,24px);line-height:1.45;
+  color:#332756;
+}
+
+
+/* ======== Launch Link (quiz CTA, sits under the tab row) ======== */
+.launch-link{
+  display:flex;align-items:center;gap:14px;
+  margin:14px 0 2px;padding:16px 20px;
+  border-radius:16px;text-decoration:none;
+  background:linear-gradient(135deg, rgba(255,107,193,0.12), rgba(107,213,255,0.10));
+  border:1px solid rgba(255,138,209,0.4);
+  box-shadow:0 8px 28px rgba(178,107,255,0.18);
+  transition:all .25s cubic-bezier(.34,1.56,.64,1);
+}
+.launch-link:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 38px rgba(178,107,255,0.3);
+  border-color:rgba(255,138,209,0.7);
+}
+.ll-emoji{font-size:24px;flex-shrink:0;line-height:1}
+.ll-text{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
+.ll-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:15px;
+  color:var(--ink);letter-spacing:-0.2px;line-height:1.3;
+}
+.ll-sub{font-size:12.5px;color:var(--ink-soft);line-height:1.45}
+.ll-arrow{font-size:18px;color:var(--pink);flex-shrink:0;transition:transform .25s}
+.launch-link:hover .ll-arrow{transform:translateX(4px)}
+@media(max-width:640px){
+  .launch-link{padding:14px 16px;gap:11px}
+  .ll-title{font-size:14px}
+  .ll-sub{font-size:12px}
+}
+
+/* ======== Tier Comparison ======== */
+.tier-wrap{margin-top:28px}
+.tier-intro{text-align:center;margin-bottom:20px}
+.tier-intro-badge{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;
+  color:var(--cyan);text-transform:uppercase;font-weight:500;margin-bottom:8px;
+}
+.tier-intro-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;color:var(--ink);margin-bottom:6px;
+}
+.tier-intro-sub{font-size:13px;color:var(--ink-faint)}
+.tier-link{color:var(--cyan);font-weight:600}
+
+.tier-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  margin-top:8px;
+}
+.tier-card{
+  border-radius:18px;padding:22px 20px;
+  position:relative;overflow:hidden;
+  transition:all .35s cubic-bezier(.34,1.56,.64,1);
+  display:flex;flex-direction:column;
+}
+.tier-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(178,107,255,0.3)}
+
+.tier-light{
+  background:var(--cream);
+  color:var(--ink-dark);
+  box-shadow:0 8px 32px rgba(178,107,255,0.15), 0 0 0 1px rgba(255,255,255,0.4) inset;
+}
+.tier-light .tier-name{color:var(--ink-dark)}
+.tier-light .tier-tagline{color:#6b5d8a}
+.tier-light .tier-desc{color:#4d4268}
+.tier-light .tier-item-text{color:#332756}
+.tier-light .tier-cta{color:var(--purple);border-top:1px dashed rgba(178,107,255,0.3)}
+.tier-light .tier-divider{background:rgba(178,107,255,0.2)}
+
+.tier-dark{
+  background:linear-gradient(145deg, #1c1340 0%, #13092a 100%);
+  border:1px solid var(--border-strong);
+  color:var(--ink);
+}
+.tier-dark .tier-cta{color:var(--purple-2);border-top:1px dashed rgba(178,107,255,0.3)}
+.tier-dark .tier-divider{background:rgba(178,107,255,0.25)}
+
+.tier-holo{
+  background:
+    linear-gradient(145deg, rgba(255,107,193,0.15), rgba(107,213,255,0.1)),
+    linear-gradient(145deg, #2a1a4d 0%, #1a0f36 100%);
+  border:1px solid rgba(255,138,209,0.4);
+  color:var(--ink);
+  box-shadow:0 0 40px rgba(255,138,209,0.15);
+  position:relative;
+}
+.tier-holo::before{
+  content:'';position:absolute;inset:0;border-radius:18px;padding:1px;
+  background:var(--holo);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  pointer-events:none;opacity:0.6;
+}
+.tier-holo .tier-name{background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.tier-holo .tier-cta{color:var(--mint);border-top:1px dashed rgba(142,255,213,0.4)}
+.tier-holo .tier-divider{background:rgba(142,255,213,0.25)}
+
+.tier-name{
+  font-family:'Poppins',sans-serif;font-weight:900;font-size:22px;
+  letter-spacing:-0.3px;margin-bottom:4px;
+}
+.tier-tagline{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:13px;color:var(--ink-soft);margin-bottom:10px;line-height:1.3;
+}
+.tier-desc{font-size:12.5px;color:var(--ink-faint);line-height:1.5;margin-bottom:14px}
+.tier-divider{height:1px;margin-bottom:14px;background:rgba(178,107,255,0.25)}
+.tier-items{display:flex;flex-direction:column;gap:9px;flex:1;margin-bottom:14px}
+.tier-item{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.4}
+.tier-item-icon{flex-shrink:0;font-size:14px;margin-top:1px}
+.tier-item-text{color:var(--ink-soft);flex:1}
+
+.tier-cta{
+  padding-top:12px;
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;
+  text-transform:uppercase;font-weight:500;
+}
+
+/* Clickable tier link */
+a.tier-link{
+  color:var(--cyan);font-weight:600;text-decoration:none;
+  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1.2px;
+  text-transform:uppercase;
+  padding:6px 14px;border-radius:50px;
+  border:1px solid rgba(107,213,255,0.35);
+  background:rgba(107,213,255,0.06);
+  display:inline-block;
+  transition:all .2s;
+}
+a.tier-link:hover{
+  background:rgba(107,213,255,0.15);border-color:rgba(107,213,255,0.55);
+  transform:translateY(-1px);
+}
+
+/* ======== VIP Readiness (Day 6) ======== */
+.vip-ready-wrap{
+  margin-top:28px;padding:28px 26px;
+  border-radius:22px;
+  background:
+    linear-gradient(160deg, rgba(255,107,193,0.1), rgba(107,213,255,0.06)),
+    linear-gradient(145deg, #1c1340 0%, #13092a 100%);
+  border:1px solid rgba(255,138,209,0.35);
+  position:relative;overflow:hidden;
+}
+.vip-ready-wrap::before{
+  content:'';position:absolute;top:-80px;left:-40px;
+  width:220px;height:220px;
+  background:radial-gradient(circle,rgba(255,107,193,0.18),transparent 70%);
+  pointer-events:none;
+}
+.vip-ready-wrap::after{
+  content:'';position:absolute;bottom:-60px;right:-30px;
+  width:180px;height:180px;
+  background:radial-gradient(circle,rgba(142,255,213,0.12),transparent 70%);
+  pointer-events:none;
+}
+.vip-ready-intro{text-align:center;margin-bottom:22px;position:relative;z-index:1}
+.vip-ready-badge{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;
+  background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  text-transform:uppercase;font-weight:500;margin-bottom:8px;
+}
+.vip-ready-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;
+  color:var(--ink);letter-spacing:-0.3px;margin-bottom:8px;
+}
+.vip-ready-sub{
+  font-size:13.5px;line-height:1.65;color:var(--ink-soft);
+  max-width:520px;margin:0 auto;
+}
+.vip-ready-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+  position:relative;z-index:1;
+}
+.vip-ready-card{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:16px 18px;border-radius:14px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  transition:all .25s;
+}
+.vip-ready-card:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,0.06);
+  border-color:var(--border-strong);
+  box-shadow:0 8px 24px rgba(178,107,255,0.18);
+}
+.vip-ready-icon{
+  font-size:22px;line-height:1;flex-shrink:0;margin-top:2px;
+  filter:drop-shadow(0 3px 10px rgba(255,107,193,0.3));
+}
+.vip-ready-text{
+  font-size:13.5px;line-height:1.55;color:var(--ink);
+  font-family:'Nunito',sans-serif;font-weight:500;
+}
+.vip-ready-footer{
+  margin-top:18px;padding:14px 18px;border-radius:12px;
+  background:rgba(255,255,255,0.035);
+  border:1px dashed rgba(255,138,209,0.3);
+  font-size:13px;line-height:1.65;color:var(--ink-soft);
+  position:relative;z-index:1;
+}
+.vip-ready-dot{color:var(--pink);margin-right:6px;font-weight:700}
+a.vip-ready-link{
+  color:var(--mint);font-weight:700;text-decoration:none;
+  border-bottom:1px dashed rgba(142,255,213,0.4);
+  transition:all .2s;
+}
+a.vip-ready-link:hover{color:var(--cyan);border-bottom-color:var(--cyan)}
+
+/* ======== Philosophy Triad (Day 1) ======== */
+.triad-wrap{margin-top:24px;position:relative}
+.triad-intro{text-align:center;margin-bottom:22px}
+.triad-badge{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;
+  color:var(--cyan);text-transform:uppercase;font-weight:500;
+}
+.triad-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  position:relative;z-index:1;
+}
+.triad-card{
+  position:relative;
+  padding:28px 20px 24px;border-radius:20px;
+  background:linear-gradient(160deg,var(--cream) 0%,var(--cream-2) 100%);
+  color:var(--ink-dark);text-align:center;
+  box-shadow:0 8px 28px rgba(178,107,255,0.18), 0 0 0 1px rgba(255,255,255,0.4) inset;
+  transition:all .35s cubic-bezier(.34,1.56,.64,1);
+  overflow:hidden;
+}
+.triad-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--holo);opacity:0.85;
+}
+.triad-card:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 14px 38px rgba(178,107,255,0.28)}
+.triad-emoji{
+  font-size:36px;line-height:1;margin-bottom:10px;
+  filter:drop-shadow(0 4px 12px rgba(178,107,255,0.3));
+  animation:triad-float 4s ease-in-out infinite;
+}
+.triad-card:nth-child(2) .triad-emoji{animation-delay:.8s}
+.triad-card:nth-child(3) .triad-emoji{animation-delay:1.6s}
+@keyframes triad-float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+.triad-label{
+  font-family:'Poppins',sans-serif;font-weight:900;font-size:18px;
+  color:var(--ink-dark);letter-spacing:-0.2px;margin-bottom:4px;
+}
+.triad-sub{font-size:12.5px;color:#5d5280;line-height:1.45;font-weight:500}
+.triad-ring{display:none}
+
+/* ======== Chart Focus (Day 5) ======== */
+.cf-wrap{margin-top:18px;position:relative}
+.cf-intro{text-align:center;margin-bottom:20px}
+.cf-badge{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;
+  color:var(--cyan);text-transform:uppercase;font-weight:500;margin-bottom:6px;
+}
+.cf-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:20px;color:var(--ink);
+  letter-spacing:-0.2px;
+}
+.cf-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;
+}
+.cf-focus-card{
+  position:relative;
+  padding:24px 18px 22px;border-radius:18px;
+  background:linear-gradient(145deg,#1c1340 0%,#13092a 100%);
+  border:1px solid rgba(178,107,255,0.35);
+  text-align:center;
+  transition:all .3s cubic-bezier(.34,1.56,.64,1);
+  overflow:hidden;
+}
+.cf-focus-card::before{
+  content:'';position:absolute;inset:0;border-radius:18px;padding:1px;
+  background:var(--holo);opacity:0.5;
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  pointer-events:none;
+}
+.cf-focus-card::after{
+  content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);
+  width:110px;height:110px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,107,193,0.22),transparent 70%);
+  pointer-events:none;
+}
+.cf-focus-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(178,107,255,0.3)}
+.cf-focus-num{
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;
+  color:var(--pink-2);margin-bottom:6px;font-weight:500;
+  position:relative;z-index:1;
+}
+.cf-focus-label{
+  font-family:'Poppins',sans-serif;font-weight:900;font-size:22px;
+  background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:-0.3px;margin-bottom:4px;
+  position:relative;z-index:1;
+}
+.cf-focus-desc{
+  font-size:12.5px;color:var(--ink-soft);line-height:1.45;
+  position:relative;z-index:1;
+}
+.cf-skip-row{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+  padding:14px 18px;border-radius:14px;
+  background:rgba(255,255,255,0.03);
+  border:1px dashed rgba(178,107,255,0.25);
+}
+.cf-skip-label{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;
+  color:var(--ink-faint);text-transform:uppercase;font-weight:500;
+  margin-right:4px;
+}
+.cf-skip-chip{
+  padding:4px 11px;border-radius:50px;
+  background:rgba(255,255,255,0.04);
+  font-size:11.5px;color:var(--ink-faint);font-weight:600;
+  letter-spacing:0.2px;
+  text-decoration:line-through;
+  text-decoration-color:rgba(255,107,193,0.5);
+  text-decoration-thickness:1.5px;
+}
+
+/* ======== Invite Walkthrough (Day 7) ======== */
+.iw-wrap{
+  padding:26px 22px;border-radius:22px;
+  background:linear-gradient(160deg, rgba(142,255,213,0.08), rgba(178,107,255,0.08));
+  border:1px solid rgba(142,255,213,0.25);
+  position:relative;overflow:hidden;
+}
+.iw-wrap::before{
+  content:'';position:absolute;top:-80px;right:-40px;
+  width:220px;height:220px;
+  background:radial-gradient(circle,rgba(142,255,213,0.15),transparent 70%);
+  pointer-events:none;
+}
+.iw-intro{text-align:center;margin-bottom:22px;position:relative;z-index:1}
+.iw-badge{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;
+  color:var(--mint);text-transform:uppercase;font-weight:500;margin-bottom:6px;
+}
+.iw-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;
+  color:var(--ink);letter-spacing:-0.3px;
+}
+.iw-steps{display:flex;flex-direction:column;gap:14px;position:relative;z-index:1}
+.iw-step{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;
+  padding:20px 22px;border-radius:16px;
+  background:rgba(255,255,255,0.035);
+  border:1px solid var(--border);
+}
+.iw-step-left{display:flex;flex-direction:column;gap:6px}
+.iw-step-num{
+  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;
+  color:var(--mint);font-weight:500;
+}
+.iw-step-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;
+  color:var(--ink);letter-spacing:-0.2px;line-height:1.25;
+}
+.iw-step-desc{font-size:13.5px;line-height:1.65;color:var(--ink-soft)}
+.iw-step-visual{display:flex;align-items:center;justify-content:center;min-height:180px}
+
+/* ---- Mock Skool sidebar (Step 1) ---- */
+.mock-sidebar{
+  width:100%;max-width:260px;
+  background:#fff;border-radius:14px;padding:12px;
+  box-shadow:0 8px 28px rgba(0,0,0,0.25);
+  font-family:'Nunito',sans-serif;
+  color:#1a1530;
+}
+.mock-sb-banner{
+  height:70px;border-radius:10px;margin-bottom:10px;
+  background:linear-gradient(135deg,#b69cd8 0%,#7d5ca8 50%,#5a3f88 100%);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.mock-sb-banner::before{
+  content:'';position:absolute;top:20%;right:10%;width:20px;height:20px;
+  background:radial-gradient(circle,#fff,transparent 70%);opacity:0.6;
+}
+.mock-sb-banner-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:10px;
+  color:#fff;text-align:center;line-height:1.2;
+}
+.mock-sb-url{font-size:10px;color:#888;margin-bottom:8px}
+.mock-sb-desc{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.mock-sb-line{height:6px;background:#e8e3f0;border-radius:3px}
+.mock-sb-stats{
+  display:flex;justify-content:space-around;padding:8px 0;
+  border-top:1px solid #eee;border-bottom:1px solid #eee;margin-bottom:8px;
+}
+.mock-sb-stat{text-align:center}
+.mock-sb-stat-num{font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;color:#1a1530;line-height:1}
+.mock-sb-stat-lbl{font-size:8px;color:#888;margin-top:2px}
+.mock-sb-avatars{display:flex;gap:-4px;margin-bottom:10px;justify-content:center}
+.mock-sb-avatar{
+  width:20px;height:20px;border-radius:50%;border:2px solid #fff;
+  margin-left:-4px;
+}
+.mock-sb-avatar:first-child{margin-left:0}
+.mock-sb-btn-wrap{position:relative}
+.mock-sb-btn{
+  padding:10px 14px;border:2px solid #e8a84d;border-radius:8px;
+  text-align:center;font-family:'Nunito',sans-serif;font-weight:700;
+  font-size:11px;color:#8a7355;letter-spacing:0.5px;
+  animation:iw-pulse 2s ease-in-out infinite;
+}
+@keyframes iw-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(232,168,77,0.4)}
+  50%{box-shadow:0 0 0 8px rgba(232,168,77,0)}
+}
+.mock-sb-arrow{
+  position:absolute;top:50%;right:-90px;transform:translateY(-50%);
+  font-family:'Fraunces',serif;font-style:italic;font-size:12px;
+  color:var(--mint);white-space:nowrap;font-weight:600;
+}
+
+/* ---- Mock popup (Step 2) ---- */
+.mock-popup{
+  width:100%;max-width:300px;
+  background:#fff;border-radius:14px;padding:20px 18px;
+  box-shadow:0 12px 40px rgba(0,0,0,0.35);
+  font-family:'Nunito',sans-serif;color:#1a1530;
+}
+.mock-pop-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:14px;
+  color:#1a1530;margin-bottom:10px;
+}
+.mock-pop-body{
+  font-size:11px;line-height:1.5;color:#444;margin-bottom:14px;
+}
+.mock-pop-pct{color:#22a566;font-weight:700}
+.mock-pop-link-row{
+  display:flex;gap:0;border:1px solid #e8e3f0;border-radius:6px;
+  overflow:hidden;position:relative;align-items:stretch;
+}
+.mock-pop-link{
+  flex:1;padding:8px 10px;font-size:9.5px;color:#5e8fd4;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  font-family:'DM Mono',monospace;
+  display:flex;align-items:center;
+}
+.mock-pop-copy{
+  padding:8px 14px;background:#f4d98a;color:#8a7355;
+  font-weight:700;font-size:10px;letter-spacing:0.5px;
+  display:flex;align-items:center;justify-content:center;
+  animation:iw-pulse-gold 2s ease-in-out infinite;
+}
+@keyframes iw-pulse-gold{
+  0%,100%{background:#f4d98a}
+  50%{background:#ffd560}
+}
+.mock-pop-arrow{
+  position:absolute;top:50%;right:-90px;transform:translateY(-50%);
+  font-family:'Fraunces',serif;font-style:italic;font-size:12px;
+  color:var(--mint);white-space:nowrap;font-weight:600;
+}
+
+/* ---- Mock "saved" confirmation (Step 3) ---- */
+.mock-saved{
+  display:flex;gap:14px;align-items:flex-start;
+  width:100%;max-width:300px;
+  padding:18px 20px;border-radius:14px;
+  background:linear-gradient(135deg, rgba(142,255,213,0.2), rgba(142,255,213,0.08));
+  border:1px solid rgba(142,255,213,0.4);
+}
+.mock-saved-check{
+  width:32px;height:32px;border-radius:50%;
+  background:var(--mint);color:#0a1024;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:16px;flex-shrink:0;
+  box-shadow:0 0 20px rgba(142,255,213,0.5);
+}
+.mock-saved-text{flex:1}
+.mock-saved-title{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;
+  color:var(--mint);margin-bottom:3px;
+}
+.mock-saved-sub{font-size:12.5px;color:var(--ink-soft);line-height:1.5}
+
+.iw-outro{
+  margin-top:16px;padding:14px 18px;border-radius:12px;
+  background:rgba(142,255,213,0.08);
+  border:1px dashed rgba(142,255,213,0.35);
+  font-size:13px;line-height:1.6;color:var(--ink-soft);
+  position:relative;z-index:1;
+}
+.iw-outro-dot{color:var(--mint);margin-right:6px;font-weight:700}
+
+/* ======== Accordion ======== */
+.concept-wrap{width:100%}
+.accordion{
+  border-radius:14px;overflow:hidden;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  transition:all .25s;
+}
+.accordion:hover{background:rgba(255,255,255,0.06);border-color:var(--border-strong)}
+.accordion.open{
+  background:rgba(255,255,255,0.07);
+  border-color:rgba(178,107,255,0.45);
+  box-shadow:0 8px 24px rgba(178,107,255,0.12);
+}
+.accordion-btn{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:16px 20px;
+  background:transparent;border:none;cursor:pointer;
+  color:var(--ink);text-align:left;
+  font-family:'Nunito',sans-serif;
+}
+.accordion-left{display:flex;align-items:center;gap:12px;flex:1}
+.accordion-icon{font-size:18px;flex-shrink:0}
+.accordion-headline{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:15.5px;
+  line-height:1.35;color:var(--ink);letter-spacing:-0.1px;
+}
+.accordion-chev{
+  font-family:'DM Mono',monospace;font-size:22px;line-height:1;
+  color:var(--purple-2);font-weight:400;
+  transition:transform .25s;width:24px;text-align:center;
+}
+.accordion.open .accordion-chev{color:var(--pink)}
+.accordion-panel{
+  overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1);
+}
+.accordion-body{
+  padding:0 20px 18px;
+  font-size:14.5px;line-height:1.75;color:var(--ink-soft);
+  font-family:'Nunito',sans-serif;
+}
+
+/* ======== Pull Quote ======== */
+.pullquote{
+  position:relative;padding:28px 32px 28px 70px;
+  background:linear-gradient(135deg, #0d0922, #1c1340, #0d0922);
+  border-radius:18px;
+  border:1px solid var(--border-strong);
+  overflow:hidden;margin:4px 0;
+}
+.pullquote::before{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:140px;height:140px;
+  background:radial-gradient(circle, rgba(255,107,193,0.2) 0%, transparent 70%);
+  pointer-events:none;
+}
+.pullquote-mark{
+  position:absolute;top:10px;left:18px;
+  font-family:'Fraunces',serif;font-size:72px;line-height:1;
+  color:var(--pink);opacity:0.5;font-weight:900;pointer-events:none;
+}
+.pullquote-text{
+  position:relative;z-index:1;
+  font-family:'Fraunces',serif;font-style:italic;font-weight:600;
+  font-size:clamp(16px,2vw,20px);line-height:1.5;
+  color:var(--ink);
+}
+
+/* ======== Callout ======== */
+.callout{border-radius:16px;padding:22px 24px;margin:4px 0;position:relative;overflow:hidden}
+.callout-white{
+  background:var(--cream-2);color:var(--ink-dark);
+  box-shadow:0 8px 28px rgba(178,107,255,0.15), 0 0 0 1px rgba(255,255,255,0.5) inset;
+}
+.callout-white .callout-headline{color:var(--ink-dark);font-family:'Poppins',sans-serif;font-weight:800;font-size:16px;margin-bottom:8px;letter-spacing:-0.1px}
+.callout-white .callout-body{color:#4d4268;font-size:14px;line-height:1.7}
+.callout-white::before{
+  content:'';position:absolute;top:0;left:0;width:4px;height:100%;
+  background:var(--holo);
+}
+.callout-gradient{
+  background:linear-gradient(135deg, rgba(255,107,193,0.18), rgba(178,107,255,0.18));
+  border:1px solid var(--border-strong);
+  color:var(--ink);
+}
+.callout-gradient .callout-headline{color:var(--ink);font-family:'Poppins',sans-serif;font-weight:800;font-size:16px;margin-bottom:8px;letter-spacing:-0.1px}
+.callout-gradient .callout-body{color:var(--ink-soft);font-size:14px;line-height:1.7}
+.callout-gradient::before{
+  content:'✦';position:absolute;top:14px;right:16px;
+  color:var(--pink);opacity:0.5;font-size:16px;
+}
+
+/* ======== Path Picker ======== */
+.pathpicker{
+  padding:28px;border-radius:22px;
+  background:linear-gradient(145deg, rgba(255,107,193,0.08), rgba(107,213,255,0.06));
+  border:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.pathpicker::before{
+  content:'';position:absolute;top:-60px;left:-30px;
+  width:180px;height:180px;
+  background:radial-gradient(circle,rgba(178,107,255,0.15),transparent 70%);
+  pointer-events:none;
+}
+.pp-question{text-align:center;margin-bottom:22px;position:relative;z-index:1}
+.pp-q-badge{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;
+  color:var(--cyan);text-transform:uppercase;font-weight:500;margin-bottom:6px;
+}
+.pp-q-text{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;
+  color:var(--ink);letter-spacing:-0.3px;
+}
+.pp-options{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+.pp-option{
+  width:100%;padding:18px 22px;
+  background:var(--cream-2);color:var(--ink-dark);
+  border:2px solid transparent;border-radius:14px;
+  cursor:pointer;transition:all .25s cubic-bezier(.34,1.56,.64,1);
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  font-family:'Nunito',sans-serif;font-weight:700;font-size:15px;text-align:left;
+  box-shadow:0 4px 16px rgba(178,107,255,0.12);
+}
+.pp-option:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(178,107,255,0.2)}
+.pp-option.picked{
+  background:var(--holo);color:#fff;border-color:#fff;
+  box-shadow:0 8px 28px rgba(255,107,193,0.4);
+}
+.pp-option.dim{opacity:0.45;transform:scale(0.98)}
+.pp-option-arrow{
+  font-family:'DM Mono',monospace;font-size:18px;
+  color:var(--purple);transition:transform .2s;
+}
+.pp-option.picked .pp-option-arrow{color:#fff;transform:translateX(4px)}
+
+.pp-result{
+  margin-top:20px;padding:22px 24px;
+  background:linear-gradient(145deg, #1c1340 0%, #13092a 100%);
+  border:1px solid var(--border-strong);
+  border-radius:16px;
+  animation:fadeup .45s cubic-bezier(.25,.9,.3,1);
+  position:relative;z-index:1;
+}
+.pp-result-eyebrow{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;
+  color:var(--mint);text-transform:uppercase;font-weight:500;margin-bottom:6px;
+}
+.pp-result-name{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:20px;
+  background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:6px;letter-spacing:-0.2px;
+}
+.pp-result-tier{font-size:12.5px;color:var(--ink-soft);margin-bottom:16px}
+.pp-result-tier strong{color:var(--pink-2)}
+.pp-result-points{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.pp-result-point{display:flex;gap:10px;font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.pp-point-dot{color:var(--pink);flex-shrink:0;margin-top:1px;font-size:11px}
+.pp-result-cta{
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;
+  color:var(--mint);text-transform:uppercase;font-weight:500;
+  padding-top:12px;border-top:1px dashed rgba(142,255,213,0.3);
+}
+
+/* ======== Philosophy Triad (Day 1) ======== */
+.triad-wrap{margin-top:22px}
+.triad-intro{text-align:center;margin-bottom:16px}
+.triad-badge{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;
+  color:var(--mint);text-transform:uppercase;font-weight:500;
+}
+.triad-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  position:relative;padding:8px 0;
+}
+.triad-ring{
+  position:absolute;inset:10% 12%;
+  border-radius:50%;
+  background:radial-gradient(ellipse, rgba(255,138,209,0.15), transparent 60%);
+  pointer-events:none;z-index:0;
+  animation:triad-pulse 4s ease-in-out infinite alternate;
+}
+@keyframes triad-pulse{
+  0%{opacity:0.4;transform:scale(0.95)}
+  100%{opacity:0.8;transform:scale(1.05)}
+}
+.triad-card{
+  position:relative;z-index:1;
+  background:var(--cream-2);color:var(--ink-dark);
+  border-radius:18px;padding:22px 18px;text-align:center;
+  box-shadow:0 8px 24px rgba(178,107,255,0.15), 0 0 0 1px rgba(255,255,255,0.5) inset;
+  transition:all .3s cubic-bezier(.34,1.56,.64,1);
+}
+.triad-card:hover{transform:translateY(-4px) rotate(-1deg);box-shadow:0 14px 32px rgba(178,107,255,0.25)}
+.triad-card:nth-child(2):hover{transform:translateY(-4px) rotate(0deg)}
+.triad-card:nth-child(3):hover{transform:translateY(-4px) rotate(1deg)}
+.triad-emoji{font-size:34px;line-height:1;margin-bottom:10px;filter:drop-shadow(0 2px 10px rgba(178,107,255,0.3))}
+.triad-label{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:16px;
+  color:var(--ink-dark);letter-spacing:-0.2px;margin-bottom:4px;
+}
+.triad-sub{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:12.5px;color:#6b5d8a;line-height:1.35;
+}
+
+/* ======== Chart Focus (Day 5) ======== */
+.cf-wrap{margin-top:22px;padding:26px;border-radius:22px;
+  background:linear-gradient(145deg, rgba(107,213,255,0.08), rgba(178,107,255,0.08));
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.cf-wrap::before{
+  content:'';position:absolute;top:-50px;right:-50px;
+  width:160px;height:160px;
+  background:radial-gradient(circle,rgba(142,255,213,0.12),transparent 70%);
+  pointer-events:none;
+}
+.cf-intro{text-align:center;margin-bottom:16px;position:relative;z-index:1}
+.cf-badge{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;
+  color:var(--cyan);text-transform:uppercase;font-weight:500;margin-bottom:6px;
+}
+.cf-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:19px;
+  color:var(--ink);letter-spacing:-0.3px;
+}
+.cf-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  position:relative;z-index:1;margin-bottom:18px;
+}
+.cf-focus-card{
+  background:var(--cream-2);color:var(--ink-dark);
+  border-radius:14px;padding:18px 14px;text-align:center;
+  box-shadow:0 6px 18px rgba(178,107,255,0.15), 0 0 0 1px rgba(255,255,255,0.4) inset;
+  transition:all .25s;position:relative;
+}
+.cf-focus-card::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:30%;height:3px;
+  background:var(--holo);border-radius:0 0 6px 6px;
+}
+.cf-focus-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(178,107,255,0.22)}
+.cf-focus-num{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;
+  color:var(--purple);margin-bottom:6px;font-weight:500;
+}
+.cf-focus-label{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;
+  color:var(--ink-dark);letter-spacing:-0.2px;margin-bottom:4px;
+}
+.cf-focus-desc{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:12px;color:#6b5d8a;line-height:1.35;
+}
+.cf-skip-row{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  padding:14px 16px;border-radius:12px;
+  background:rgba(0,0,0,0.2);border:1px dashed rgba(178,107,255,0.25);
+  position:relative;z-index:1;
+}
+.cf-skip-label{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;
+  color:var(--ink-faint);text-transform:uppercase;font-weight:500;margin-right:4px;
+}
+.cf-skip-chip{
+  font-size:11.5px;color:var(--ink-faint);
+  padding:4px 10px;border-radius:50px;
+  background:rgba(255,255,255,0.04);
+  text-decoration:line-through;text-decoration-color:rgba(255,107,193,0.5);
+  text-decoration-thickness:1.5px;
+}
+
+/* ======== Actions pane ======== */
+.actions-pane{gap:12px}
+.actions-lead{
+  padding:18px 20px;border-radius:14px;
+  background:linear-gradient(135deg, rgba(255,138,209,0.1), rgba(178,107,255,0.1));
+  border:1px solid var(--border);
+  margin-bottom:8px;
+}
+.actions-lead-badge{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;
+  color:var(--pink-2);text-transform:uppercase;font-weight:500;margin-bottom:4px;
+}
+.actions-lead-text{font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+
+.action-card{
+  display:flex;gap:16px;padding:18px 22px;
+  background:var(--cream-2);
+  border-radius:14px;
+  box-shadow:0 4px 18px rgba(178,107,255,0.1), 0 0 0 1px rgba(255,255,255,0.4) inset;
+  transition:all .25s;
+}
+.action-card:hover{transform:translateX(4px);box-shadow:0 6px 24px rgba(178,107,255,0.18)}
+.action-num{
+  font-family:'DM Mono',monospace;font-size:14px;font-weight:500;
+  color:var(--purple);
+  min-width:32px;padding-top:2px;
+  letter-spacing:1px;
+}
+.action-text{
+  font-size:14.5px;line-height:1.65;color:var(--ink-dark);
+  flex:1;font-family:'Nunito',sans-serif;font-weight:500;
+}
+
+/* ======== Prompt pane ======== */
+.prompt-intro{font-size:14px;line-height:1.65;color:var(--ink-soft);padding:0 4px}
+.prompt-box{
+  background:linear-gradient(135deg, #0d0922, #1c1340, #0d0922);
+  border-radius:18px;padding:26px;position:relative;
+  border:1px solid var(--border-strong);overflow:hidden;
+}
+.prompt-box::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:180px;height:180px;
+  background:radial-gradient(circle, rgba(255,107,193,0.18) 0%, transparent 70%);
+  pointer-events:none;
+}
+.prompt-box::after{
+  content:'';position:absolute;bottom:-40px;left:-40px;
+  width:140px;height:140px;
+  background:radial-gradient(circle, rgba(107,213,255,0.12) 0%, transparent 70%);
+  pointer-events:none;
+}
+.prompt-hdr{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:18px;position:relative;z-index:1;
+}
+.prompt-badge{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--cyan);font-weight:500;
+}
+.prompt-copy-btn{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.5px;
+  font-weight:600;color:#fff;background:var(--holo);
+  padding:8px 16px;border-radius:8px;border:none;cursor:pointer;transition:all .15s;
+  box-shadow:0 2px 12px rgba(178,107,255,0.4);
+}
+.prompt-copy-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(178,107,255,0.55)}
+.prompt-text{
+  font-family:'DM Mono',monospace;font-size:12px;line-height:1.9;
+  color:rgba(245,240,255,0.78);white-space:pre-wrap;
+  position:relative;z-index:1;
+}
+
+/* ======== Bottom + footer ======== */
+.lesson-bottom{
+  margin-top:40px;padding-top:28px;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.bottom-done-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;
+  padding:14px 30px;border-radius:50px;border:none;cursor:pointer;transition:all .2s;
+  letter-spacing:0.3px;
+}
+.bottom-done-btn.pending{
+  background:var(--holo);color:#fff;
+  box-shadow:0 6px 24px rgba(178,107,255,0.4),inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.bottom-done-btn.pending:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(178,107,255,0.55)}
+.bottom-done-btn.complete{background:rgba(255,107,193,0.15);color:var(--pink);border:1px solid var(--border-strong)}
+.bottom-next{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;color:var(--ink-soft);cursor:pointer;transition:color .15s;
+  background:none;border:none;font-family:'Nunito',sans-serif;font-weight:600;
+}
+.bottom-next:hover{color:var(--cyan)}
+
+.lesson-footer{margin-top:52px;padding-top:28px;border-top:1px solid var(--border);text-align:center}
+.lf-brand{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:var(--ink);margin-bottom:6px}
+.lf-brand em{font-style:italic;background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lf-details{font-size:11px;color:var(--ink-faint);margin-bottom:4px}
+.lf-links{font-size:11px;color:var(--ink-faint)}
+.lf-links a{color:var(--purple-2);text-decoration:none}
+.lf-links a:hover{color:var(--pink)}
+.lf-credit{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-top:10px;opacity:0.7}
+
+/* ======== Scrollbars ======== */
+.side-list::-webkit-scrollbar,.main::-webkit-scrollbar{width:4px}
+.side-list::-webkit-scrollbar-thumb,.main::-webkit-scrollbar-thumb{background:rgba(178,107,255,0.3);border-radius:2px}
+.side-list::-webkit-scrollbar-track,.main::-webkit-scrollbar-track{background:transparent}
+
+/* ======== Mobile ======== */
+@media(max-width:900px){
+  .tier-cards{grid-template-columns:1fr;gap:14px}
+  .triad-grid{grid-template-columns:1fr;gap:12px}
+  .cf-grid{grid-template-columns:1fr;gap:10px}
+  .vip-ready-grid{grid-template-columns:1fr;gap:10px}
+  .iw-step{grid-template-columns:1fr;gap:18px}
+  .mock-sb-arrow,.mock-pop-arrow{position:static;transform:none;margin-top:8px;text-align:center;display:block}
+}
+@media(max-width:768px){
+  .topbar-nav{display:none}
+  .mobile-toggle{display:block}
+  .layout{position:relative}
+  .sidebar{position:absolute;left:0;top:0;bottom:0;z-index:100;transform:translateX(-100%);transition:transform .25s ease;box-shadow:4px 0 24px rgba(0,0,0,0.5)}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-overlay{display:none;position:absolute;inset:0;background:rgba(0,0,0,0.6);z-index:99}
+  .sidebar-overlay.show{display:block}
+  .main-inner{padding:28px 22px 80px}
+  .lesson-top{flex-direction:column;gap:10px}
+  .lesson-bottom{flex-direction:column;gap:12px;align-items:stretch}
+  .bottom-done-btn{justify-content:center}
+  .bottom-next{justify-content:center}
+  .tabs{margin-left:-6px;margin-right:-6px;padding-left:4px;padding-right:4px}
+  .tab{padding:9px 14px;font-size:12px}
+  .accordion-headline{font-size:14.5px}
+  .hero-text{font-size:17px}
+  .pullquote{padding:24px 22px 24px 60px}
+}
+
+
+/* ======================================================================
+   NEW COMPONENTS FOR V9
+   ====================================================================== */
+
+/* ===== MISSION CARD (Day 1) ===== */
+.mission-wrap{margin-top:32px}
+.mission-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--pink);margin-bottom:12px;display:flex;align-items:center;gap:6px;
+}
+.mission-card{
+  position:relative;
+  background:linear-gradient(135deg, #1a0e2e 0%, #0f0620 60%, #1a0e2e 100%);
+  border:1px solid var(--border-strong);
+  border-radius:24px;
+  padding:38px 40px 42px;
+  overflow:hidden;
+  display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:center;
+}
+.mission-card::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 30% 120%, rgba(255,138,209,0.28) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% -10%, rgba(142,255,213,0.12) 0%, transparent 50%);
+  pointer-events:none;
+}
+.mission-flame-bg{position:relative;z-index:1;display:flex;align-items:center;justify-content:center}
+.mission-flame-bg svg{width:100%;max-width:120px;height:auto;filter:drop-shadow(0 0 24px rgba(255,138,209,0.4))}
+.mission-body{position:relative;z-index:1}
+.mission-line-1{
+  font-family:'Fraunces',serif;font-weight:600;font-style:italic;
+  font-size:22px;line-height:1.3;color:var(--ink);margin-bottom:10px;
+  letter-spacing:-0.3px;
+}
+.mission-hl{
+  background:var(--holo);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  font-weight:700;font-style:normal;
+}
+.mission-hl-alt{
+  color:var(--mint);font-weight:700;font-style:normal;
+}
+.mission-line-2{
+  font-size:14.5px;line-height:1.7;color:var(--ink-soft);margin-bottom:22px;
+}
+.mission-divider{
+  height:1px;background:linear-gradient(90deg, transparent, var(--border-strong), transparent);
+  margin:4px 0 18px;
+}
+.mission-line-3{
+  font-size:13.5px;line-height:1.7;color:var(--ink-soft);margin-bottom:14px;
+  font-family:'Nunito',sans-serif;
+}
+.mission-punch{
+  font-family:'Poppins',sans-serif;font-weight:900;font-style:italic;
+  font-size:24px;letter-spacing:-0.3px;
+  background:var(--holo);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1.2;
+}
+
+/* ===== OLD BARGAIN CARD (Day 1) ===== */
+.bargain-wrap{margin-top:30px}
+.bargain-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--cyan);margin-bottom:12px;
+}
+.bargain-card{
+  position:relative;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%),
+    linear-gradient(135deg, #12192e, #0e1428);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:36px 40px;
+  overflow:hidden;
+}
+.bargain-card::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,107,193,0.025) 20px, rgba(255,107,193,0.025) 21px);
+  pointer-events:none;
+}
+.bargain-header{position:relative;z-index:1;display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.bargain-stamp{
+  font-family:'DM Mono',monospace;font-weight:500;font-size:11px;letter-spacing:3px;
+  color:#ff6bc1;border:2px solid #ff6bc1;border-radius:4px;
+  padding:4px 10px;transform:rotate(-8deg);opacity:0.75;
+}
+.bargain-title{
+  font-family:'Fraunces',serif;font-weight:700;font-size:30px;
+  color:var(--ink);letter-spacing:-0.5px;
+  text-decoration:line-through;
+  text-decoration-color:rgba(255,107,193,0.55);
+  text-decoration-thickness:2px;
+}
+.bargain-body{
+  position:relative;z-index:1;
+  font-size:15.5px;line-height:1.75;color:var(--ink-soft);margin-bottom:22px;
+}
+.bargain-forms{position:relative;z-index:1;margin-bottom:22px}
+.bargain-form-label{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;font-weight:500;
+}
+.bargain-form-tags{display:flex;flex-wrap:wrap;gap:7px}
+.b-tag{
+  font-size:12px;font-weight:600;
+  padding:6px 12px;border-radius:100px;
+  background:rgba(255,107,193,0.08);
+  border:1px solid rgba(255,107,193,0.25);
+  color:var(--pink-2);
+  letter-spacing:0.2px;
+}
+.bargain-break{
+  position:relative;z-index:1;
+  padding-top:18px;border-top:1px solid var(--border);
+  display:flex;justify-content:center;
+}
+.bargain-break-line{
+  font-family:'Poppins',sans-serif;font-weight:800;font-style:italic;
+  font-size:20px;
+  background:var(--holo);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:-0.3px;
+}
+
+/* ===== VALUES TRIAD (Day 1) ===== */
+.values-wrap{margin-top:32px}
+.values-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--mint);margin-bottom:8px;
+}
+.values-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:20px;
+  color:var(--ink);margin-bottom:18px;letter-spacing:-0.3px;
+}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.value-card{
+  position:relative;
+  background:var(--card-2);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:24px 22px;
+  overflow:hidden;
+  transition:all .2s;
+}
+.value-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--holo);
+}
+.value-card.value-pink::before{background:linear-gradient(90deg,#ff6bc1,#ff8ad1)}
+.value-card.value-mint::before{background:linear-gradient(90deg,#8effd5,#6bd5ff)}
+.value-card.value-cyan::before{background:linear-gradient(90deg,#6bd5ff,#b26bff)}
+.value-card:hover{transform:translateY(-2px);border-color:var(--border-strong)}
+.value-icon{font-size:28px;margin-bottom:14px}
+.value-headline{display:flex;flex-direction:column;gap:2px;margin-bottom:14px}
+.value-over{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;
+  color:var(--ink);letter-spacing:-0.3px;line-height:1.1;
+}
+.value-over-sep{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--ink-faint);font-weight:500;
+  margin:2px 0;
+}
+.value-under{
+  font-family:'Fraunces',serif;font-weight:400;font-style:italic;
+  font-size:16px;color:var(--ink-soft);opacity:0.7;
+  text-decoration:line-through;text-decoration-thickness:1px;
+  text-decoration-color:rgba(245,240,255,0.35);
+}
+.value-body{
+  font-size:13px;line-height:1.7;color:var(--ink-soft);
+}
+
+/* ===== CATEGORY MAP (Day 1) ===== */
+.catmap-wrap{margin-top:30px}
+.catmap-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--purple-2);margin-bottom:8px;
+}
+.catmap-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:20px;
+  color:var(--ink);margin-bottom:16px;letter-spacing:-0.3px;
+}
+.catmap-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.catmap-card{
+  background:var(--card-2);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px 14px;
+  text-align:center;
+  transition:all .2s;
+  position:relative;
+  overflow:hidden;
+}
+.catmap-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+}
+.catmap-purple::before{background:linear-gradient(90deg,#b26bff,#c78fff)}
+.catmap-pink::before{background:linear-gradient(90deg,#ff6bc1,#ff8ad1)}
+.catmap-lime::before{background:linear-gradient(90deg,#d4ff00,#8effd5)}
+.catmap-cyan::before{background:linear-gradient(90deg,#6bd5ff,#b26bff)}
+.catmap-mint::before{background:linear-gradient(90deg,#8effd5,#d4ff00)}
+.catmap-card:hover{transform:translateY(-2px);border-color:var(--border-strong)}
+.catmap-emoji{font-size:26px;margin-bottom:8px}
+.catmap-name{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;
+  color:var(--ink);margin-bottom:6px;letter-spacing:-0.2px;line-height:1.2;
+}
+.catmap-desc{
+  font-size:11.5px;line-height:1.5;color:var(--ink-soft);
+}
+
+/* ===== CLASSROOM LINEUP (Day 1) ===== */
+.clr-wrap{margin-top:30px}
+.clr-badge{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;color:var(--cyan);margin-bottom:8px}
+.clr-title{font-family:'Poppins',sans-serif;font-weight:800;font-size:20px;color:var(--ink);margin-bottom:16px;letter-spacing:-0.3px}
+.clr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.clr-card{position:relative;background:var(--card-2);border:1px solid var(--border);border-radius:14px;padding:16px 14px;transition:all .2s;overflow:hidden}
+.clr-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--holo);opacity:0.7}
+.clr-card:hover{transform:translateY(-2px);border-color:var(--border-strong)}
+.clr-new{position:absolute;top:10px;right:10px;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;font-weight:500;color:#0a1024;background:var(--mint);padding:3px 8px;border-radius:50px;box-shadow:0 0 12px rgba(142,255,213,0.5)}
+.clr-here{position:absolute;top:8px;right:10px;color:var(--pink);font-size:12px;opacity:0.8}
+.clr-e{font-size:22px;margin-bottom:8px}
+.clr-n{font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;color:var(--ink);letter-spacing:-0.2px;line-height:1.25;margin-bottom:5px}
+.clr-d{font-size:11.5px;line-height:1.5;color:var(--ink-soft)}
+.clr-caption{margin-top:14px;font-size:13.5px;line-height:1.7;color:var(--ink-soft);font-style:italic;text-align:center}
+
+/* ===== FIRE STREAK CARD (Day 1) ===== */
+.fire-wrap{margin-top:30px}
+.fire-card{
+  background:linear-gradient(135deg, rgba(255,107,193,0.08) 0%, rgba(178,107,255,0.08) 100%);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:28px 32px;
+  display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
+  overflow:hidden;position:relative;
+}
+.fire-left{position:relative;z-index:1}
+.fire-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--pink);margin-bottom:6px;
+}
+.fire-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;
+  color:var(--ink);margin-bottom:10px;letter-spacing:-0.3px;
+}
+.fire-body{
+  font-size:13.5px;line-height:1.7;color:var(--ink-soft);
+}
+.fire-visual{
+  position:relative;width:220px;min-width:220px;
+  display:flex;flex-direction:column;align-items:center;
+}
+.fire-bars{
+  display:flex;align-items:flex-end;gap:3px;
+  width:220px;height:70px;padding:6px;
+  background:rgba(0,0,0,0.15);border-radius:10px;
+  border:1px solid var(--border);
+}
+.fire-bar{
+  flex:1;background:linear-gradient(180deg, #ff6bc1, #b26bff);
+  border-radius:2px;opacity:0;
+  animation:fireBarUp .5s ease forwards;
+  box-shadow:0 0 6px rgba(255,107,193,0.4);
+}
+@keyframes fireBarUp{
+  from{opacity:0;transform:scaleY(0.3);transform-origin:bottom}
+  to{opacity:1;transform:scaleY(1);transform-origin:bottom}
+}
+.fire-streak-label{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ink-faint);margin-top:6px;font-weight:500;
+}
+.fire-emoji-float{
+  position:absolute;top:-4px;right:-6px;
+  font-size:28px;
+  animation:fireFloat 2.4s ease-in-out infinite;
+  filter:drop-shadow(0 0 10px rgba(255,107,193,0.6));
+}
+@keyframes fireFloat{
+  0%,100%{transform:translateY(0) rotate(-3deg)}
+  50%{transform:translateY(-6px) rotate(3deg)}
+}
+
+/* ===== ABOUT PAGE RECORDING GUIDE (Day 1) ===== */
+.recguide-wrap{margin-top:32px;border:1px dashed rgba(178,107,255,0.4);border-radius:16px;overflow:hidden}
+.recguide-banner{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:18px 22px;cursor:pointer;
+  background:linear-gradient(135deg, rgba(199,143,255,0.08), rgba(107,213,255,0.06));
+  transition:background .2s;
+}
+.recguide-banner:hover{background:linear-gradient(135deg, rgba(199,143,255,0.14), rgba(107,213,255,0.1))}
+.recguide-banner-left{display:flex;align-items:center;gap:14px;flex:1}
+.recguide-icon{
+  width:42px;height:42px;border-radius:12px;
+  background:var(--holo);display:flex;align-items:center;justify-content:center;font-size:20px;
+  box-shadow:0 4px 14px rgba(178,107,255,0.4);
+}
+.recguide-eyebrow{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--purple-2);font-weight:500;margin-bottom:3px;
+}
+.recguide-title{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:14.5px;
+  color:var(--ink);letter-spacing:-0.2px;
+}
+.recguide-chev{
+  font-family:'Poppins',sans-serif;font-weight:400;font-size:24px;color:var(--ink-soft);
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+  border-radius:50%;background:rgba(255,255,255,0.04);
+}
+.recguide-body{
+  padding:22px 28px 28px;
+  background:rgba(15,9,34,0.5);
+  border-top:1px solid var(--border);
+}
+.recguide-intro{
+  font-size:14px;line-height:1.7;color:var(--ink-soft);margin-bottom:22px;
+  padding:14px 18px;background:rgba(255,255,255,0.02);border-radius:10px;
+  border-left:3px solid var(--purple);
+}
+.recguide-timeline{display:flex;flex-direction:column;gap:10px}
+.recguide-row{
+  display:grid;grid-template-columns:44px 1fr;gap:14px;
+  padding:14px 16px;background:rgba(255,255,255,0.02);border-radius:10px;
+  border:1px solid var(--border);
+}
+.recguide-n{
+  font-family:'DM Mono',monospace;font-weight:600;font-size:14px;
+  color:var(--purple-2);text-align:center;padding-top:2px;letter-spacing:0.5px;
+}
+.recguide-beat-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:5px}
+.recguide-beat{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;
+  color:var(--ink);letter-spacing:-0.2px;
+}
+.recguide-time{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;
+  color:var(--cyan);font-weight:500;text-transform:uppercase;flex-shrink:0;
+}
+.recguide-note{
+  font-size:13px;line-height:1.65;color:var(--ink-soft);
+}
+.recguide-outro{
+  margin-top:18px;padding:14px 18px;
+  background:linear-gradient(135deg, rgba(255,107,193,0.06), rgba(142,255,213,0.04));
+  border-radius:10px;font-size:13px;line-height:1.65;color:var(--ink-soft);
+  border:1px solid var(--border);
+}
+
+/* ===== PATH CONVERGENCE (Day 2) ===== */
+.pc-wrap{margin-top:30px}
+.pc-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--pink);margin-bottom:12px;
+}
+.pc-visual{
+  background:linear-gradient(135deg, #0e1428 0%, #161e3a 100%);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:26px 30px;
+  overflow:hidden;
+}
+.pc-visual svg{width:100%;height:auto;display:block}
+.pc-caption{
+  margin-top:14px;font-size:13.5px;line-height:1.7;color:var(--ink-soft);
+  font-style:italic;text-align:center;padding:0 18px;
+}
+
+/* ===== PRIMARY + SUPPORTING (Day 2) ===== */
+.ps-wrap{margin-top:30px}
+.ps-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--cyan);margin-bottom:14px;
+}
+.ps-cards{
+  display:grid;grid-template-columns:1fr 50px 1fr;gap:14px;align-items:stretch;
+}
+.ps-card{
+  background:var(--card-2);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px 24px;
+  position:relative;overflow:hidden;
+  transition:all .2s;
+}
+.ps-card.ps-primary{border-color:rgba(255,107,193,0.4)}
+.ps-card.ps-primary::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#ff6bc1,#b26bff)}
+.ps-card.ps-support{border-color:rgba(107,213,255,0.4)}
+.ps-card.ps-support::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#6bd5ff,#8effd5)}
+.ps-card-label{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ink-faint);font-weight:500;margin-bottom:8px;
+}
+.ps-card-title{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;
+  color:var(--ink);margin-bottom:10px;letter-spacing:-0.3px;
+}
+.ps-card-body{
+  font-size:13.5px;line-height:1.65;color:var(--ink-soft);
+}
+.ps-connector{display:flex;align-items:center;justify-content:center}
+.ps-plus{
+  font-family:'Poppins',sans-serif;font-weight:300;font-size:36px;
+  color:var(--purple-2);opacity:0.7;
+}
+.ps-footer{
+  margin-top:16px;text-align:center;
+  font-family:'Fraunces',serif;font-style:italic;font-size:15px;
+  color:var(--ink-soft);
+}
+
+/* ===== INFINITE VS FINITE (Day 3) ===== */
+.ivf-wrap{margin-top:30px}
+.ivf-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--mint);margin-bottom:14px;
+}
+.ivf-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ivf-card{
+  background:var(--card-2);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:26px 26px 24px;
+  text-align:center;position:relative;overflow:hidden;
+}
+.ivf-card.ivf-infinite{border-top:3px solid #b26bff}
+.ivf-card.ivf-finite{border-top:3px solid #ff6bc1}
+.ivf-svg{margin-bottom:14px}
+.ivf-svg svg{width:120px;height:80px}
+.ivf-label{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ink-faint);font-weight:500;margin-bottom:4px;
+}
+.ivf-offer{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;
+  color:var(--ink);margin-bottom:10px;letter-spacing:-0.3px;
+}
+.ivf-body{
+  font-size:13px;line-height:1.7;color:var(--ink-soft);
+}
+.ivf-footer{
+  margin-top:16px;text-align:center;
+  font-family:'Fraunces',serif;font-style:italic;font-size:15px;
+  color:var(--ink-soft);
+}
+
+/* ===== SAME TOOL TWO POSITIONS (Day 4) ===== */
+.sttp-wrap{margin-top:30px}
+.sttp-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--cyan);margin-bottom:14px;
+}
+.sttp-diagram{
+  background:linear-gradient(135deg, #0e1428, #161e3a);
+  border:1px solid var(--border);border-radius:18px;
+  padding:28px 24px;
+}
+.sttp-diagram svg{width:100%;height:auto;max-height:180px;display:block}
+.sttp-caption{
+  margin-top:14px;font-size:13.5px;line-height:1.7;color:var(--ink-soft);
+  font-style:italic;text-align:center;padding:0 18px;
+}
+
+/* ===== TREASURE GRID (Day 4) ===== */
+.tg-wrap{margin-top:30px}
+.tg-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--purple-2);margin-bottom:14px;
+}
+.tg-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.tg-tile{
+  aspect-ratio:1;
+  background:var(--card-2);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px 6px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  text-align:center;
+  transition:all .2s;
+  opacity:0;
+  animation:tgIn .4s ease forwards;
+}
+@keyframes tgIn{
+  from{opacity:0;transform:scale(0.85)}
+  to{opacity:1;transform:scale(1)}
+}
+.tg-tile:hover{transform:translateY(-2px);border-color:var(--border-strong)}
+.tg-tile.tg-more{
+  background:linear-gradient(135deg, rgba(255,107,193,0.12), rgba(178,107,255,0.12));
+  border-color:var(--border-strong);
+}
+.tg-e{font-size:20px}
+.tg-n{
+  font-family:'Nunito',sans-serif;font-weight:700;font-size:10.5px;
+  color:var(--ink);line-height:1.2;letter-spacing:-0.1px;
+}
+.tg-caption{
+  margin-top:14px;font-size:13.5px;line-height:1.7;color:var(--ink-soft);
+  font-style:italic;text-align:center;
+}
+
+/* ===== NODE ARROW (Day 5) ===== */
+.na-wrap{margin-top:30px}
+.na-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--mint);margin-bottom:14px;
+}
+.na-diagram{
+  background:linear-gradient(135deg, #0e1428, #161e3a);
+  border:1px solid var(--border);border-radius:18px;
+  padding:24px 20px;
+}
+.na-diagram svg{width:100%;height:auto;max-height:150px;display:block}
+.na-caption{
+  margin-top:14px;font-size:13.5px;line-height:1.7;color:var(--ink-soft);
+  font-style:italic;text-align:center;padding:0 18px;
+}
+
+/* ===== HALF-STARTED VS SHIPPED (Day 6) ===== */
+.hss-wrap{margin-top:30px}
+.hss-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--pink);margin-bottom:14px;
+}
+.hss-grid{
+  display:grid;grid-template-columns:1fr 60px 1fr;gap:14px;align-items:center;
+  background:linear-gradient(135deg, #0e1428, #161e3a);
+  border:1px solid var(--border);border-radius:18px;
+  padding:28px 24px;
+}
+.hss-side{display:flex;flex-direction:column;gap:14px;align-items:center}
+.hss-side-label{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ink-faint);font-weight:500;
+}
+.hss-tiles{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:6px;width:100%;
+}
+.hss-tile-half{
+  background:rgba(245,240,255,0.04);
+  border:1px dashed rgba(245,240,255,0.15);
+  border-radius:6px;
+  height:38px;padding:6px;
+  display:flex;align-items:center;
+}
+.hss-tile-bar{
+  height:4px;background:rgba(245,240,255,0.25);border-radius:100px;
+}
+.hss-side-caption{
+  font-size:12px;line-height:1.6;color:var(--ink-faint);
+  text-align:center;font-style:italic;
+}
+.hss-arrow{display:flex;align-items:center;justify-content:center}
+.hss-arrow svg{width:44px;height:44px;filter:drop-shadow(0 0 8px rgba(255,107,193,0.4))}
+.hss-shipped{
+  background:linear-gradient(135deg, rgba(255,107,193,0.12), rgba(142,255,213,0.08));
+  border:1px solid var(--border-strong);
+  border-radius:12px;
+  padding:20px 18px;width:100%;
+  display:flex;flex-direction:column;gap:7px;align-items:center;
+  box-shadow:0 8px 24px rgba(178,107,255,0.15);
+  position:relative;
+}
+.hss-shipped-check{
+  position:absolute;top:-10px;right:-10px;
+  width:28px;height:28px;border-radius:50%;
+  background:var(--holo);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+  box-shadow:0 4px 12px rgba(178,107,255,0.5);
+}
+.hss-shipped-bar{
+  width:100%;height:6px;background:rgba(245,240,255,0.25);border-radius:100px;
+}
+.hss-shipped-bar.full{background:var(--holo);box-shadow:0 0 10px rgba(255,107,193,0.4)}
+.hss-ship .hss-side-caption{color:var(--mint);font-style:normal;font-weight:600}
+
+/* ===== REFERRAL MATH HERO (Day 7) ===== */
+.rm-wrap{margin-top:30px}
+.rm-badge{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2.5px;text-transform:uppercase;font-weight:500;
+  color:var(--mint);margin-bottom:14px;
+}
+.rm-rows{display:flex;flex-direction:column;gap:10px}
+.rm-row{
+  display:grid;grid-template-columns:60px 1fr 30px 1.4fr;gap:14px;align-items:center;
+  padding:18px 22px;
+  background:var(--card-2);
+  border:1px solid var(--border);
+  border-radius:14px;
+  position:relative;overflow:hidden;
+}
+.rm-row::before{content:'';position:absolute;top:0;bottom:0;left:0;width:4px}
+.rm-mint::before{background:linear-gradient(180deg,#8effd5,#6bd5ff)}
+.rm-pink::before{background:linear-gradient(180deg,#ff6bc1,#ff8ad1)}
+.rm-purple::before{background:linear-gradient(180deg,#b26bff,#c78fff)}
+.rm-num{
+  font-family:'Poppins',sans-serif;font-weight:900;font-size:40px;
+  background:var(--holo);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  text-align:center;line-height:1;
+}
+.rm-label{
+  font-size:14px;color:var(--ink-soft);line-height:1.4;
+}
+.rm-label strong{color:var(--ink);font-weight:700}
+.rm-equal{
+  font-family:'DM Mono',monospace;font-size:22px;color:var(--ink-faint);text-align:center;
+}
+.rm-result{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:16px;
+  color:var(--ink);letter-spacing:-0.2px;line-height:1.3;
+}
+.rm-footer{
+  margin-top:16px;text-align:center;
+  font-family:'Fraunces',serif;font-style:italic;font-size:15px;
+  color:var(--ink-soft);
+}
+
+/* ===== MOBILE RESPONSIVE FOR NEW COMPONENTS ===== */
+@media(max-width:900px){
+  .mission-card{grid-template-columns:1fr;gap:18px;padding:28px 24px;text-align:center}
+  .mission-flame-bg{max-width:90px;margin:0 auto}
+  .mission-line-1{font-size:18px}
+  .mission-punch{font-size:20px}
+  .values-grid{grid-template-columns:1fr;gap:12px}
+  .catmap-grid{grid-template-columns:repeat(2,1fr)}
+  .clr-grid{grid-template-columns:repeat(2,1fr)}
+  .fire-card{grid-template-columns:1fr;gap:20px;padding:24px}
+  .fire-visual{width:100%;max-width:280px;margin:0 auto}
+  .fire-bars{width:100%;max-width:260px}
+  .ps-cards{grid-template-columns:1fr;gap:12px}
+  .ps-connector{padding:6px 0}
+  .ps-plus{transform:rotate(90deg)}
+  .ivf-grid{grid-template-columns:1fr;gap:12px}
+  .tg-grid{grid-template-columns:repeat(3,1fr)}
+  .hss-grid{grid-template-columns:1fr;gap:18px;padding:24px 20px}
+  .hss-arrow{transform:rotate(90deg)}
+  .rm-row{grid-template-columns:50px 1fr;grid-template-rows:auto auto;gap:8px 12px;padding:16px 18px}
+  .rm-num{grid-row:span 2;font-size:32px}
+  .rm-equal{display:none}
+  .rm-result{font-size:14px}
+  .bargain-card{padding:28px 24px}
+  .bargain-title{font-size:24px}
+  .bargain-header{flex-wrap:wrap}
+  .recguide-body{padding:20px}
+  .recguide-row{grid-template-columns:34px 1fr;padding:12px 14px}
+}
+@media(max-width:600px){
+  .catmap-grid{grid-template-columns:1fr}
+  .clr-grid{grid-template-columns:1fr}
+  .tg-grid{grid-template-columns:repeat(2,1fr)}
+  .bargain-stamp{font-size:10px;padding:3px 8px}
+}
+
+
+
+/* ===== Glow Up additions ===== */
+.ps-cards.three{grid-template-columns:1fr 40px 1fr 40px 1fr}
+.ps-card.ps-paid{border-color:rgba(255,107,193,0.45);background:linear-gradient(135deg,rgba(255,107,193,0.08),rgba(178,107,255,0.06))}
+.ps-card.ps-paid .ps-card-label{color:var(--pink)}
+@media(max-width:760px){
+  .ps-cards,.ps-cards.three{grid-template-columns:1fr}
+  .ps-connector{display:flex;justify-content:center;padding:4px 0}
+}
+
+.clr-section{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--mint);margin:18px 0 10px;display:flex;align-items:center;gap:10px;
+}
+.clr-section::after{content:'';flex:1;height:1px;background:var(--border)}
+.clr-section.paid{color:var(--pink)}
+.clr-section.unlock{color:var(--cyan)}
+.clr-card{position:relative}
+.clr-tag{
+  position:absolute;top:10px;right:10px;
+  font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:3px 7px;border-radius:100px;
+}
+.clr-tag.free{background:rgba(142,255,213,0.14);color:var(--mint)}
+.clr-tag.unlock{background:rgba(107,213,255,0.14);color:var(--cyan)}
+.clr-tag.paid{background:rgba(255,107,193,0.16);color:var(--pink)}
+.clr-card.clr-paid{opacity:.82;border-style:dashed}
+
+.gem-links{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.gem-link{
+  display:block;padding:11px 16px;border-radius:12px;
+  background:rgba(142,255,213,0.08);border:1px solid rgba(142,255,213,0.3);
+  color:var(--mint);font-weight:700;font-size:13px;text-decoration:none;transition:all .2s;
+}
+.gem-link:hover{background:rgba(142,255,213,0.16);transform:translateY(-1px)}
+
+.pp-result-free{
+  margin:14px 0 4px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--mint);
+}
+.pp-result-inside{
+  margin-top:16px;padding:16px 18px;border-radius:14px;
+  background:rgba(255,107,193,0.07);border:1px dashed rgba(255,138,209,0.4);
+}
+.pp-result-inside-lbl{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--pink);margin-bottom:6px;
+}
+.pp-result-inside-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;margin-bottom:4px}
+.pp-result-inside-desc{font-size:13px;line-height:1.6;color:var(--ink-soft)}
+.pp-result-inside a{color:var(--pink);font-weight:700;text-decoration:none}
+
+.doors-wrap{margin-top:26px}
+.doors-card{
+  border-radius:20px;padding:26px 28px;
+  border:1.5px solid transparent;
+  background:linear-gradient(var(--bg-3),var(--bg-3)) padding-box,var(--holo-2) border-box;
+  box-shadow:0 14px 44px rgba(255,107,193,0.18);
+  position:relative;overflow:hidden;
+}
+.doors-card::before{
+  content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;
+  background:radial-gradient(circle,rgba(255,107,193,0.2),transparent 70%);pointer-events:none;
+}
+.doors-badge{
+  display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  padding:5px 12px;border-radius:100px;background:var(--holo-2);color:#fff;margin-bottom:12px;
+}
+.doors-title{font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;line-height:1.2;margin-bottom:10px}
+.doors-body{font-size:14px;line-height:1.7;color:var(--ink-soft);max-width:620px}
+.doors-note{
+  margin-top:14px;padding:12px 16px;border-radius:12px;
+  background:rgba(255,255,255,0.04);border:1px dashed rgba(255,138,209,0.35);
+  font-size:13px;line-height:1.6;color:var(--ink);
+}
+.doors-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.doors-btn{
+  display:inline-block;padding:13px 22px;border-radius:100px;font-weight:800;font-size:13.5px;
+  text-decoration:none;color:#fff;background:var(--holo-2);
+  box-shadow:0 8px 28px rgba(255,107,193,0.35),inset 0 1px 0 rgba(255,255,255,0.25);transition:all .25s;
+}
+.doors-btn:hover{transform:translateY(-2px)}
+.doors-btn.ghost{background:transparent;border:1.5px solid var(--border-strong);box-shadow:none;color:var(--ink)}
+.doors-btn.ghost:hover{background:rgba(178,107,255,0.1)}
+
+.audit-card{
+  margin-top:22px;padding:22px 24px;border-radius:18px;
+  background:linear-gradient(135deg,rgba(178,107,255,0.08),rgba(107,213,255,0.05));
+  border:1px solid var(--border-strong);
+}
+.audit-badge{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;
+}
+.audit-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;margin-bottom:8px}
+.audit-body{font-size:13.5px;line-height:1.65;color:var(--ink-soft)}
+.audit-list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:7px}
+.audit-list li{font-size:13px;line-height:1.5;color:var(--ink-soft);padding-left:18px;position:relative}
+.audit-list li::before{content:'✦';position:absolute;left:0;color:var(--mint);font-size:10px;top:3px}
+.audit-fine{margin-top:12px;font-size:11.5px;color:var(--ink-faint);font-style:italic}
+
+.tier-note{
+  margin-top:14px;text-align:center;font-size:12.5px;color:var(--ink-faint);line-height:1.6;
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<div id="loading" aria-hidden="true"><div class="spark">✦</div><div class="label">Loading your space…</div></div>
+
+
+<script>
+/* ============================================================
+   GLOW UP WITH AMANDA · START HERE
+   Vanilla JS. No build step. Edit the data below, not the renderer.
+   Rules baked in: free gems may be linked; paid gems are named,
+   never linked; no prices anywhere (the plans page holds them);
+   audit availability is always "limited availability".
+============================================================ */
+
+const LINKS = {
+  glowup:    "https://www.skool.com/glowup",
+  classroom: "https://www.skool.com/glowup/classroom",
+  plans:     "https://www.skool.com/amanda/plans",
+  about:     "https://www.skool.com/amanda/about",
+  audit:     "https://cal.com/amanda-fielding-smith-ljdz7y/strategy-audit-open",
+  auditExample: "https://aefieldi.github.io/strategyrecap/",
+  playbook:  "https://aefieldi.github.io/freegift/",
+  kickoff:   "https://www.youtube.com/watch?v=tRn2AauOC5g",
+  quiz:      "https://aefieldi.github.io/GLOWUPSTART/quiz/",
+  card:      "https://claude.ai/public/artifacts/f5215a22-5042-4a9a-b8a6-8c407c0665ff",
+  northNode: "https://claude.ai/public/artifacts/8dcc6c6e-37ee-4427-966b-1fe0ffb5a80d",
+  setup:     "https://aefieldi.github.io/skoolfromscratch/",
+  treasureMap: "https://claude.ai/public/artifacts/c409a795-c312-4358-956a-a4bea5969c06",
+  ytGuide:   "https://claude.ai/public/artifacts/823a5817-e4e6-4921-b330-67895856efe8",
+  planners:  "https://claude.ai/public/artifacts/83a81580-361d-415f-8161-b0a28d1079ba",
+  eight:     "https://claude.ai/public/artifacts/08788b51-5f51-467c-b18d-6ca3af973f1c",
+  fourStages: "https://aefieldi.github.io/4-stages-of-ads/"
+};
+
+/* One line to edit when the doors status changes. Leave note empty to hide the banner. */
+const DOORS = {
+  note: "Doors to Spiritual Business Skool reopen Friday, November 6 with The Audit Method workshop. Everyone in this community hears first, the day they open."
+};
+
+const lessons = [
+  {
+    id: 0, title: "Welcome In", accent: "In", dur: "7 min", emoji: "🤗", hasVideo: true,
+    overview: {
+      desc: "This is the free side of my world. Every free training, gem and video I've made for spiritual entrepreneurs and online experts to monetize faster with Claude, content and community, in one place, sorted by what you're working on. No gatekeeping. This mini course exists so you make the most of it from Day 1 instead of opening every classroom at once and finishing none of them.",
+      hero: "When the teacher is ready, the student appears. When the student is ready, the teacher appears.",
+      blocks: ["mission","bargain","values","philosophy","room","fire"]
+    },
+    concepts: [
+      { type: "callout", style: "white", headline: "The power of mindful intention ✨", body: "You want to get the most return on your energetic investment. The reason most women fail to make real progress isn't a lack of inherent value, knowing, or ability. It's listening to too many differing perspectives, being overstimulated, and not knowing which path is actually theirs. It's like trying to put together 100 different puzzles at once and wondering why the pieces don't fit. Your offer is a vessel for your magic. Your offer plus your visibility is how you manifest your external vision. That's why those two things are the foundation of everything in here. We're about simplicity. People think scaling is about doing more. It's actually about doing less of everything else and more of the things in your zone of genius." },
+      { type: "pullquote", text: "Doing the right thing at the wrong time is still the wrong thing. We're not here to hit $10k months once. We're here to build something you can actually hold." },
+      { type: "accordion", headline: "This is a Role Model space", icon: "💜", body: "I'm here on this journey along with you, sharing what's working for me as I build. Every woman in here brings her own wealth of perspective and life experience, so this isn't just my space, it's ours. I created the community I wished existed when I was getting started. You coming in here is already part of what makes it work." },
+      { type: "accordion", headline: "Free here, paid inside Spiritual Business Skool", icon: "🚪", body: "Everything in this classroom is free and it's the real thing, not a teaser. The paid versions live inside Spiritual Business Skool: the templates, the 7-day and 28-day challenges, the 36+ done-for-you artifacts, the 13-step Audit Method classroom, the live calls and the daily homework. A few trainings in this classroom are unlocks you can buy here one time, and every one of them is included inside Spiritual Business Skool. Day 7 of this course walks you through what's inside each tier, and the plans page always has the current details." },
+      { type: "accordion", headline: "Attraction over persuasion", icon: "✨", body: "This is anti-bro-marketing. No fake scarcity. No hype. No convincing. Pull marketing, not push marketing. The more you show up in alignment with who you are, speaking your truth, the more the right people get magnetized to you. You don't have to chase. You have to be findable." },
+      { type: "pullquote", text: "We all have a magnetic monopole in our center that's constantly attracting the right people, places, and opportunities to us. The seed you plant today is not a fig tree tomorrow." }
+    ],
+    actions: [
+      "Download the Skool app on your phone (iOS or Android) so you get the notification the second a new training drops in here. Single highest-leverage thing you can do in your first 5 minutes.",
+      "Take a tour of the top nav: Community (feed), Classroom (every free training, by category), Calendar, Members, Leaderboards.",
+      "Introduce yourself in the comments of the START HERE post: your platform, your follower count, and the ONE thing you want to monetize faster. I read every single one. Use the prompt below if you want help writing it.",
+      "Grab The Ultimate A to Z Spiritual Business Marketing Playbook: every free gem and training I've made, in one page. " + LINKS.playbook,
+      "Start building your 🔥 streak today. Comment on 2 to 3 posts from other members right now to begin earning your fire emoji."
+    ],
+    prompt: "I just joined Glow Up with Amanda, the free community for spiritual entrepreneurs and online experts who want to monetize faster. Help me write a short, warm introduction comment for the START HERE post. I want it to feel real and grounded, not a pitch. Include: where I create (my platform and handle), roughly how many followers I have, what I do, and the ONE thing I want to monetize faster in the next 90 days. Keep it under 120 words and make it feel like me, not a resume."
+  },
+  {
+    id: 1, title: "The 4-Minute Soul Diagnostic", accent: "Soul Diagnostic", dur: "4 min", emoji: "🔮",
+    launchLink: { url: LINKS.quiz, emoji: "🧭", label: "Take the Choose Your Execution Path quiz", sub: "6 questions, about 4 minutes. Opens in a new tab. Come back here when you have your result." },
+    overview: {
+      desc: "The reason most women don't get where they want to go isn't a lack of ideas. It's too many ideas and not enough follow-through on the right one. This quiz exists so you don't come into this space empty and leave empty. Four minutes. Six questions. One free classroom to open first, the gem to grab, and where that path goes deeper inside Spiritual Business Skool. Based on where you actually are right now, not where you wish you were.",
+      hero: "If you don't know why you do the things you do, you'll come into this space empty and leave empty. The quiz is how we make sure that doesn't happen.",
+      blocks: ["convergence","primarySupporting"]
+    },
+    concepts: [
+      { type: "pullquote", text: "Answer from where you are, not where you wish you were. The accuracy of your result depends entirely on your honesty." },
+      { type: "accordion", headline: "Why this quiz comes first", icon: "🎯", body: "Everything else in this community (classrooms, gems, trainings) is more powerful when you know where to start. The quiz removes the overwhelm of 'where do I even begin' and replaces it with a clear primary path plus a supporting resource. One clear direction beats seventeen open tabs every single time. This is the Simplicity value in action." },
+      { type: "accordion", headline: "Your archetype, decoded", icon: "🌟", body: "The quiz gives you three things. A PRIMARY PATH: the ONE free classroom to open first, with the video to watch and the gem to grab. A SUPPORTING RESOURCE: a complementary free training that reinforces the primary. And WHERE IT GOES DEEPER: the paid classroom inside Spiritual Business Skool that holds the templates and the full system for your path, so you know exactly what you'd be stepping up into when you're ready. That's it. Three things. Not seventeen." },
+      { type: "callout", style: "white", headline: "Every path starts in the Classroom tab", body: "Your result points you to one free classroom and one supporting resource. That's the whole job of the quiz: to turn seventeen open tabs into one obvious next move. Everything else in here will still be waiting for you when you've finished the first thing. Momentum is built one shipped thing at a time, not seventeen half-started ones." },
+      { type: "accordion", headline: "Trust your gut over the quiz", icon: "🌙", body: "If you take the quiz and your gut disagrees with the result, trust your gut. Use the quiz as a second opinion. You know yourself better than any algorithm does. Your authority in Human Design is your inner GPS. Use it." }
+    ],
+    actions: [
+      "Take the Choose Your Execution Path quiz (the button above this lesson).",
+      "Screenshot or copy your result. The Copy My Result button gives you the whole thing as text, with the gem links.",
+      "Post your archetype in the comments of the START HERE post with one sentence about what it confirmed or surprised you. Attach the screenshot so other women can see your path and cheer you on."
+    ]
+  },
+  {
+    id: 2, title: "Your Execution Path, Decoded", accent: "Decoded", dur: "8 min", emoji: "🌀",
+    overview: {
+      desc: "Your quiz pointed you somewhere. This is where that result gets decoded. There are seven paths in here and each one opens a different free classroom, because 'where do I start' has a genuinely different answer depending on whether you have a community yet, what you want to sell, and who already knows you exist. Find yours below, read why it fits, grab the gem, then go do that one thing.",
+      hero: "Awareness is the beginning of devotion. Name the shiny objects in advance and they lose their pull in the moment.",
+      blocks: ["infiniteFinite"]
+    },
+    concepts: [
+      { type: "path-picker" },
+      { type: "accordion", headline: "Infinite game vs finite game", icon: "♾️", body: "Your offer determines the entry point that fits. RECURRING MEMBERSHIP = infinite game. You are not just selling someone on joining, you are selling them on taking the action that gets them a result, month after month. So your entry point has to be an infinite mechanism too. That is what the Create Your Own Infinite Challenge classroom inside Spiritual Business Skool builds. HIGH TICKET = finite game. Clear start, clear end, one specific result. A paid audit or reading is built this way on purpose: one hour, one deep dive, which naturally reveals the next layer your 90-day offer solves. The Audit Method kickoff training in this classroom is the free version of that whole system." },
+      { type: "pullquote", text: "Match your entry point to the game you're inviting people into." },
+      { type: "accordion", headline: "Commit to ONE, finish it", icon: "🎯", body: "Pick the path that aligns with this quarter's #1 goal. Go to that classroom. Watch the full video before touching any other resource. There are seven paths in here and stacking them is how women end up executing none of them. Your path can and will evolve, it's a beautiful part of being an entrepreneur. But you can only execute one at a time cleanly. This is the Momentum value in action." },
+      { type: "callout", style: "gradient", headline: "Your path can evolve", body: "Pick the one that matches this quarter's #1 goal, not your five-year vision. You'll grow. The path will shift. That's the point." }
+    ],
+    actions: [
+      "Commit to ONE path for this week. Write it down somewhere visible (phone lock screen, desktop sticky, post-it).",
+      "Go to that classroom and watch the first video fully before opening any other resource. Then open the gem underneath it and actually use it.",
+      "Block two 90-minute execution sessions in your calendar this week for actual creation, not consumption.",
+      "Run the Shiny Object Awareness Prompt (below) and share your mantra in the community so we can hold each other accountable."
+    ],
+    prompt: "I've just committed to one execution path for the next week:\n\nMy archetype from the quiz: [FOUNDATION BUILDER / ARCHITECT / LIGHTHOUSE / HOST / CLOSER / ALCHEMIST / AMPLIFIER]\nThe free classroom that points me to: [THAT CLASSROOM]\nMy #1 goal this quarter: [YOUR GOAL]\nMy Human Design type: [TYPE / AUTHORITY]\n\nBased on this, help me become aware of the shiny object distractions most likely to pull me off course this week. Name the top 3 specific temptations (new courses, new offers, new niches, new platforms, comparison spirals) I'm likely to encounter. Then give me a short, grounded, kind mantra I can say to myself to stay focused when one of them shows up. Not militant, not hustle-culture, just a loving reminder of the path I chose and why."
+  },
+  {
+    id: 3, title: "What's Actually Inside", accent: "The Map", dur: "7 min", emoji: "🗺️",
+    overview: {
+      desc: "Your path is picked. Now here is the whole map, so you know what exists and roughly where you are headed. Two rooms. This one, where every free training lives. And Spiritual Business Skool, the paid room, where the templates, challenges, live calls and full systems live. Read this as a tour, not a to-do list. You are not starting all of this. Most of it is not for you yet, and that is the point.",
+      hero: "A map is not a to-do list. You only ever walk one path at a time.",
+      blocks: ["lineup","sameTool","treasure"]
+    },
+    concepts: [
+      { type: "callout", style: "gradient", headline: "Everything here is organised in levels", body: "The classrooms are not a menu of equally good options. They are stacked. Each level assumes the one underneath it is handled. Most overwhelm in here is someone trying to do Level 3 work on a Level 1 foundation, then concluding they are the problem. They are not. The order is the problem." },
+      { type: "accordion", headline: "Level 0 · Foundation (free, in this classroom)", icon: "🧭", body: "Where everyone starts, whatever you are selling.\n\nSTART HERE: you are in it right now.\n\nHUMAN DESIGN x KABBALISTIC ASTROLOGY: why you're really here and how to build a business that serves your soul's purpose. This is the alignment layer underneath all the strategy.\n\nTHE AUDIT METHOD KICKOFF TRAINING: the one-hour masterclass on the system that turns one paid audit or reading into a 90-day client. Watch this even if high ticket isn't your path yet. It reframes how you sell everything." },
+      { type: "accordion", headline: "Level 1 · Home Base (free, in this classroom)", icon: "🌱", body: "You need somewhere for people to land.\n\nSKOOL SETUP, GROWTH & MONETIZATION: how to start, set up, grow and monetize a Skool community from scratch, in the order I actually do it. Setup from zero, launching in 7 days without a single course, the $8 pricing model, and Growth Boost.\n\nInside Spiritual Business Skool this becomes the SKOOL LAUNCH CHALLENGE (7 days, templates for every step) and the SKOOL GLOW UP GEMS (about page, pinned post and engagement templates)." },
+      { type: "accordion", headline: "Level 2 · Drive Traffic (free, in this classroom)", icon: "🌀", body: "You have the room. Now people have to find it.\n\nCLAUDE AI: artifacts and content systems to blow up your personal brand. The YouTube + Skool funnel, 30 days of content in 30 minutes, the 10 marketing rules I'd break, and how I build an artifact in an afternoon.\n\nMETA ADS: to increase traffic, sales and visibility. The four campaign stages in order, the $7 a day rebuild, and the readiness scorecard.\n\nInside Spiritual Business Skool this becomes the VISIBILITY BY DESIGN CHALLENGE (28 days, in alignment with your design), ASTROLOGY x VISIBILITY, and ADS BY DESIGN (the full paid traffic system)." },
+      { type: "accordion", headline: "Level 3 · Offers & Challenges (inside Spiritual Business Skool)", icon: "♾️", body: "You have traffic. Now you compound it.\n\nAI MARKETING TREASURE CHEST: 36+ done-for-you artifacts and skills you host inside your own Skool, use with clients, or run as lead magnets and mini offers.\n\nCREATE YOUR OWN INFINITE CHALLENGE: if you are selling a membership. Build it once and it keeps onboarding, re-engaging and delivering results.\n\nTHE 5 DAY CLIENT CHALLENGE: if you are selling high ticket. A finite challenge that solves one specific problem and reveals the next level your offer solves. Includes a custom GPT and the templates.\n\nTHE AUDIT METHOD (13 steps): the full build behind the free kickoff training. Your highlights, your 30-day promo plan, the DM flow, the call flow and the ask.\n\nCLAUDE COMMUNITY MAXXING: 90 minutes, end to end, on your first or next AI digital product. Also unlockable in this classroom." },
+      { type: "accordion", headline: "Level 4 · Tools & Support", icon: "💎", body: "For when you are already executing and want leverage, or want eyes on it.\n\nTOOLS & PLATFORM LIBRARY: your complete spiritual business arsenal. Unlockable here, included inside Spiritual Business Skool. The free version is the A to Z Playbook.\n\n24/7 SPIRITUAL BUSINESS COACH and CEO ORACLE GPT: plug in your Human Design and astrology, get real-time business guidance on any decision. Unlockable here, included inside Spiritual Business Skool.\n\nPREMIUM SKILLS TREASURE CHEST and PREMIUM+ Q&A: skills, templates, trackers and dashboards, plus submit your question and watch it answered on the call. Inside Spiritual Business Skool.\n\n1:1 STRATEGY AUDIT: when you want someone to look over everything you are doing and tell you the next one to three moves. Built for experts with an audience and proven client results. Limited availability. The classroom here shows you exactly what you walk away with." },
+      { type: "pullquote", text: "If your content is for everyone, it is for no one. Each artifact is a spear. The membership is the room it lives in." },
+      { type: "accordion", headline: "What's an artifact?", icon: "🪞", body: "An artifact is an interactive, browser-based tool that feels premium and completable. This mini course you are working through right now? That is an artifact. Way more engaging than a static PDF. Way more memorable than a Google Doc. It is why people actually finish them. You can rebrand any of mine to your business in plain English inside Claude, no code, no designer, no tech overwhelm." },
+      { type: "callout", style: "white", headline: "You are allowed to not be ready for most of this", body: "Nothing in here expires. The classrooms you are not touching this month are not opportunities you are losing, they are the reason you will not have to go looking elsewhere in six months. Bookmark the map. Walk one path." }
+    ],
+    actions: [
+      "Open the Classroom tab and skim the full list. Five minutes, no clicking in. You are orienting, not starting.",
+      "Find the classroom your quiz pointed you to and bookmark it. That is your one for this week.",
+      "Work out which level you are honestly on. Not the one you want to be on. Most stuckness is Level 3 effort on a Level 1 foundation.",
+      "Name the ONE classroom you are most tempted to open instead of yours, and write down why it is not the move this month. Naming it is what takes its power away.",
+      "Skim the plans page once so you know what the paid room holds for your path, then close the tab and go execute the free one. " + LINKS.plans
+    ],
+    prompt: "I just took the Choose Your Execution Path quiz inside Glow Up with Amanda (the free community) and I want a reality check on where I actually am.\n\nMy quiz archetype: [YOUR ARCHETYPE]\nThe free classroom it pointed me to: [THAT CLASSROOM]\nWhat I currently have built: [NO SKOOL / QUIET SKOOL / ACTIVE COMMUNITY / OFFER BUT NO TRAFFIC / TRAFFIC BUT NO OFFER]\nWhat I want to sell in the next 90 days: [MEMBERSHIP / HIGH TICKET / MINI OFFERS / STILL DECIDING]\n\nThe levels are: Level 0 Foundation, Level 1 Home Base, Level 2 Drive Traffic, Level 3 Offers and Challenges, Level 4 Tools and Support.\n\nTell me honestly which level I am actually operating on, and whether anything on a level below mine is still unfinished and quietly undermining the work I am trying to do above it. Then give me the single classroom to focus on for the next 30 days and one sentence on what I should deliberately ignore until that is done. Be direct with me. I would rather hear that my foundation is shaky now than in three months."
+  },
+  {
+    id: 4, title: "Soul-Aligned Strategy", accent: "Strategy", dur: "8 min", emoji: "🔮", hasVideo: true,
+    overview: {
+      desc: "Strategy without alignment is just high-performing hustle bro-marketing. And we don't do that. This lesson is what makes everything else sustainable. You'll meet the core concepts behind Human Design and Kabbalistic Astrology, and the free classroom in this community that lets you personalize every business decision to your actual wiring.",
+      hero: "You were not a mistake of timing. You were perfectly scheduled.",
+      blocks: ["chartFocus","nodeArrow"]
+    },
+    concepts: [
+      { type: "callout", style: "white", headline: "You are a once-in-a-billion-trillion-years cosmic event", body: "Your soul chose the exact moment in time to be born that gave you the greatest opportunity of exercising your free will to become more like the light of the Creator. The gifts, insights, experiences, and even the baggage you carry are yours alone. They serve the collective in a way no one else can replicate." },
+      { type: "pullquote", text: "Strategy without alignment is just hustle bro-marketing in a prettier outfit. We don't do that. Ew. Who even is that?" },
+      { type: "accordion", headline: "Human Design is the part, Astrology is the movie", icon: "🎭", body: "HUMAN DESIGN is how your energy actually works. Your internal energetics. Not a personality test. This is the part you play. ASTROLOGY is the bigger arc, themes, timing, and lessons of this lifetime. This is the movie you're in. Both together = your soul-aligned operating system." },
+      { type: "accordion", headline: "Focus on these three. Ignore the rest.", icon: "🎯", body: "Your chart looks overwhelming on purpose. Don't try to learn all of it. Start here, in this order. 1) TYPE: how your energy moves through the world. 2) PROFILE: the characteristics that, when embodied, create more freedom, flow, and abundance. 3) AUTHORITY: your inner GPS for decision-making. In HD, your mind is never the authority. You have your own internal decision-making mechanism. SKIP FOR NOW: Split Definition, Gates, Channels, Incarnation Cross. Layer in slowly." },
+      { type: "pullquote", text: "Too much imaginary knowledge you don't know what to do with makes you a crazy person. We don't want that." },
+      { type: "accordion", headline: "Your North Node is the growth edge", icon: "🌟", body: "In Kabbalistic Astrology, your North Node is the most important point on your chart. It represents who you're here to become, grow into, and transform into this lifetime. Every time I've launched something aligned with my North Node (Aquarius: innovation, tech, collective), my business has taken off. That's not coincidence. That's alignment." },
+      { type: "accordion", headline: "Alignment is why something isn't working", icon: "⚡", body: "Ignoring your design is the #1 cause of doing all the things and having nothing feel aligned. The answer is almost never more effort. If you keep efforting the same things, you keep getting the same results. You don't need to become a Human Design or astrology expert. You just need to know enough to stop copy-pasting someone else's strategy and wondering why it's not working for you." }
+    ],
+    actions: [
+      "Pull your Human Design chart free at ihdschool.com/get-your-chart.",
+      "Pull your astrology chart (to find your Sun, Moon, Rising, and North Node) at horoscopes.astro-seek.com.",
+      "Save these 4 things somewhere you'll actually reference: Type, Authority, Profile, North Node.",
+      "Open the Human Design x Kabbalistic Astrology classroom here. It's free. Start with the Human Design Business Playbook video, then run the North Node Business Simulator: " + LINKS.northNode,
+      "Want it personalized? CEO Oracle GPT plugs in your full HD + Kabbalistic Astrology chart for real-time strategic feedback on every business decision. It's an unlock in this classroom and it's included inside Spiritual Business Skool, where the Visibility by Design Challenge turns your design into exactly how you're meant to show up online.",
+      "Name one strategy you've been forcing that your design is asking you to stop. Actually stop it.",
+      "(Optional but recommended) Follow me where I share behind-the-scenes builds and real-time strategy: Instagram @amandafielding.smith · TikTok @amandafieldingsmith · YouTube @amandafieldingsmith."
+    ],
+    prompt: "I'm a [HUMAN DESIGN TYPE] with [AUTHORITY] authority, my profile is [PROFILE], and my North Node in Kabbalistic Astrology is in [SIGN/HOUSE if known].\n\nBased on this, help me write a short post for the Glow Up with Amanda community feed. The headline of the post should be: My Soul Aligned Strategy ✨\n\nThe post should share:\n1. One strategy I've been forcing that my design is actually telling me to stop 🛑\n2. What I'm going to do instead this month 🌿\n3. A question at the end that invites other women to share what THEIR design is asking them to release 💬\n\nUse emojis naturally where they add warmth or rhythm, not stacked or decorative. Voice: grounded, real, slightly vulnerable, not preachy or guru-ish. No hashtags. Under 150 words. Make it feel like me thinking out loud with the community, not a polished lesson."
+  },
+  {
+    id: 5, title: "Your First Win", accent: "First Win", dur: "6 min", emoji: "🏆",
+    overview: {
+      desc: "Everything in Days 1 through 5 was orientation, theory, and behind-the-scenes context. Today is execution. You don't need 10 half-started things. You need ONE shipped thing that builds real momentum. Fill out your First Win Commitment Card, execute it this week, share it with the community.",
+      hero: "It doesn't matter how much tweaking or building you do if nobody knows about it. Shipping is part of the strategy, not the reward for finishing it.",
+      blocks: ["halfStarted"]
+    },
+    concepts: [
+      { type: "pullquote", text: "It doesn't count unless it ships. Momentum over perfection." },
+      { type: "accordion", headline: "Your first week ships ONE thing", icon: "🏁", body: "Pick one win. Commit to a ship date. Actually hit publish. Not: keep tweaking, keep building, keep 'almost ready' for weeks while nobody knows you exist. Shipping is how momentum starts. Everything else is procrastination in a trenchcoat. I had to relearn this myself. It's really easy to build and tweak behind the scenes without sharing. Don't do that." },
+      { type: "callout", style: "white", headline: "Doing the right thing at the wrong time is still the wrong thing", body: "We're not shipping for the sake of shipping. We're shipping so that the thing actually builds on itself. A $10k month you can't hold isn't a win. A launch that burns you out for three months isn't a win. A first win that you can keep compounding from? That's the goal. That's what sustainable, soul-aligned business actually looks like." },
+      { type: "accordion", headline: "Posting your commitment IS the execution", icon: "💫", body: "Posting publicly in the community isn't optional social stuff. It's the accountability layer. Public commitment equals faster shipping equals momentum from day one. You can also use your commitment post to request what you want built next. An artifact, a training, a topic. I read every single one, and your requests shape what drops in here next. Tag @Amanda Smith if you want to guarantee I see it." },
+      { type: "callout", style: "gradient", headline: "Encouragement is the currency", body: "The fastest way to get the most out of this space: show up for other members first. Leave real comments on at least 3 other posts today. The Role Model framework only works if we cheer each other on out loud. This community isn't a static library of my stuff. We're building it together." },
+      { type: "accordion", headline: "Loom is your unstuck button", icon: "🎥", body: "If you ever hit a wall anywhere in here (a gem, a tech thing, a customization question), record a quick Loom (loom.com, free up to 5 min). Go to Loom, click New Video, then Record Video, and select FULL SCREEN (not camera only, so I can actually see what you're looking at). Walk through what you're stuck on. Post it in the community. Real feedback from the women in here instead of staying stuck for days. This is literally how I record these lessons." },
+      { type: "accordion", headline: "When you're ready for more support", icon: "🚪", body: "When you want the templates, the live calls, the daily homework and my eyes on what you're building, that's Spiritual Business Skool. Day 7 walks you through what's inside each tier, and the plans page always has the current format and availability. No pressure, no pitch. The door is open whenever you're ready, and it'll still be open when you're not." }
+    ],
+    actions: [
+      "Open your First Win Commitment Card: " + LINKS.card + " Fill it out with your archetype, biggest aha, first win, and ship date.",
+      "Screenshot the result (or copy the text, both work).",
+      "Post it in the community. Tag @Amanda Smith if you want to make sure I catch it.",
+      "Comment on at least 3 other members' posts today. Real comments, not just 'love this!'. Encouragement compounds.",
+      "Ship your first win by the date you committed to.",
+      "Share the result in the community when it's live. That's how you become someone the community recognizes."
+    ]
+  },
+  {
+    id: 6, title: "When You're Ready: Spiritual Business Skool", accent: "Spiritual Business Skool", dur: "5 min", emoji: "🚪",
+    overview: {
+      desc: "Everything you've touched so far is free, and it's the real thing. This is the honest tour of the paid room, so you know exactly what's there when the moment comes, and so you're not guessing. Spiritual Business Skool is where the templates, the challenges, the live calls, the daily homework and the full 13-step systems live. Three tiers, one community. The plans page always has the current prices and availability, so I keep them off this page on purpose.",
+      hero: "The free trainings show you the system. The paid room is where we build it together, with the templates and my eyes on it.",
+      blocks: ["tiers","doors","audit"]
+    },
+    concepts: [
+      { type: "accordion", headline: "Standard: everything inside, the live calls, the daily homework", icon: "🌱", body: "The Skool Launch Challenge (7 days, templates for every step), the Visibility by Design Challenge (28 days, in alignment with your design), the AI Marketing Treasure Chest (36+ done-for-you artifacts and skills), Human Design x Kabbalah for Business, Claude Community Maxxing, Create Your Own Infinite Challenge, the 5 Day Client Challenge, the Skool Glow Up Gems, and the live calls with daily homework. If you're executing one path from this course, Standard holds the full version of it." },
+      { type: "accordion", headline: "Premium: the annual, plus three bonuses you can't buy separately", icon: "💎", body: "Everything in Standard for the year, plus the Spiritual CEO Business Oracle (CEO Oracle GPT and the 24/7 Spiritual Business Coach merged into one), the automated 30-day content plan, and The Audit Method 13-step classroom. Premium members submit their questions and I answer them on the call." },
+      { type: "accordion", headline: "VIP: for established creators with a platform and proven client results", icon: "🔥", body: "Built for creators with 5k+ and client results who want the room that pays them on repeat. Three live group coaching calls a month with me, a custom ads strategy for your offers, AI systems for your personal brand, and the VIP Vault with every replay and VIP tool. It's also the container every 1:1 client moves into after their 90 days." },
+      { type: "accordion", headline: "What stays free, forever", icon: "💚", body: "This community. Every training in this classroom. The A to Z Playbook with every free gem. New trainings drop in here first, and you get the notification. Nothing about Spiritual Business Skool makes this room smaller. It's the next room, not a replacement for this one." },
+      { type: "pullquote", text: "There's no one right way, there's only your way and consistency." },
+      { type: "accordion", headline: "Want personalized support before the doors open?", icon: "🔮", body: "The 1:1 Strategy Audit is how I do it with people right now. 60 minutes, 1:1. I go through your offers, content and community before we ever get on the call, and you leave with your #1 bottleneck, your next 3 moves for the next 90 days, your custom game plan and the replay with my full notes. Built for experts with an audience and proven client results. Limited availability. Say yes on the call and the audit applies to the 90-day container, and Spiritual Business Skool, every tier, comes with it." }
+    ],
+    actions: [
+      "Read the plans page once, slowly. Know what's in each tier before you need to decide anything. " + LINKS.plans,
+      "Match the tier to the path you chose on Day 3. Standard holds the full version of every free classroom in here. Premium adds the Oracle, the automated content plan and The Audit Method. VIP is for creators with 5k+ and client results.",
+      "If you have an audience and proven client results and you want eyes on your business now, book a Strategy Audit. Limited availability. " + LINKS.audit,
+      "Run the readiness prompt below. It's not a sales prompt. It's a numbers prompt, so you decide from evidence, not from FOMO.",
+      "Whatever you decide, keep executing your one path in here. The free room is the foundation either way."
+    ],
+    prompt: "I'm deciding whether now is the right time to join Spiritual Business Skool (a paid community for spiritual entrepreneurs and online experts who want to monetize faster with Claude, content and community), or whether to keep executing the free trainings in Glow Up with Amanda first.\n\nWhere I am:\n- Platform and follower count: [PLATFORM / FOLLOWERS]\n- Current monthly revenue: [NUMBER]\n- What I sell right now: [OFFER / NOTHING YET]\n- Clients or members I've had in the last 90 days: [NUMBER]\n- Hours a week I can actually give this: [NUMBER]\n- The free classroom I committed to on Day 3 and how far I've gotten: [CLASSROOM / PROGRESS]\n- The tier I'm considering: [STANDARD / PREMIUM / VIP]\n\nBe direct and evidence-driven. Tell me: 1) whether I've actually done the free version of my path yet, or whether I'm looking at the paid room to avoid finishing the free one, 2) what one result in the next 30 days would prove I'm ready to invest, and 3) if I am ready, which tier matches where I am and why. No hype, no hustle-culture framing. Give me the number, not the encouragement."
+  }
+];
+
+/* ---------- Day 1 blocks ---------- */
+const values = [
+  { icon:"🕊️", over:"Simplicity", under:"complexity", body:"Scaling isn't doing more. It's doing less of everything outside your zone of genius. One clear path beats seventeen open tabs.", accent:"pink" },
+  { icon:"🌿", over:"Freedom", under:"hustle", body:"Sustainable visibility over burnout. You're not here to prove you can grind. You're here to get paid to exist.", accent:"mint" },
+  { icon:"⚡", over:"Momentum", under:"perfection", body:"It doesn't count unless it ships. The seed you plant today is not a fig tree tomorrow. Show up, build in public, let the compounding happen.", accent:"cyan" }
+];
+const philosophy = [
+  { emoji:"🌿", label:"Sustainable", sub:"Aligned, anti-hustle, built to hold" },
+  { emoji:"⚡", label:"Shipped", sub:"Real visibility, real results" },
+  { emoji:"💜", label:"Role Model", sub:"Building alongside, not above" }
+];
+const roomCards = [
+  { emoji:"📌", name:"The START HERE post", desc:"Introduce yourself in the comments: platform, follower count, the ONE thing you want to monetize faster", color:"pink" },
+  { emoji:"🎓", name:"The Classroom", desc:"Every free training and gem, sorted by what you're working on. Your quiz tells you which one to open first", color:"purple" },
+  { emoji:"🔔", name:"New drops", desc:"New trainings land in here first. Turn on notifications and you'll never miss one", color:"cyan" },
+  { emoji:"🚪", name:"Spiritual Business Skool", desc:"The paid room: templates, challenges, live calls, daily homework and the full systems. Day 7 walks you through it", color:"lime" }
+];
+
+/* ---------- Day 3 path picker ---------- */
+const pathOptions = [
+  { id:"foundation", question:"🌱 The Foundation Builder", path:"Skool Setup, Growth & Monetization",
+    whyPoints:["You don't have your Skool set up yet, or the foundation feels wobbly enough that everything you build on top of it wobbles too","Setup first, in the order I actually do it: plan, monetization model, about page, plugins, then community, classroom, calendar. Then launch in 7 days without a single course","You're not behind. You're at the beginning, which is the only place anyone has ever started"],
+    gems:[{label:"Soul-Aligned Skool Setup Guide",url:LINKS.setup}],
+    inside:{name:"Skool Launch Challenge + Skool Glow Up Gems",desc:"The 7-day version with templates for every step, plus the about page, pinned post and engagement templates."},
+    cta:"Open Skool Setup, Growth & Monetization →" },
+  { id:"architect", question:"💜 The Architect", path:"Claude AI: artifacts & content systems",
+    whyPoints:["You're stuck at 'what do I actually sell', which is a build problem, not a marketing problem. Nothing downstream works until this is answered","An artifact beats a course: interactive, premium, finishable. Your first one takes 20 minutes, and one artifact can be the whole front end of a Skool","Once you've built one, the pattern repeats. This is the skill, not the single product"],
+    gems:[{label:"The Skool Treasure Map",url:LINKS.treasureMap}],
+    inside:{name:"Claude Community Maxxing + AI Marketing Treasure Chest",desc:"The 90-minute workshop (ideate, create, deliver, promote) and 36+ done-for-you artifacts to brand as your own. Claude Community Maxxing is also an unlock in this classroom."},
+    cta:"Open the Claude AI classroom →" },
+  { id:"lighthouse", question:"🌀 The Lighthouse", path:"Claude AI: content systems",
+    whyPoints:["Your bottleneck is being seen, not convincing. The content systems in here solve exactly that across YouTube, Instagram and TikTok","It's a system, not a launch you recover from. You don't rise to your goals, you fall to the level of your systems","One YouTube video with one artifact underneath it can grow a Skool on autopilot. Ten minutes to set up"],
+    gems:[{label:"The YouTube Video Guide That Grows Your Skool on Autopilot",url:LINKS.ytGuide}],
+    inside:{name:"Visibility by Design Challenge",desc:"28 days of daily visibility in alignment with your design, with the artifacts to make each day faster. Plus Astrology x Visibility."},
+    cta:"Open the Claude AI classroom →" },
+  { id:"host", question:"♾️ The Host", path:"Skool Setup, Growth & Monetization: growth & pricing",
+    whyPoints:["Selling a membership is an infinite game. You're not selling the join, you're selling the reason to keep showing up","Pricing is a lever most people never pull. The $8 model, the low-to-high-ticket ladder and when to raise the floor are all free in here","Growth Boost only pops off when your positioning is nailed. The 93-members-in-10-days video shows the setup and what it cost"],
+    gems:[{label:"$8 Is the New Free: Low to High Ticket Scaling Guide",url:LINKS.eight}],
+    inside:{name:"Create Your Own Infinite Challenge",desc:"The in-Skool challenge you build once that keeps onboarding, re-engaging and delivering results on repeat. Plus the Skool Glow Up Gems."},
+    cta:"Open Skool Setup, Growth & Monetization →" },
+  { id:"closer", question:"🔮 The Closer", path:"The Audit Method: kickoff training",
+    whyPoints:["One paid 60-minute audit or reading that turns into a 90-day client. You already have the skill. This is the ask around it","No launch, no funnel, no 47-step sequence. The three questions that pick your audit, 30 days of short-form that books it, and the one line at the end of the call","It's the exact system I'm running in my own business right now, receipts in the video"],
+    gems:[{label:"Watch the kickoff training on YouTube",url:LINKS.kickoff}],
+    inside:{name:"The Audit Method (13 steps) + 5 Day Client Challenge",desc:"Every template and the full build: highlights, the 30-day audit promo plan, the DM flow, the call flow and the ask. Then the finite challenge that signs them."},
+    cta:"Open The Audit Method →" },
+  { id:"alchemist", question:"😍 The Alchemist", path:"Claude AI: artifacts",
+    whyPoints:["You don't need more strategy, you need finished assets you can deploy this week. Your leverage point is speed-to-asset","An artifact can be a freebie one month and a paid mini offer the next. Same tool, different positioning","Artifacts are the single best thing I've used to grow my own community, because they get you cheaper signups than almost anything else"],
+    gems:[{label:"Claude Just Killed Daily Planners (example artifact)",url:LINKS.planners}],
+    inside:{name:"AI Marketing Treasure Chest",desc:"36+ plug-and-play artifacts and skills, each with its own module and tutorial, to run as freebies, mini offers or client tools. Plus the Premium Skills Treasure Chest."},
+    cta:"Open the Claude AI classroom →" },
+  { id:"amplifier", question:"📈 The Amplifier", path:"Meta Ads",
+    whyPoints:["You have an offer that converts and a community that's alive. Your constraint isn't what to sell, it's how many of the right people see it","You'd rather buy qualified attention than manufacture it daily, and at your stage that's the correct trade","There's an order to it. Run the four campaign stages in sequence and you stop paying for ads to a page that doesn't convert"],
+    gems:[{label:"4 Stages of Ads to Your Skool",url:LINKS.fourStages}],
+    inside:{name:"Ads By Design",desc:"The full paid traffic system behind about half of my own growth: campaign structure, creative, the ad templates and the numbers to watch."},
+    cta:"Open the Meta Ads classroom →" }
+];
+
+/* ---------- Day 4 lineup ---------- */
+const freeClassrooms = [
+  { e:"🧭", n:"Start Here", d:"You are here", here:true },
+  { e:"🔮", n:"The Audit Method", d:"The kickoff training: one paid audit or reading that turns into a 90-day client" },
+  { e:"🎯", n:"1:1 Strategy Audit", d:"What you walk away with, and how to book. Limited availability" },
+  { e:"🏫", n:"Skool Setup, Growth & Monetization", d:"Start, set up, grow and monetize a Skool from scratch, in order" },
+  { e:"💜", n:"Claude AI", d:"Artifacts and content systems to blow up your personal brand" },
+  { e:"🌟", n:"Human Design x Kabbalistic Astrology", d:"Why you're really here, and the business that serves your soul's purpose" },
+  { e:"📣", n:"Meta Ads", d:"To increase traffic, sales and visibility" },
+  { e:"💫", n:"Offers By Design", d:"Scale your offers in alignment with your design" }
+];
+const unlockClassrooms = [
+  { e:"🤖", n:"24/7 Spiritual Business Coach", d:"Your coach in your pocket, trained on everything in here" },
+  { e:"🔮", n:"CEO Oracle GPT", d:"Plug in your HD + Kabbalistic Astrology chart, get real-time strategy" },
+  { e:"⚡", n:"Claude Community Maxxing", d:"Your first or next AI digital product with Claude, in 90 minutes" },
+  { e:"🪞", n:"Your Online Persona w Human Design", d:"The version of you your audience actually needs to see" },
+  { e:"✨", n:"Tools & Platform Library", d:"Templates, prompts, guides and AI tools: your complete arsenal" }
+];
+const paidClassrooms = [
+  { e:"🌱", n:"Skool Launch Challenge", d:"Launch in 7 days, templates for every step" },
+  { e:"🌀", n:"Visibility by Design Challenge", d:"28 days of daily visibility in alignment with your design" },
+  { e:"😍", n:"AI Marketing Treasure Chest", d:"36+ done-for-you artifacts and skills" },
+  { e:"💎", n:"Skool Glow Up Gems", d:"About page, pinned post and engagement templates" },
+  { e:"📈", n:"Ads By Design", d:"The full paid traffic system" },
+  { e:"♾️", n:"Create Your Own Infinite Challenge", d:"Build it once, it grows the membership forever" },
+  { e:"🔥", n:"5 Day Client Challenge", d:"The finite challenge that signs high-ticket clients" },
+  { e:"🔍", n:"The Audit Method (13 steps)", d:"The full build behind the free kickoff training" },
+  { e:"🛠️", n:"Premium Skills Treasure Chest", d:"Skills, templates, trackers, dashboards" },
+  { e:"🎙️", n:"Premium+ Q&A", d:"Submit your question, watch it answered on the call" },
+  { e:"✨", n:"Astrology x Visibility", d:"Visibility audits by your chart" },
+  { e:"👑", n:"VIP Vault", d:"Every replay and VIP tool" }
+];
+const treasure = [
+  ["🎥","YouTube Studio"],["📝","Content Engine"],["🌀","Visibility Tracker"],["🔥","Hot Take Miner"],["📸","Carousel Creator"],
+  ["✨","Script Studio"],["🔄","Repurposing Engine"],["💬","Engagement Gen"],["💎","Pricing Assessment"],["💰","Revenue Model"],
+  ["🌟","Genius Zone"],["🌙","HD Forecast"],["📋","Course Dashboard"],["🎁","Launch Workbook"]
+];
+
+/* ---------- Day 7 tiers (no prices on purpose) ---------- */
+const tiers = [
+  { name:"Standard", style:"light", tagline:"Everything inside, the live calls, the daily homework",
+    desc:"The full version of every free classroom in here, plus the challenges and the artifacts.",
+    items:[["🌱","Skool Launch Challenge (7 days, templates)"],["🌀","Visibility by Design Challenge (28 days)"],["😍","36+ done-for-you AI artifacts & skills"],["🌟","Human Design x Kabbalah for Business"],["💜","Claude Community Maxxing"],["♾️","Infinite Challenge + 5 Day Client Challenge"],["📞","Live calls + daily homework"]],
+    cta:"The full version of your path ✦" },
+  { name:"Premium", style:"dark", tagline:"The annual, plus three bonuses you can't buy separately",
+    desc:"Everything in Standard for the year, plus the Oracle, the automated 30-day content plan and The Audit Method.",
+    items:[["💜","Everything in Standard, for the year"],["🔮","Spiritual CEO Business Oracle (CEO Oracle GPT + 24/7 Coach)"],["📅","The automated 30-day content plan"],["🔍","The Audit Method, 13-step classroom"],["💬","Submit your questions, answered on the call"]],
+    cta:"Where the bonuses live ✦" },
+  { name:"VIP", style:"holo", tagline:"Amanda in your business",
+    desc:"For established creators with a platform of 5k+ and proven client results. Build the room that pays you on repeat.",
+    items:[["🔥","3x monthly LIVE group coaching calls with Amanda"],["💎","Custom ads strategy for your offers"],["🛠️","AI systems for your personal brand"],["👑","The VIP Vault: every replay and VIP tool"],["➕","Everything in Standard + Premium"]],
+    cta:"DM Amanda if you're interested ✦" }
+];
+
+/* ============================================================
+   STATE
+============================================================ */
+let cur = 0, tab = "overview", picked = null, mobileOpen = false;
+const done = {}, openAcc = {};
+
+/* ============================================================
+   HELPERS
+============================================================ */
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const nl = s => esc(s).replace(/\n/g,"<br>");
+function linkify(s){
+  return esc(s).replace(/(https?:\/\/[^\s]+)/g, u => `<a href="${u}" target="_blank" rel="noopener noreferrer" style="color:var(--mint);font-weight:700;text-decoration:none;word-break:break-all">${u}</a>`);
+}
+function gemLinks(gems){
+  if(!gems||!gems.length) return "";
+  return `<div class="gem-links">${gems.map(g=>`<a class="gem-link" href="${g.url}" target="_blank" rel="noopener noreferrer">✦ ${esc(g.label)}</a>`).join("")}</div>`;
+}
+
+/* ============================================================
+   BLOCKS (overview visuals)
+============================================================ */
+const blocks = {
+  mission: () => `
+<div class="mission-wrap reveal" style="animation-delay:340ms">
+  <div class="mission-badge">✦ Our Shared Mission</div>
+  <div class="mission-card">
+    <div class="mission-flame-bg" aria-hidden="true">
+      <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="missionFlame" cx="50%" cy="75%" r="65%"><stop offset="0%" stop-color="#ff8ad1" stop-opacity="0.9"/><stop offset="50%" stop-color="#b26bff" stop-opacity="0.6"/><stop offset="100%" stop-color="#6bd5ff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="crownGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#c78fff"/><stop offset="50%" stop-color="#ff8ad1"/><stop offset="100%" stop-color="#8effd5"/></linearGradient>
+        </defs>
+        <path d="M 100 220 Q 60 180 70 130 Q 78 95 100 80 Q 122 95 130 130 Q 140 180 100 220 Z" fill="url(#missionFlame)" opacity="0.7"/>
+        <path d="M 100 200 Q 80 175 85 145 Q 92 120 100 110 Q 108 120 115 145 Q 120 175 100 200 Z" fill="#ff8ad1" opacity="0.4"/>
+        <g transform="translate(100 45)" opacity="0.95">
+          <path d="M -28 8 L -22 -12 L -14 4 L -8 -18 L 0 0 L 8 -18 L 14 4 L 22 -12 L 28 8 Z" fill="url(#crownGrad)"/>
+          <circle cx="-22" cy="-12" r="2" fill="#8effd5"/><circle cx="0" cy="-22" r="2.5" fill="#fff"/><circle cx="22" cy="-12" r="2" fill="#8effd5"/>
+          <rect x="-28" y="8" width="56" height="3" rx="1" fill="url(#crownGrad)"/>
+        </g>
+        <path d="M 100 90 L 100 65" stroke="#f5f0ff" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="mission-body">
+      <div class="mission-line-1">We're here to turn women who would've been burned at the stake in <span class="mission-hl">1592</span> into filthy rich internet celebrities.</div>
+      <div class="mission-line-2">Because the more money sits in the hands of good people, the better this world gets.</div>
+      <div class="mission-divider"></div>
+      <div class="mission-line-3">In Human Design, <span class="mission-hl-alt">2027</span> is when we shift from the Right Angle Cross of Planning to the Right Angle Cross of the Sleeping Phoenix.</div>
+      <div class="mission-punch">It's time to get paid to exist.</div>
+    </div>
+  </div>
+</div>`,
+
+  bargain: () => `
+<div class="bargain-wrap reveal" style="animation-delay:420ms">
+  <div class="bargain-badge">⚔️ Our Common Enemy</div>
+  <div class="bargain-card">
+    <div class="bargain-header"><div class="bargain-stamp">VOID</div><div class="bargain-title">The Old Bargain</div></div>
+    <div class="bargain-body">The Old Bargain is the cultural contract that says you can keep your gifts, if you stay small. That spiritual women shouldn't want money. That visibility is dangerous. That being seen gets you burned.</div>
+    <div class="bargain-forms">
+      <div class="bargain-form-label">It shows up as:</div>
+      <div class="bargain-form-tags">${["building in silence","hustle culture in a spiritual costume","scarcity consciousness","bro-marketing","playing small to stay safe","waiting to be ready"].map(t=>`<span class="b-tag">${t}</span>`).join("")}</div>
+    </div>
+    <div class="bargain-break"><span class="bargain-break-line">We're breaking the bargain.</span></div>
+  </div>
+</div>`,
+
+  values: () => `
+<div class="values-wrap reveal" style="animation-delay:500ms">
+  <div class="values-badge">✦ How we win the fight</div>
+  <div class="values-title">Our three values</div>
+  <div class="values-grid">${values.map((v,i)=>`
+    <div class="value-card value-${v.accent} reveal" style="animation-delay:${580+i*120}ms">
+      <div class="value-icon">${v.icon}</div>
+      <div class="value-headline"><span class="value-over">${v.over}</span><span class="value-over-sep">over</span><span class="value-under">${v.under}</span></div>
+      <div class="value-body">${v.body}</div>
+    </div>`).join("")}
+  </div>
+</div>`,
+
+  philosophy: () => `
+<div class="triad-wrap">
+  <div class="triad-intro"><div class="triad-badge">✦ The philosophy that runs through everything</div></div>
+  <div class="triad-grid">${philosophy.map((p,i)=>`
+    <div class="triad-card reveal" style="animation-delay:${280+i*140}ms">
+      <div class="triad-emoji">${p.emoji}</div><div class="triad-label">${p.label}</div><div class="triad-sub">${p.sub}</div>
+    </div>`).join("")}
+    <div class="triad-ring" aria-hidden="true"></div>
+  </div>
+</div>`,
+
+  room: () => `
+<div class="catmap-wrap reveal" style="animation-delay:300ms">
+  <div class="catmap-badge">✦ How this room works</div>
+  <div class="catmap-title">Four things to know</div>
+  <div class="catmap-grid">${roomCards.map((c,i)=>`
+    <div class="catmap-card catmap-${c.color} reveal" style="animation-delay:${380+i*90}ms">
+      <div class="catmap-emoji">${c.emoji}</div><div class="catmap-name">${c.name}</div><div class="catmap-desc">${c.desc}</div>
+    </div>`).join("")}
+  </div>
+</div>`,
+
+  fire: () => `
+<div class="fire-wrap reveal" style="animation-delay:340ms">
+  <div class="fire-card">
+    <div class="fire-left">
+      <div class="fire-badge">🔥 The Fire Streak</div>
+      <div class="fire-title">10 actions a day · 30 days · you get the 🔥</div>
+      <div class="fire-body">Skool gives you a fire emoji next to your name when you take 10 community actions per day for 30 days straight. Every post, comment, and like you receive counts. If you're a Skool owner yourself, it's instant social proof that you're active on the platform. Easiest trust-builder out there.</div>
+    </div>
+    <div class="fire-visual">
+      <div class="fire-bars">${Array.from({length:30},(_,i)=>`<div class="fire-bar" style="animation-delay:${i*40}ms;height:${30+(i%5)*10}%"></div>`).join("")}</div>
+      <div class="fire-streak-label">30-day streak</div>
+      <div class="fire-emoji-float">🔥</div>
+    </div>
+  </div>
+</div>`,
+
+  convergence: () => `
+<div class="pc-wrap reveal" style="animation-delay:300ms">
+  <div class="pc-badge">✦ Too many ideas, not enough follow-through</div>
+  <div class="pc-visual">
+    <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="pcBright" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ff6bc1"/><stop offset="50%" stop-color="#b26bff"/><stop offset="100%" stop-color="#8effd5"/></linearGradient>
+        <filter id="pcGlow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <path d="M 30 40 Q 200 80 380 90 T 770 110" stroke="rgba(245,240,255,0.14)" stroke-width="1.5" fill="none"/>
+      <path d="M 30 70 Q 220 30 400 120 T 770 130" stroke="rgba(245,240,255,0.12)" stroke-width="1.5" fill="none"/>
+      <path d="M 30 100 Q 180 160 380 100 T 770 120" stroke="rgba(245,240,255,0.14)" stroke-width="1.5" fill="none"/>
+      <path d="M 30 130 Q 240 90 410 140 T 770 125" stroke="rgba(245,240,255,0.1)" stroke-width="1.5" fill="none"/>
+      <path d="M 30 160 Q 200 200 380 130 T 770 125" stroke="rgba(245,240,255,0.12)" stroke-width="1.5" fill="none"/>
+      <path d="M 30 190 Q 220 140 400 150 T 770 130" stroke="rgba(245,240,255,0.1)" stroke-width="1.5" fill="none"/>
+      <path d="M 30 220 Q 180 180 390 140 T 770 130" stroke="rgba(245,240,255,0.12)" stroke-width="1.5" fill="none"/>
+      <path d="M 30 130 Q 250 130 430 128 T 770 125" stroke="url(#pcBright)" stroke-width="4" fill="none" filter="url(#pcGlow)" stroke-linecap="round"/>
+      <circle cx="770" cy="125" r="10" fill="#ff8ad1" filter="url(#pcGlow)"/><circle cx="770" cy="125" r="4" fill="#fff"/>
+      <text x="30" y="22" fill="rgba(245,240,255,0.55)" font-size="11" font-family="DM Mono, monospace" letter-spacing="1.5">ALL THE IDEAS</text>
+      <text x="670" y="22" fill="#ff8ad1" font-size="11" font-family="DM Mono, monospace" letter-spacing="1.5">YOUR PATH →</text>
+    </svg>
+  </div>
+  <div class="pc-caption">The quiz doesn't give you a new idea. It picks the right one from the ones you already have, so you stop opening tabs and start finishing things.</div>
+</div>`,
+
+  primarySupporting: () => `
+<div class="ps-wrap reveal" style="animation-delay:420ms">
+  <div class="ps-badge">✦ What you get from the quiz</div>
+  <div class="ps-cards three">
+    <div class="ps-card ps-primary"><div class="ps-card-label">01 · PRIMARY PATH</div><div class="ps-card-title">The ONE thing</div><div class="ps-card-body">The free classroom to open first, the video to watch and the gem to grab. All free, all in this community.</div></div>
+    <div class="ps-connector"><div class="ps-plus">+</div></div>
+    <div class="ps-card ps-support"><div class="ps-card-label">02 · SUPPORTING RESOURCE</div><div class="ps-card-title">The complement</div><div class="ps-card-body">A free training that reinforces the primary. It's the layer that makes the first one stick.</div></div>
+    <div class="ps-connector"><div class="ps-plus">+</div></div>
+    <div class="ps-card ps-paid"><div class="ps-card-label">03 · WHERE IT GOES DEEPER</div><div class="ps-card-title">The paid version</div><div class="ps-card-body">The classroom inside Spiritual Business Skool that holds the templates and the full system for your path. Named, so you know what's there when you're ready.</div></div>
+  </div>
+  <div class="ps-footer">That's it. Three things. Not seventeen.</div>
+</div>`,
+
+  infiniteFinite: () => `
+<div class="ivf-wrap reveal" style="animation-delay:300ms">
+  <div class="ivf-badge">✦ The game you're inviting people into</div>
+  <div class="ivf-grid">
+    <div class="ivf-card ivf-infinite">
+      <div class="ivf-svg"><svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ivfInf" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b26bff"/><stop offset="100%" stop-color="#8effd5"/></linearGradient></defs><path d="M 30 40 C 30 20 50 20 60 40 C 70 60 90 60 90 40 C 90 20 70 20 60 40 C 50 60 30 60 30 40 Z" stroke="url(#ivfInf)" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>
+      <div class="ivf-label">Infinite game</div><div class="ivf-offer">Recurring membership</div>
+      <div class="ivf-body">Ongoing play. No end date. Free here: the growth and pricing trainings. Inside Spiritual Business Skool: the Infinite Challenge you build once and the Visibility by Design Challenge that fills it.</div>
+    </div>
+    <div class="ivf-card ivf-finite">
+      <div class="ivf-svg"><svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ivfFin" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ff6bc1"/><stop offset="100%" stop-color="#6bd5ff"/></linearGradient></defs><circle cx="22" cy="40" r="5" fill="#ff6bc1"/><line x1="22" y1="40" x2="95" y2="40" stroke="url(#ivfFin)" stroke-width="3" stroke-linecap="round"/><polygon points="95,33 107,40 95,47" fill="#6bd5ff"/></svg></div>
+      <div class="ivf-label">Finite game</div><div class="ivf-offer">High-ticket offer</div>
+      <div class="ivf-body">Clear start, clear end, one specific result. Free here: The Audit Method kickoff training. Inside Spiritual Business Skool: the 13-step classroom and the 5 Day Client Challenge.</div>
+    </div>
+  </div>
+  <div class="ivf-footer">Match the entry point to the game.</div>
+</div>`,
+
+  lineup: () => {
+    const card = (c,i,kind) => `
+    <div class="clr-card ${kind==='paid'?'clr-paid':''} reveal" style="animation-delay:${380+i*50}ms">
+      ${c.here?'<div class="clr-here">✦</div>':`<div class="clr-tag ${kind}">${kind==='free'?'Free':kind==='unlock'?'Unlock':'Paid'}</div>`}
+      <div class="clr-e">${c.e}</div><div class="clr-n">${esc(c.n)}</div><div class="clr-d">${esc(c.d)}</div>
+    </div>`;
+    return `
+<div class="clr-wrap reveal" style="animation-delay:320ms">
+  <div class="clr-badge">✦ Two rooms, one map</div>
+  <div class="clr-title">What's waiting for you</div>
+  <div class="clr-section">Free · in this classroom</div>
+  <div class="clr-grid">${freeClassrooms.map((c,i)=>card(c,i,'free')).join("")}</div>
+  <div class="clr-section unlock">Unlock here · included inside Spiritual Business Skool</div>
+  <div class="clr-grid">${unlockClassrooms.map((c,i)=>card(c,i,'unlock')).join("")}</div>
+  <div class="clr-section paid">Inside Spiritual Business Skool · the paid room</div>
+  <div class="clr-grid">${paidClassrooms.map((c,i)=>card(c,i,'paid')).join("")}</div>
+  <div class="clr-caption">Your quiz result tells you which free classroom to open first, and which paid one it grows into. <a href="${LINKS.plans}" target="_blank" rel="noopener noreferrer" style="color:var(--pink);font-weight:700;text-decoration:none">See the plans &amp; what's inside →</a></div>
+</div>`;
+  },
+
+  sameTool: () => `
+<div class="sttp-wrap reveal" style="animation-delay:300ms">
+  <div class="sttp-badge">✦ The positioning changes. The tool doesn't.</div>
+  <div class="sttp-diagram">
+    <svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="sttpLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#b26bff"/><stop offset="100%" stop-color="#ff8ad1"/></linearGradient></defs>
+      <rect x="200" y="70" width="100" height="40" rx="10" fill="#161e3a" stroke="url(#sttpLine)" stroke-width="2"/>
+      <text x="250" y="95" text-anchor="middle" fill="#f5f0ff" font-size="12" font-family="DM Mono, monospace" letter-spacing="1">1 ARTIFACT</text>
+      <path d="M 200 90 Q 130 90 60 50" stroke="url(#sttpLine)" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="60" cy="50" r="6" fill="#8effd5"/>
+      <path d="M 300 90 Q 370 90 440 50" stroke="url(#sttpLine)" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="440" cy="50" r="6" fill="#ff8ad1"/>
+      <text x="60" y="35" text-anchor="middle" fill="#8effd5" font-size="11" font-family="DM Mono, monospace" letter-spacing="1.5">🎁 FREE</text>
+      <text x="60" y="20" text-anchor="middle" fill="rgba(245,240,255,0.6)" font-size="9" font-family="DM Mono, monospace">LEAD MAGNET</text>
+      <text x="440" y="35" text-anchor="middle" fill="#ff8ad1" font-size="11" font-family="DM Mono, monospace" letter-spacing="1.5">💎 PAID</text>
+      <text x="440" y="20" text-anchor="middle" fill="rgba(245,240,255,0.6)" font-size="9" font-family="DM Mono, monospace">MINI OFFER</text>
+      <text x="60" y="80" text-anchor="middle" fill="rgba(245,240,255,0.5)" font-size="10" font-family="Nunito, sans-serif">grow audience</text>
+      <text x="60" y="95" text-anchor="middle" fill="rgba(245,240,255,0.5)" font-size="10" font-family="Nunito, sans-serif">fill community</text>
+      <text x="440" y="80" text-anchor="middle" fill="rgba(245,240,255,0.5)" font-size="10" font-family="Nunito, sans-serif">monetize</text>
+      <text x="440" y="95" text-anchor="middle" fill="rgba(245,240,255,0.5)" font-size="10" font-family="Nunito, sans-serif">qualify leads</text>
+    </svg>
+  </div>
+  <div class="sttp-caption">This is how the two rooms work too. Every free gem in here is the lead magnet version. The paid version lives inside Spiritual Business Skool.</div>
+</div>`,
+
+  treasure: () => `
+<div class="tg-wrap reveal" style="animation-delay:420ms">
+  <div class="tg-badge">✦ Inside the Treasure Chest, Spiritual Business Skool (a sample)</div>
+  <div class="tg-grid">${treasure.map((t,i)=>`<div class="tg-tile" style="animation-delay:${500+i*40}ms"><div class="tg-e">${t[0]}</div><div class="tg-n">${t[1]}</div></div>`).join("")}<div class="tg-tile tg-more" style="animation-delay:1060ms"><div class="tg-e">➕</div><div class="tg-n">20+ more</div></div></div>
+  <div class="tg-caption">36+ artifacts and growing, every one with its own module and tutorial. Named here so you know what's there. They live inside Spiritual Business Skool.</div>
+</div>`,
+
+  chartFocus: () => `
+<div class="cf-wrap">
+  <div class="cf-intro"><div class="cf-badge">✦ Your chart, simplified</div><div class="cf-title">Focus here. Skip the rest for now.</div></div>
+  <div class="cf-grid">
+    ${[["01","Type","How your energy moves"],["02","Authority","Your inner GPS"],["03","Profile","Your characteristics in flow"]].map((c,i)=>`<div class="cf-focus-card reveal" style="animation-delay:${260+i*130}ms"><div class="cf-focus-num">${c[0]}</div><div class="cf-focus-label">${c[1]}</div><div class="cf-focus-desc">${c[2]}</div></div>`).join("")}
+  </div>
+  <div class="cf-skip-row reveal" style="animation-delay:700ms"><span class="cf-skip-label">Skip for now:</span>${["Split Definition","Gates","Channels","Incarnation Cross"].map(s=>`<span class="cf-skip-chip">${s}</span>`).join("")}</div>
+</div>`,
+
+  nodeArrow: () => `
+<div class="na-wrap reveal" style="animation-delay:420ms">
+  <div class="na-badge">✦ Your growth trajectory</div>
+  <div class="na-diagram">
+    <svg viewBox="0 0 500 140" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="naLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="rgba(245,240,255,0.35)"/><stop offset="70%" stop-color="#b26bff"/><stop offset="100%" stop-color="#8effd5"/></linearGradient>
+      <filter id="naGlow"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+      <circle cx="60" cy="70" r="24" fill="none" stroke="rgba(245,240,255,0.3)" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <text x="60" y="75" text-anchor="middle" fill="rgba(245,240,255,0.6)" font-size="16">☋</text>
+      <text x="60" y="115" text-anchor="middle" fill="rgba(245,240,255,0.55)" font-size="10" font-family="DM Mono, monospace" letter-spacing="1">SOUTH NODE</text>
+      <text x="60" y="130" text-anchor="middle" fill="rgba(245,240,255,0.4)" font-size="9" font-family="Nunito">already mastered</text>
+      <path d="M 90 70 L 400 70" stroke="url(#naLine)" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#naGlow)"/>
+      <polygon points="400,63 415,70 400,77" fill="#8effd5" filter="url(#naGlow)"/>
+      <text x="245" y="58" text-anchor="middle" fill="#c78fff" font-size="10" font-family="DM Mono, monospace" letter-spacing="2">WHO YOU'RE BECOMING →</text>
+      <circle cx="440" cy="70" r="28" fill="none" stroke="#8effd5" stroke-width="2" filter="url(#naGlow)"/><circle cx="440" cy="70" r="4" fill="#8effd5"/>
+      <text x="440" y="76" text-anchor="middle" fill="#f5f0ff" font-size="18">☊</text>
+      <text x="440" y="115" text-anchor="middle" fill="#8effd5" font-size="10" font-family="DM Mono, monospace" letter-spacing="1">NORTH NODE</text>
+      <text x="440" y="130" text-anchor="middle" fill="rgba(245,240,255,0.6)" font-size="9" font-family="Nunito">your growth edge</text>
+    </svg>
+  </div>
+  <div class="na-caption">Every time I've launched something aligned with my North Node, my business has taken off. That's not coincidence. That's alignment.</div>
+</div>`,
+
+  halfStarted: () => `
+<div class="hss-wrap reveal" style="animation-delay:300ms">
+  <div class="hss-badge">✦ Pick one. Ship one.</div>
+  <div class="hss-grid">
+    <div class="hss-side hss-half">
+      <div class="hss-side-label">10 half-started things</div>
+      <div class="hss-tiles">${[20,33,46,59,72,25,38,51,64,77].map((w,i)=>`<div class="hss-tile-half" style="opacity:${[0.25,0.35,0.45][i%3]};transform:rotate(${[-4,-2,0,2,4][i%5]}deg)"><div class="hss-tile-bar" style="width:${w}%"></div></div>`).join("")}</div>
+      <div class="hss-side-caption">Still in drafts. Still "almost ready". Still invisible.</div>
+    </div>
+    <div class="hss-arrow"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hssArrow" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ff6bc1"/><stop offset="100%" stop-color="#8effd5"/></linearGradient></defs><path d="M 5 20 L 30 20" stroke="url(#hssArrow)" stroke-width="3" stroke-linecap="round" fill="none"/><polygon points="28,14 38,20 28,26" fill="#8effd5"/></svg></div>
+    <div class="hss-side hss-ship">
+      <div class="hss-side-label">1 shipped thing</div>
+      <div class="hss-shipped"><div class="hss-shipped-check">✓</div><div class="hss-shipped-bar"></div><div class="hss-shipped-bar full"></div><div class="hss-shipped-bar"></div></div>
+      <div class="hss-side-caption">Live. Public. Gaining momentum. Already building the next one on top of it.</div>
+    </div>
+  </div>
+</div>`,
+
+  tiers: () => `
+<div class="tier-wrap">
+  <div class="tier-intro">
+    <div class="tier-intro-badge">✦ What's inside Spiritual Business Skool</div>
+    <div class="tier-intro-title">Three levels, one community</div>
+    <div class="tier-intro-sub"><a href="${LINKS.plans}" target="_blank" rel="noopener noreferrer" class="tier-link">See the plans, prices &amp; current availability ✦</a></div>
+  </div>
+  <div class="tier-cards">${tiers.map((t,i)=>`
+    <div class="tier-card tier-${t.style} reveal" style="animation-delay:${250+i*150}ms">
+      <div class="tier-name">${t.name}</div>
+      <div class="tier-tagline">${t.tagline}</div>
+      <div class="tier-desc">${t.desc}</div>
+      <div class="tier-divider"></div>
+      <div class="tier-items">${t.items.map(it=>`<div class="tier-item"><span class="tier-item-icon">${it[0]}</span><span class="tier-item-text">${esc(it[1])}</span></div>`).join("")}</div>
+      <div class="tier-cta">${t.cta}</div>
+    </div>`).join("")}
+  </div>
+  <div class="tier-note">Prices and availability live on the plans page so this course never goes stale. Everything in this free community stays free.</div>
+</div>`,
+
+  doors: () => DOORS.note ? `
+<div class="doors-wrap reveal" style="animation-delay:500ms">
+  <div class="doors-card">
+    <div class="doors-badge">🚪 The doors</div>
+    <div class="doors-title">Two ways in. One way up.</div>
+    <div class="doors-body">Spiritual Business Skool opens its doors on a schedule, not all the time. When they're open, you pick Standard or Premium, and VIP is the step up from there. Members of this free community always hear first.</div>
+    <div class="doors-note">${esc(DOORS.note)}</div>
+    <div class="doors-actions">
+      <a class="doors-btn" href="${LINKS.plans}" target="_blank" rel="noopener noreferrer">See the plans →</a>
+      <a class="doors-btn ghost" href="${LINKS.about}" target="_blank" rel="noopener noreferrer">Read the about page</a>
+    </div>
+  </div>
+</div>` : `
+<div class="doors-wrap reveal" style="animation-delay:500ms">
+  <div class="doors-card">
+    <div class="doors-badge">🚪 The doors</div>
+    <div class="doors-title">Two ways in. One way up.</div>
+    <div class="doors-body">Spiritual Business Skool opens its doors on a schedule, not all the time. When they're open, you pick Standard or Premium, and VIP is the step up from there. Members of this free community always hear first.</div>
+    <div class="doors-actions">
+      <a class="doors-btn" href="${LINKS.plans}" target="_blank" rel="noopener noreferrer">See the plans →</a>
+      <a class="doors-btn ghost" href="${LINKS.about}" target="_blank" rel="noopener noreferrer">Read the about page</a>
+    </div>
+  </div>
+</div>`,
+
+  audit: () => `
+<div class="audit-card reveal" style="animation-delay:620ms">
+  <div class="audit-badge">✦ Want personalized support now?</div>
+  <div class="audit-title">1:1 Strategy Audit</div>
+  <div class="audit-body">60 minutes, 1:1. I go through your offers, content and community before we ever get on the call. Built for experts with an audience and proven client results.</div>
+  <ul class="audit-list">
+    <li>You leave with your #1 bottleneck and your next 3 high-leverage moves for the next 90 days</li>
+    <li>Your custom game plan, the replay and my full notes, whether you ever work with me again or not</li>
+    <li>Say yes on the call and your audit applies to the 90-day container. Spiritual Business Skool, every tier, comes with it</li>
+  </ul>
+  <div class="gem-links">
+    <a class="gem-link" href="${LINKS.audit}" target="_blank" rel="noopener noreferrer">✦ Book your Strategy Audit</a>
+    <a class="gem-link" href="${LINKS.auditExample}" target="_blank" rel="noopener noreferrer">✦ See what you walk away with (example recap, made-up client)</a>
+  </div>
+  <div class="audit-fine">Limited availability.</div>
+</div>`
+};
+
+/* ============================================================
+   CONCEPT RENDERERS
+============================================================ */
+function conceptHTML(c, li, ci){
+  const delay = 80 + ci*70;
+  let inner = "";
+  if(c.type === "callout"){
+    inner = `<div class="callout callout-${c.style}"><div class="callout-headline">${esc(c.headline)}</div><div class="callout-body">${nl(c.body)}</div></div>`;
+  } else if(c.type === "pullquote"){
+    inner = `<div class="pullquote"><div class="pullquote-mark">❝</div><div class="pullquote-text">${esc(c.text)}</div></div>`;
+  } else if(c.type === "accordion"){
+    const key = li + "-" + ci, open = !!openAcc[key];
+    inner = `<div class="accordion ${open?'open':''}">
+      <button class="accordion-btn" onclick="toggleAcc('${key}')">
+        <div class="accordion-left"><span class="accordion-icon">${c.icon}</span><span class="accordion-headline">${esc(c.headline)}</span></div>
+        <div class="accordion-chev">${open?'−':'+'}</div>
+      </button>
+      <div class="accordion-panel" style="max-height:${open?'3000px':'0'}"><div class="accordion-body">${nl(c.body)}</div></div>
+    </div>`;
+  } else if(c.type === "path-picker"){
+    inner = pathPickerHTML();
+  }
+  return `<div class="concept-wrap reveal" style="animation-delay:${delay}ms">${inner}</div>`;
+}
+
+function pathPickerHTML(){
+  const p = pathOptions.find(o=>o.id===picked);
+  return `<div class="pathpicker">
+    <div class="pp-question"><div class="pp-q-badge">✦ Your quiz result</div><div class="pp-q-text">Which path did the quiz give you?</div></div>
+    <div class="pp-options">${pathOptions.map((o,i)=>`<button class="pp-option reveal ${picked===o.id?'picked':''}" style="animation-delay:${150+i*120}ms" onclick="pickPath('${o.id}')"><div class="pp-option-text">${o.question}</div><div class="pp-option-arrow">→</div></button>`).join("")}</div>
+    ${p ? `<div class="pp-result">
+      <div class="pp-result-eyebrow">Your path →</div>
+      <div class="pp-result-name">${esc(p.path)}</div>
+      <div class="pp-result-tier">Lives in <strong>the Glow Up classroom</strong>, free</div>
+      <div class="pp-result-points">${p.whyPoints.map(w=>`<div class="pp-result-point"><span class="pp-point-dot">✦</span><span>${esc(w)}</span></div>`).join("")}</div>
+      <div class="pp-result-free">The gem to grab</div>
+      ${gemLinks(p.gems)}
+      <div class="pp-result-inside">
+        <div class="pp-result-inside-lbl">Where it goes deeper · inside Spiritual Business Skool</div>
+        <div class="pp-result-inside-name">${esc(p.inside.name)}</div>
+        <div class="pp-result-inside-desc">${esc(p.inside.desc)} <a href="${LINKS.plans}" target="_blank" rel="noopener noreferrer">See the plans →</a></div>
+      </div>
+      <a class="pp-result-cta" href="${LINKS.classroom}" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none">${esc(p.cta)}</a>
+    </div>` : ""}
+  </div>`;
+}
+
+/* ============================================================
+   PANES
+============================================================ */
+function overviewPane(L){
+  return `<div class="pane">
+    <div class="lesson-desc reveal" style="animation-delay:80ms">${esc(L.overview.desc)}</div>
+    ${L.overview.hero ? `<div class="hero-callout reveal" style="animation-delay:200ms"><div class="hero-mark">"</div><div class="hero-text">${esc(L.overview.hero)}</div></div>` : ""}
+    ${(L.overview.blocks||[]).map(b => blocks[b] ? blocks[b]() : "").join("")}
+  </div>`;
+}
+function conceptsPane(L){
+  return `<div class="pane">${L.concepts.map((c,i)=>conceptHTML(c,L.id,i)).join("")}</div>`;
+}
+function actionsPane(L){
+  return `<div class="pane actions-pane">
+    <div class="actions-lead reveal" style="animation-delay:60ms"><div class="actions-lead-badge">Do this today</div><div class="actions-lead-text">These are the small moves that compound. Don't skip. This is where momentum starts.</div></div>
+    ${L.actions.map((a,i)=>`<div class="action-card reveal" style="animation-delay:${120+i*90}ms"><div class="action-num">${String(i+1).padStart(2,"0")}</div><div class="action-text">${linkify(a)}</div></div>`).join("")}
+  </div>`;
+}
+function promptPane(L){
+  return `<div class="pane">
+    <div class="prompt-intro reveal" style="animation-delay:60ms">Paste this into Claude and fill in the brackets. You'll get your custom output in under a minute.</div>
+    <div class="prompt-box reveal" style="animation-delay:160ms">
+      <div class="prompt-hdr"><span class="prompt-badge">Copy-paste into Claude →</span><button class="prompt-copy-btn" id="prompt-copy-btn" onclick="copyPrompt()">📋 Copy Prompt</button></div>
+      <div class="prompt-text" id="prompt-text">${esc(L.prompt)}</div>
+    </div>
+  </div>`;
+}
+
+/* ============================================================
+   MAIN RENDER
+============================================================ */
+function render(){
+  const L = lessons[cur];
+  const doneCount = Object.values(done).filter(Boolean).length;
+  const pct = Math.round(doneCount / lessons.length * 100);
+  const tabs = [["overview","Overview","✦"],["concepts","Key Concepts","💎"],["actions","Do This","🌟"]];
+  if(L.prompt) tabs.push(["prompt","Prompt","✨"]);
+  const titleHTML = (L.accent && L.title.includes(L.accent))
+    ? esc(L.title.split(L.accent)[0]) + `<span class="accent-gradient">${esc(L.accent)}</span>` + esc(L.title.split(L.accent)[1])
+    : esc(L.title);
+  const next = lessons[cur+1];
+
+  const stars = Array.from({length:55},(_,i)=>{
+    const v=["","lg","pink","cyan","mint"][i%5];
+    return `<div class="s-star ${v}" style="left:${(37*i)%100}%;top:${(53*i)%100}%;animation-delay:${((0.17*i)%4).toFixed(2)}s;animation-duration:${3+i%4}s"></div>`;
+  }).join("");
+
+  document.getElementById("root").innerHTML = `
+<div class="app">
+  <div class="stars-bg">${stars}</div>
+  <div class="topbar">
+    <div class="topbar-left">
+      <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
+      <div class="topbar-icon">✦</div>
+      <div class="topbar-title">Glow Up with Amanda · <em>Start Here</em></div>
+    </div>
+    <div class="topbar-nav"><a class="topbar-link active" href="${LINKS.classroom}" target="_blank" rel="noopener noreferrer" style="text-decoration:none">Classroom</a></div>
+  </div>
+  <div class="layout">
+    <div class="sidebar-overlay ${mobileOpen?'show':''}" onclick="toggleSidebar(false)"></div>
+    <div class="sidebar ${mobileOpen?'open':''}">
+      <div class="side-header">
+        <div class="side-eyebrow">✦ Start Here</div>
+        <div class="side-title">Glow Up with Amanda · Start Here</div>
+        <div class="side-prog-row"><div class="side-prog-bg"><div class="side-prog-fill" style="width:${pct}%"></div></div><div class="side-prog-pct">${pct}%</div></div>
+      </div>
+      <div class="side-list">${lessons.map((l,i)=>`
+        <div class="side-item ${cur===i?'active':''}" onclick="selectLesson(${i})">
+          <div class="side-check ${done[i]?'done':'pending'}">${done[i]?'<svg width="11" height="11" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>':''}</div>
+          <div class="side-item-emoji">${l.emoji}</div>
+          <div class="side-item-title">${esc(l.title)}</div>
+        </div>`).join("")}
+      </div>
+    </div>
+    <div class="main" id="main">
+      <div class="main-inner">
+        <div class="lesson-meta-row reveal" style="animation-delay:40ms">
+          <div class="lesson-num-badge">Day ${L.id+1} of ${lessons.length} · ${L.dur}</div>
+          <div class="lesson-mode-chip ${L.hasVideo?'has-video':'quick-day'}">${L.hasVideo?'🎬 Video lesson':'⚡ Quick day · take action'}</div>
+        </div>
+        <div class="lesson-top reveal" style="animation-delay:120ms">
+          <div class="lesson-title"><span class="lesson-emoji">${L.emoji}</span> ${titleHTML}</div>
+          <div class="lesson-top-actions"><button class="lesson-done-top ${done[cur]?'complete':'pending'}" onclick="toggleDone(${cur})">${done[cur]?'✦ Completed':'○ Mark Complete'}</button></div>
+        </div>
+        <div class="tabs reveal" style="animation-delay:200ms">${tabs.map(t=>`<button class="tab ${tab===t[0]?'active':''}" onclick="setTab('${t[0]}')"><span class="tab-icon">${t[2]}</span><span class="tab-label">${t[1]}</span></button>`).join("")}</div>
+        ${L.launchLink ? `<a class="launch-link reveal" href="${L.launchLink.url}" target="_blank" rel="noopener noreferrer" style="animation-delay:240ms"><span class="ll-emoji">${L.launchLink.emoji}</span><span class="ll-text"><span class="ll-title">${esc(L.launchLink.label)}</span><span class="ll-sub">${esc(L.launchLink.sub)}</span></span><span class="ll-arrow">→</span></a>` : ""}
+        <div class="tab-content">
+          ${tab==="overview"?overviewPane(L):tab==="concepts"?conceptsPane(L):tab==="actions"?actionsPane(L):promptPane(L)}
+        </div>
+        <div class="lesson-bottom reveal" style="animation-delay:600ms">
+          <button class="bottom-done-btn ${done[cur]?'complete':'pending'}" onclick="toggleDone(${cur})">${done[cur]?'✦ Lesson Complete':'✎ Mark Lesson Complete'}</button>
+          ${next ? `<button class="bottom-next" onclick="selectLesson(${cur+1})">Next: ${esc(next.title)} →</button>` : `<a class="bottom-next" href="${LINKS.plans}" target="_blank" rel="noopener noreferrer" style="text-decoration:none">See what's inside Spiritual Business Skool →</a>`}
+        </div>
+        <div class="lesson-footer">
+          <div class="lf-brand">✦ Glow Up with <em>Amanda</em> ✦</div>
+          <div class="lf-links"><a href="${LINKS.glowup}" target="_blank" rel="noopener noreferrer">Glow Up with Amanda</a> · <a href="${LINKS.classroom}" target="_blank" rel="noopener noreferrer">Classroom</a> · <a href="${LINKS.playbook}" target="_blank" rel="noopener noreferrer">A to Z Playbook</a> · <a href="${LINKS.plans}" target="_blank" rel="noopener noreferrer">Spiritual Business Skool</a></div>
+          <div class="lf-credit">Glow Up with Amanda · Start Here · The free side of Spiritual Business Skool</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`;
+}
+
+/* ============================================================
+   ACTIONS
+============================================================ */
+function selectLesson(i){ cur = i; tab = "overview"; picked = null; mobileOpen = false; render(); scrollTop(); }
+function setTab(t){ tab = t; render(); }
+function toggleSidebar(force){ mobileOpen = (typeof force === "boolean") ? force : !mobileOpen; render(); }
+function toggleAcc(key){ openAcc[key] = !openAcc[key]; render(); }
+function pickPath(id){ picked = (picked === id) ? null : id; render(); }
+function scrollTop(){ const m = document.getElementById("main"); if(m) m.scrollTop = 0; }
+function toggleDone(i){
+  const was = done[i];
+  done[i] = !was;
+  render();
+  if(!was) celebrate();
+}
+function celebrate(){
+  const c = document.createElement("div");
+  c.className = "celebration";
+  c.innerHTML = Array.from({length:24},(_,i)=>`<div class="celeb-spark" style="left:${45+Math.random()*10}%;top:${40+Math.random()*10}%;animation-delay:${i*30}ms;transform:rotate(${i*15}deg) translateY(-${80+Math.random()*80}px)"></div>`).join("");
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(), 1800);
+}
+function copyPrompt(){
+  const txt = lessons[cur].prompt || "";
+  const ok = () => { const b = document.getElementById("prompt-copy-btn"); if(b){ b.textContent = "✦ Copied!"; setTimeout(()=>{ b.textContent = "📋 Copy Prompt"; }, 2000); } };
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(ok).catch(()=>fallbackCopy(txt, ok)); }
+  else fallbackCopy(txt, ok);
+}
+function fallbackCopy(txt, ok){
+  try{ const ta=document.createElement("textarea"); ta.value=txt; ta.style.cssText="position:fixed;left:-9999px;top:-9999px;opacity:0"; document.body.appendChild(ta); ta.focus(); ta.select(); document.execCommand("copy"); document.body.removeChild(ta); ok(); }catch(e){ console.error("Copy failed", e); }
+}
+
+render();
+requestAnimationFrame(()=>{ const e=document.getElementById("loading"); if(e){ e.classList.add("hidden"); setTimeout(()=>e.remove(),450); } });
+</script>
+</body>
+</html>
