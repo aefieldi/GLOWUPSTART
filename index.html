@@ -2098,7 +2098,21 @@ const LINKS = {
   catQuestions: "https://www.skool.com/glowup?c=8a15b70d908f467ca4cb714ae0f2a0ac&s=newest-cm&fl=",
   catLibra: "https://www.skool.com/glowup?c=13f6bdf5abd94e64b89b177efee5f11b&s=newest-cm&fl=",
   catClaude: "https://www.skool.com/glowup?c=6626d80096964726a553c38f67ea1362&s=newest-cm&fl=",
-  catSkool: "https://www.skool.com/glowup?c=0b328fe790114da0bb27671eb7cb02db&s=newest-cm&fl="
+  catSkool: "https://www.skool.com/glowup?c=0b328fe790114da0bb27671eb7cb02db&s=newest-cm&fl=",
+  roadmap: "https://aefieldi.github.io/GLOWUPSTART/roadmap/"
+};
+const CLS = {
+  audit:   "https://www.skool.com/glowup/classroom/9d3b7e44?md=a6941d203a094d26a9983e59b2990460",
+  audit11: "https://www.skool.com/glowup/classroom/8f98f994?md=1bfb6762cc01490d9c1a2f71b032749e",
+  skool:   "https://www.skool.com/glowup/classroom/712a1f28?md=ed6fbaf725c440c5bdf8bcc4aaf61a36",
+  coach:   "https://www.skool.com/glowup/classroom/775dae6d?md=497de13a055341cda133960d54f21eae",
+  claude:  "https://www.skool.com/glowup/classroom/b82ded0e?md=c0e338ba8ec14917b36acee64a8311eb",
+  hdk:     "https://www.skool.com/glowup/classroom/adf293bc?md=15619e69370f4be6a7e345f2c4114906",
+  ads:     "https://www.skool.com/glowup/classroom/f951936e?md=e549576f026742cc850e57dcd2d372fa",
+  tools:   "https://www.skool.com/glowup/classroom/af8033c0?md=3549ac4fab2b4600acc823e3f26041c6",
+  oracle:  "https://www.skool.com/glowup/classroom/6da84c68?md=491582ba0b6347caaf9897275a9535a0",
+  ccm:     "https://www.skool.com/glowup/classroom/42e440c3?md=6282c56e45b748278de71525042d66de",
+  persona: "https://www.skool.com/glowup/classroom/a04c72ad?md=483c795a07604f0d80b6fe3dfabbd36d"
 };
 
 /* One line to edit when the doors status changes. Leave note empty to hide the banner. */
@@ -2181,6 +2195,7 @@ const lessons = [
   },
   {
     id: 3, title: "What's Actually Inside", accent: "The Map", dur: "7 min", emoji: "🗺️",
+    launchLink: { url: LINKS.roadmap, emoji: "🗺️", label: "Open the interactive Glow Up Road Map", sub: "Every classroom in this community on one map. Answer six questions, or tap any stop to peek inside." },
     overview: {
       desc: "Your path is picked. Now here is the whole map, so you know what exists and roughly where you are headed. Two rooms. This one, where every free training lives. And Spiritual Business Skool, the paid room, where the templates, challenges, live calls and full systems live. Read this as a tour, not a to-do list. You are not starting all of this. Most of it is not for you yet, and that is the point.",
       hero: "A map is not a to-do list. You only ever walk one path at a time.",
@@ -2192,7 +2207,7 @@ const lessons = [
       { type: "accordion", headline: "Level 1 · Home Base (free, in this classroom)", icon: "🌱", body: "You need somewhere for people to land.\n\nSKOOL SETUP, GROWTH & MONETIZATION: how to start, set up, grow and monetize a Skool community from scratch, in the order I actually do it. Setup from zero, launching in 7 days without a single course, the $8 pricing model, and Growth Boost.\n\nInside Spiritual Business Skool this becomes the SKOOL LAUNCH CHALLENGE (7 days, templates for every step) and the SKOOL GLOW UP GEMS (about page, pinned post and engagement templates)." },
       { type: "accordion", headline: "Level 2 · Drive Traffic (free, in this classroom)", icon: "🌀", body: "You have the room. Now people have to find it.\n\nCLAUDE AI: artifacts and content systems to blow up your personal brand. The YouTube + Skool funnel, 30 days of content in 30 minutes, the 10 marketing rules I'd break, and how I build an artifact in an afternoon.\n\nMETA ADS: to increase traffic, sales and visibility. The four campaign stages in order, the $7 a day rebuild, and the readiness scorecard.\n\nInside Spiritual Business Skool this becomes the VISIBILITY BY DESIGN CHALLENGE (28 days, in alignment with your design), ASTROLOGY x VISIBILITY, and ADS BY DESIGN (the full paid traffic system)." },
       { type: "accordion", headline: "Level 3 · Offers & Challenges (inside Spiritual Business Skool)", icon: "♾️", body: "You have traffic. Now you compound it.\n\nAI MARKETING TREASURE CHEST: 36+ done-for-you artifacts and skills you host inside your own Skool, use with clients, or run as lead magnets and mini offers.\n\nCREATE YOUR OWN INFINITE CHALLENGE: if you are selling a membership. Build it once and it keeps onboarding, re-engaging and delivering results.\n\nTHE 5 DAY CLIENT CHALLENGE: if you are selling high ticket. A finite challenge that solves one specific problem and reveals the next level your offer solves. Includes a custom GPT and the templates.\n\nTHE AUDIT METHOD (13 steps): the full build behind the free kickoff training. Your highlights, your 30-day promo plan, the DM flow, the call flow and the ask.\n\nCLAUDE COMMUNITY MAXXING: 90 minutes, end to end, on your first or next AI digital product. Also unlockable in this classroom." },
-      { type: "accordion", headline: "Level 4 · Tools & Support", icon: "💎", body: "For when you are already executing and want leverage, or want eyes on it.\n\nTOOLS & PLATFORM LIBRARY: your complete spiritual business arsenal. Unlockable here, included inside Spiritual Business Skool. The free version is the A to Z Playbook.\n\n24/7 SPIRITUAL BUSINESS COACH and CEO ORACLE GPT: plug in your Human Design and astrology, get real-time business guidance on any decision. Unlockable here, included inside Spiritual Business Skool.\n\nPREMIUM SKILLS TREASURE CHEST and PREMIUM+ Q&A: skills, templates, trackers and dashboards, plus submit your question and watch it answered on the call. Inside Spiritual Business Skool.\n\n1:1 STRATEGY AUDIT: when you want someone to look over everything you are doing and tell you the next one to three moves. Built for experts with an audience and proven client results. Limited availability. The classroom here shows you exactly what you walk away with." },
+      { type: "accordion", headline: "Level 4 · Tools & Support", icon: "💎", body: "For when you are already executing and want leverage, or want eyes on it.\n\nTOOLS & PLATFORM LIBRARY: your complete spiritual business arsenal. Unlockable here, included inside Spiritual Business Skool. The free version is the A to Z Playbook.\n\n24/7 SPIRITUAL BUSINESS COACH and CEO ORACLE GPT: plug in your Human Design and astrology, get real-time business guidance on any decision. Unlockable here, included inside Spiritual Business Skool.\n\nPREMIUM SKILLS TREASURE CHEST and PREMIUM+ Q&A: skills, templates, trackers and dashboards, plus submit your question and watch it answered on the call. Inside Spiritual Business Skool.\n\n1:1 STRATEGY AUDIT: when you want someone to look over everything you are doing and tell you the next one to three moves. Built for experts with an audience and proven client results. Limited availability. You book it right here in the classroom." },
       { type: "pullquote", text: "If your content is for everyone, it is for no one. Each artifact is a spear. The membership is the room it lives in." },
       { type: "accordion", headline: "What's an artifact?", icon: "🪞", body: "An artifact is an interactive, browser-based tool that feels premium and completable. This mini course you are working through right now? That is an artifact. Way more engaging than a static PDF. Way more memorable than a Google Doc. It is why people actually finish them. You can rebrand any of mine to your business in plain English inside Claude, no code, no designer, no tech overwhelm." },
       { type: "callout", style: "white", headline: "You are allowed to not be ready for most of this", body: "Nothing in here expires. The classrooms you are not touching this month are not opportunities you are losing, they are the reason you will not have to go looking elsewhere in six months. Bookmark the map. Walk one path." }
@@ -2354,19 +2369,19 @@ const pathOptions = [
 /* ---------- Day 4 lineup ---------- */
 const freeClassrooms = [
   { e:"🧭", n:"Start Here", d:"You are here", here:true },
-  { e:"🔮", n:"The Audit Method", d:"The bonus kickoff training: one paid audit or reading that turns into a 90-day client. Not available to the public" },
-  { e:"🎯", n:"1:1 Strategy Audit", d:"What you walk away with, and how to book. Limited availability" },
-  { e:"🏫", n:"Skool Setup, Growth & Monetization", d:"Start, set up, grow and monetize a Skool from scratch, in order" },
-  { e:"💜", n:"Claude AI", d:"Artifacts and content systems to blow up your personal brand" },
-  { e:"🌟", n:"Human Design x Kabbalistic Astrology", d:"Why you're really here, and the business that serves your soul's purpose" },
-  { e:"📣", n:"Meta Ads", d:"To increase traffic, sales and visibility" },
+  { e:"🔮", n:"The Audit Method Kickoff", d:"How to turn one paid 60 to 90-minute call into clients on demand, on repeat. Only inside this community", url:CLS.audit },
+  { e:"🏫", n:"Skool Setup, Growth & Monetization", d:"All my free resources for setting up, growing and monetizing your Skool", url:CLS.skool },
+  { e:"💜", n:"Claude AI Content Systems", d:"AI content systems to blow up your personal brand, with Poppy, Claude and more", url:CLS.claude },
+  { e:"🌟", n:"Human Design & Kabbalistic Astrology", d:"Every type, the profile lines, Kabbalah for your business, marketing and sales", url:CLS.hdk },
+  { e:"📣", n:"Meta Ads", d:"My free videos and guides for growing your Skool sales and members with ads", url:CLS.ads }
 ];
 const unlockClassrooms = [
-  { e:"🤖", n:"24/7 Spiritual Business Coach", d:"Your coach in your pocket, trained on everything in here" },
-  { e:"🔮", n:"CEO Oracle GPT", d:"Plug in your HD + Kabbalistic Astrology chart, get real-time strategy" },
-  { e:"⚡", n:"Claude Community Maxxing", d:"Your first or next AI digital product with Claude, in 90 minutes" },
-  { e:"🪞", n:"Your Online Persona w Human Design", d:"The version of you your audience actually needs to see" },
-  { e:"✨", n:"Tools & Platform Library", d:"Templates, prompts, guides and AI tools: your complete arsenal" }
+  { e:"🎯", n:"1:1 Strategy Audit", d:"60 minutes with me: your #1 bottleneck and next 3 moves. Limited availability", url:CLS.audit11 },
+  { e:"🤖", n:"24/7 Spiritual Business Coach", d:"My AI business coach, any hour of the day", url:CLS.coach },
+  { e:"⚡", n:"Claude Community Maxxing", d:"Your first or next digital product or mini offer in 90 minutes with Claude", url:CLS.ccm },
+  { e:"🔮", n:"CEO Oracle GPT", d:"Plug in your HD + Kabbalistic Astrology chart, get real-time strategy", url:CLS.oracle },
+  { e:"🪞", n:"Find Your Online Persona", d:"How you're meant to show up online, in alignment with your design", url:CLS.persona },
+  { e:"🗝️", n:"A-Z Tools & Platform Library", d:"All my A to Z spiritual business tools and the AI platforms I use", url:CLS.tools }
 ];
 const paidClassrooms = [
   { e:"🌱", n:"Skool Launch Challenge", d:"Launch in 7 days, templates for every step" },
@@ -2604,18 +2619,23 @@ const blocks = {
 </div>`,
 
   lineup: () => {
-    const card = (c,i,kind) => `
-    <div class="clr-card ${kind==='paid'?'clr-paid':''} reveal" style="animation-delay:${380+i*50}ms">
+    const card = (c,i,kind) => {
+      const tag = c.url ? 'a' : 'div';
+      const attrs = c.url ? ` href="${c.url}" target="_blank" rel="noopener noreferrer" style="animation-delay:${380+i*50}ms;display:block;text-decoration:none;color:inherit"` : ` style="animation-delay:${380+i*50}ms"`;
+      return `
+    <${tag} class="clr-card ${kind==='paid'?'clr-paid':''} reveal"${attrs}>
       ${c.here?'<div class="clr-here">✦</div>':`<div class="clr-tag ${kind}">${kind==='free'?'Free':kind==='unlock'?'Unlock':'Paid'}</div>`}
-      <div class="clr-e">${c.e}</div><div class="clr-n">${esc(c.n)}</div><div class="clr-d">${esc(c.d)}</div>
-    </div>`;
+      <div class="clr-e">${c.e}</div><div class="clr-n">${esc(c.n)}${c.url?' ↗':''}</div><div class="clr-d">${esc(c.d)}</div>
+    </${tag}>`;
+    };
     return `
 <div class="clr-wrap reveal" style="animation-delay:320ms">
   <div class="clr-badge">✦ Two rooms, one map</div>
   <div class="clr-title">What's waiting for you</div>
+  <a href="${LINKS.roadmap}" target="_blank" rel="noopener noreferrer" class="gem-link" style="margin:6px 0 4px;text-align:center">✦ Open the interactive Glow Up Road Map: six questions to your starting classroom ↗</a>
   <div class="clr-section">Free · in this classroom</div>
   <div class="clr-grid">${freeClassrooms.map((c,i)=>card(c,i,'free')).join("")}</div>
-  <div class="clr-section unlock">Unlock here · included inside Spiritual Business Skool</div>
+  <div class="clr-section unlock">Unlock here · or included inside Spiritual Business Skool</div>
   <div class="clr-grid">${unlockClassrooms.map((c,i)=>card(c,i,'unlock')).join("")}</div>
   <div class="clr-section paid">Inside Spiritual Business Skool · the paid room</div>
   <div class="clr-grid">${paidClassrooms.map((c,i)=>card(c,i,'paid')).join("")}</div>

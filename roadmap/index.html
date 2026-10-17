@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Glow Up Road Map · Glow Up with Amanda</title>
+<meta name="description" content="Every classroom inside Glow Up with Amanda on one interactive map. Answer six questions to find your starting classroom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --cream:#FAF8F4; --cream2:#F5F2EC; --white:#FFFFFF;
+  --navy:#1A1A2E; --navy2:#23233F; --navy3:#12121F;
+  --mint:#3FBF95; --mintBright:#7EECD4; --mintDeep:#1E8F6C;
+  --viol:#8B5FC7; --violL:#B88CED; --lav:#C5B8E8;
+  --orch:#D97FD9; --pink:#E8A0E8;
+  --gold:#E8C87A; --goldDeep:#A87F2E;
+  --ink:#1A1A2E; --sub:#5A5A72; --line:rgba(26,26,46,.12);
+  --panelbg: rgba(255,255,255,0.97);
+}
+html, body { height: 100%; }
+body {
+  background: linear-gradient(180deg, #EDE4FA 0%, #F4EBFB 34%, #EFE3F8 68%, #EAE0F9 100%);
+  color: var(--ink);
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+.cosmos {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 15% 8%, rgba(232,160,232,0.35) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 20%, rgba(126,236,212,0.18) 0%, transparent 40%),
+    radial-gradient(ellipse at 75% 85%, rgba(184,140,237,0.28) 0%, transparent 45%),
+    radial-gradient(ellipse at 25% 95%, rgba(232,200,122,0.16) 0%, transparent 40%);
+}
+#sparklefield { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+
+.page { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ── SCROLLING TICKER ── */
+.ticker {
+  position: sticky; top: 0; z-index: 60;
+  background: linear-gradient(90deg, var(--viol) 0%, var(--orch) 50%, var(--mint) 100%);
+  overflow: hidden; white-space: nowrap;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+.ticker-track {
+  display: inline-flex; align-items: center;
+  padding: 9px 0;
+  animation: scrollTicker 40s linear infinite;
+  will-change: transform;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-item {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: #fff; padding: 0 22px;
+  display: inline-flex; align-items: center; gap: 22px;
+  text-shadow: 0 1px 6px rgba(26,26,46,0.2);
+}
+.ticker-item::after { content: "✦"; color: rgba(255,255,255,0.8); font-size: 9px; }
+@keyframes scrollTicker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ── HEADER ── */
+.header { text-align: center; padding: 46px 20px 10px; flex-shrink: 0; position: relative; }
+.eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700; font-size: 10px;
+  letter-spacing: 5px; text-transform: uppercase;
+  color: var(--mintDeep); margin-bottom: 12px;
+}
+.header h1 {
+  font-weight: 900; font-size: clamp(28px,4.8vw,50px);
+  line-height: 1.08; margin-bottom: 12px; letter-spacing: -0.5px;
+  color: var(--navy);
+}
+.header h1 em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-weight: 700; font-size: 1.12em;
+  background: linear-gradient(90deg, var(--viol), var(--orch), var(--mintDeep));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header p {
+  font-size: 14.5px; color: var(--sub);
+  max-width: 580px; margin: 0 auto; line-height: 1.7; font-style: italic;
+}
+.gem {
+  position: absolute; pointer-events: none;
+  width: 26px; height: 26px; border-radius: 7px;
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, var(--violL), var(--pink), var(--mintBright));
+  opacity: 0.55; filter: blur(0.4px) drop-shadow(0 4px 10px rgba(139,95,199,0.35));
+  animation: gemFloat 7s ease-in-out infinite;
+}
+.gem.g2 { width: 18px; height: 18px; background: linear-gradient(135deg, var(--gold), var(--pink)); animation-duration: 9s; animation-delay: 1.2s; }
+.gem.g3 { width: 14px; height: 14px; background: linear-gradient(135deg, var(--mintBright), var(--violL)); animation-duration: 8s; animation-delay: 2.4s; }
+.gem.g4 { width: 22px; height: 22px; background: linear-gradient(135deg, var(--orch), var(--lav)); animation-duration: 10s; animation-delay: 0.6s; }
+@keyframes gemFloat {
+  0%,100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(52deg) translateY(-14px); }
+}
+.tap-hint {
+  text-align: center; color: var(--viol);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px; margin: 12px 0 4px; letter-spacing: 2px; opacity: 0.75;
+}
+
+/* ── DOOR / RESOURCE CARDS ── */
+.doors { max-width: 1000px; margin: 14px auto 4px; padding: 0 20px; width: 100%; }
+.doors-label {
+  font-family: 'Space Mono', monospace; font-weight: 700;
+  font-size: 9.5px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--viol); text-align: center; margin-bottom: 10px; opacity: 0.8;
+}
+.doors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+@media (max-width: 700px) { .doors-grid { grid-template-columns: 1fr; } }
+.door {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(139,95,199,0.22);
+  border-radius: 14px; padding: 13px 15px;
+  cursor: pointer; text-align: left;
+  transition: border-color .2s, background .2s, transform .2s, box-shadow .2s;
+  color: var(--ink); font-family: 'Outfit', sans-serif;
+  backdrop-filter: blur(6px);
+}
+.door:hover {
+  border-color: rgba(63,191,149,0.55); background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(139,95,199,0.18);
+}
+.door-q { font-size: 12px; color: var(--sub); font-style: italic; margin-bottom: 6px; line-height: 1.45; }
+.door-dest { font-weight: 800; font-size: 13px; letter-spacing: 0.2px; display: flex; align-items: center; gap: 7px; color: var(--navy); }
+.door-dest .arr { color: var(--mintDeep); font-weight: 700; }
+
+/* ── MAP + PANEL ── */
+.map-panel-wrap { position: relative; flex: 1; display: flex; align-items: stretch; margin-top: 8px; }
+.map-area { flex: 1; min-width: 0; position: relative; transition: flex .35s cubic-bezier(.16,1,.3,1); overflow-x: auto; }
+.map-scroll { min-width: 940px; }
+.map-area svg { width: 100%; height: auto; display: block; }
+
+.right-panel {
+  width: 0; overflow: hidden; flex-shrink: 0;
+  background: var(--panelbg);
+  border-left: 1px solid rgba(139,95,199,0);
+  transition: width .35s cubic-bezier(.16,1,.3,1), border-color .35s;
+  position: relative;
+  box-shadow: -12px 0 40px rgba(139,95,199,0.12);
+}
+.right-panel.open { width: 372px; border-left-color: rgba(139,95,199,0.25); }
+@media (max-width: 760px) {
+  .map-panel-wrap { flex-direction: column; }
+  .right-panel { width: 100% !important; height: 0; border-left: none; border-top: 1px solid rgba(139,95,199,0); transition: height .35s cubic-bezier(.16,1,.3,1), border-color .35s; box-shadow: 0 -12px 40px rgba(139,95,199,0.14); }
+  .right-panel.open { height: 68vh; border-top-color: rgba(139,95,199,0.25); }
+}
+.panel-inner { width: 372px; height: 100%; overflow-y: auto; padding: 0 0 46px; }
+@media (max-width: 760px) { .panel-inner { width: 100%; } }
+.panel-inner::-webkit-scrollbar { width: 4px; }
+.panel-inner::-webkit-scrollbar-thumb { background: var(--lav); border-radius: 4px; }
+
+.ptop {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid rgba(139,95,199,0.14);
+  display: flex; align-items: flex-start; gap: 12px;
+  position: sticky; top: 0; background: var(--panelbg); z-index: 2;
+}
+.picon {
+  width: 46px; height: 46px; border-radius: 13px;
+  background: linear-gradient(135deg, rgba(184,140,237,0.22), rgba(232,160,232,0.18));
+  border: 1px solid rgba(139,95,199,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 21px; flex-shrink: 0;
+  animation: iconPop .45s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes iconPop { 0% { transform: scale(0.4); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.picon.q {
+  background: linear-gradient(135deg, rgba(63,191,149,0.14), rgba(126,236,212,0.14));
+  border-color: rgba(63,191,149,0.4);
+  font-family: 'Space Mono', monospace; font-size: 15px; font-weight: 700; color: var(--mintDeep);
+}
+.picon.gold { background: linear-gradient(135deg, rgba(232,200,122,0.28), rgba(232,200,122,0.12)); border-color: rgba(168,127,46,0.4); }
+.ptitles { flex: 1; min-width: 0; }
+.pname { font-weight: 900; font-size: 16.5px; color: var(--navy); line-height: 1.22; }
+.psub {
+  font-family: 'Space Mono', monospace; font-weight: 700;
+  font-size: 8.5px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--viol); margin-top: 5px;
+}
+.psub.gold { color: var(--goldDeep); }
+.pclose {
+  background: none; border: 1px solid rgba(26,26,46,0.18);
+  border-radius: 50%; width: 28px; height: 28px;
+  color: var(--ink); font-size: 13px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: background .2s, transform .3s;
+}
+.pclose:hover { background: rgba(139,95,199,0.1); transform: rotate(90deg); }
+
+.ptagline {
+  padding: 13px 20px;
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600;
+  font-size: 17px; color: var(--viol); line-height: 1.55;
+  border-bottom: 1px solid rgba(139,95,199,0.08);
+}
+.psections { padding: 15px 20px 4px; }
+.psec { margin-bottom: 16px; }
+.psec-label {
+  font-family: 'Space Mono', monospace; font-weight: 700;
+  font-size: 8.5px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--mintDeep); margin-bottom: 6px;
+  display: flex; align-items: center; gap: 7px;
+}
+.psec-label::after { content: ''; flex: 1; height: 1px; background: rgba(63,191,149,0.2); }
+.psec-label.v { color: var(--orch); }
+.psec-label.v::after { background: rgba(217,127,217,0.24); }
+.psec p { font-size: 13px; color: var(--sub); line-height: 1.72; }
+
+.route {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  font-family: 'Space Mono', monospace; font-size: 10px;
+  color: var(--sub); letter-spacing: 0.5px;
+}
+.route .step {
+  background: rgba(197,184,232,0.24);
+  border: 1px solid rgba(139,95,199,0.24);
+  border-radius: 7px; padding: 3px 7px; color: var(--navy);
+}
+.route .step.y { background: rgba(63,191,149,0.14); border-color: rgba(63,191,149,0.4); color: var(--mintDeep); }
+.route .step.n { background: rgba(184,140,237,0.2); border-color: rgba(139,95,199,0.4); color: var(--viol); }
+.route .sep { color: var(--lav); }
+
+.answers { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 4px; }
+.abtn {
+  border-radius: 12px; padding: 12px 10px; cursor: pointer;
+  font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 13px;
+  letter-spacing: 1px; text-transform: uppercase;
+  transition: transform .15s, box-shadow .15s;
+  border: 1px solid transparent;
+}
+.abtn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(139,95,199,0.2); }
+.abtn.yes { background: linear-gradient(135deg, rgba(63,191,149,0.16), rgba(126,236,212,0.2)); border-color: rgba(63,191,149,0.45); color: var(--mintDeep); }
+.abtn.no  { background: linear-gradient(135deg, rgba(139,95,199,0.14), rgba(184,140,237,0.18)); border-color: rgba(139,95,199,0.45); color: var(--viol); }
+.abtn small { display: block; font-weight: 500; font-size: 10.5px; letter-spacing: 0.2px; text-transform: none; color: var(--sub); margin-top: 4px; }
+
+.pbtns { padding: 6px 20px 0; display: flex; flex-direction: column; gap: 9px; }
+.pbtn {
+  display: block; width: 100%; text-align: center; text-decoration: none;
+  border-radius: 12px; padding: 12px 14px; cursor: pointer;
+  font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 13px;
+  letter-spacing: 0.4px; border: none; transition: transform .15s, filter .15s;
+}
+.pbtn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+.pbtn.primary { background: linear-gradient(90deg, var(--viol), var(--orch)); color: #fff; box-shadow: 0 6px 22px rgba(139,95,199,0.35); }
+.pbtn.ghost { background: rgba(63,191,149,0.08); border: 1px solid rgba(63,191,149,0.4); color: var(--mintDeep); }
+.pbtn.gold { background: linear-gradient(90deg, var(--goldDeep), var(--gold)); color: var(--navy3); box-shadow: 0 6px 22px rgba(168,127,46,0.3); }
+
+.duo { margin: 4px 20px 0; display: flex; flex-direction: column; gap: 8px; }
+.duo-card {
+  background: rgba(197,184,232,0.14); border: 1px solid rgba(139,95,199,0.25);
+  border-radius: 12px; padding: 12px 14px; cursor: pointer;
+  transition: border-color .2s, background .2s, transform .2s;
+}
+.duo-card:hover { border-color: rgba(63,191,149,0.5); background: #fff; transform: translateY(-1px); }
+.duo-name { font-weight: 800; font-size: 13px; display: flex; align-items: center; gap: 8px; margin-bottom: 3px; color: var(--navy); }
+.duo-desc { font-size: 11.5px; color: var(--sub); line-height: 1.55; }
+
+/* ── SVG NODE STATES + MOTION ── */
+.node-group { cursor: pointer; }
+.node-circle { transition: filter .2s; }
+.node-group:hover .node-circle { filter: brightness(1.12) saturate(1.2) !important; }
+.node-group.dimmed { opacity: 0.16; transition: opacity .3s; }
+.node-group.lit { opacity: 1; transition: opacity .3s; }
+
+.float { animation: floaty 5.5s ease-in-out infinite; }
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+.cline { transition: opacity .3s; opacity: 0.75; }
+.cline.dim { opacity: 0.08 !important; }
+.cline.lit {
+  opacity: 1 !important;
+  stroke-dasharray: 10 8;
+  animation: flow 1.1s linear infinite;
+}
+@keyframes flow { to { stroke-dashoffset: -18; } }
+.blabel { transition: opacity .3s; }
+.blabel.dim { opacity: 0.1; }
+
+.ripple {
+  transform-box: fill-box; transform-origin: center;
+  animation: rippleAnim .7s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes rippleAnim {
+  0% { transform: scale(0.5); opacity: 0.7; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+@keyframes spulse { 0%,100%{ r:44; opacity:.28; } 50%{ r:54; opacity:.06; } }
+.spulse { animation: spulse 3.2s ease-in-out infinite; }
+
+/* ── BELOW MAP ── */
+.below-map { max-width: 940px; margin: 0 auto; padding: 0 20px; flex-shrink: 0; width: 100%; }
+.legend {
+  margin: 20px 0 0;
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(139,95,199,0.2);
+  border-radius: 14px; padding: 17px 20px;
+  backdrop-filter: blur(6px);
+}
+.legend-title {
+  font-family: 'Space Mono', monospace; font-weight: 700; font-size: 9.5px;
+  letter-spacing: 4px; text-transform: uppercase;
+  color: var(--mintDeep); margin-bottom: 12px;
+}
+.legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+@media (max-width: 540px) { .legend-grid { grid-template-columns: 1fr; } }
+.legend-row { display: flex; gap: 9px; align-items: flex-start; }
+.ldot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.legend-row p { font-size: 12.5px; color: var(--sub); line-height: 1.58; }
+.legend-row p strong { color: var(--navy); font-weight: 700; }
+
+.reset-wrap { text-align: center; margin: 16px 0 0; }
+.reset-btn {
+  background: rgba(255,255,255,0.7); border: 1px solid rgba(139,95,199,0.32);
+  border-radius: 999px; padding: 8px 20px;
+  color: var(--viol); font-family: 'Space Mono', monospace;
+  font-weight: 700; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  cursor: pointer; transition: border-color .2s, color .2s, background .2s;
+}
+.reset-btn:hover { border-color: var(--mintDeep); color: var(--mintDeep); background: #fff; }
+
+.finalcta {
+  margin: 22px 0 0;
+  background: linear-gradient(135deg, rgba(139,95,199,0.1), rgba(217,127,217,0.08), rgba(126,236,212,0.1)), rgba(255,255,255,0.8);
+  border: 1px solid rgba(139,95,199,0.24);
+  border-radius: 16px; padding: 24px 22px; text-align: center;
+  backdrop-filter: blur(6px);
+}
+.finalcta .tk {
+  font-family: 'Space Mono', monospace; font-weight: 700; font-size: 9px;
+  letter-spacing: 3.5px; text-transform: uppercase; color: var(--mintDeep); margin-bottom: 8px;
+}
+.finalcta h2 { font-weight: 900; font-size: 22px; margin-bottom: 8px; color: var(--navy); }
+.finalcta h2 em {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700; font-size: 1.12em;
+  background: linear-gradient(90deg, var(--viol), var(--orch), var(--mintDeep));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.finalcta p { font-size: 13.5px; color: var(--sub); line-height: 1.7; max-width: 540px; margin: 0 auto 14px; }
+.finalcta a {
+  display: inline-block; text-decoration: none;
+  background: linear-gradient(90deg, var(--viol), var(--orch));
+  color: #fff; font-weight: 800; font-size: 13.5px;
+  border-radius: 999px; padding: 12px 26px;
+  box-shadow: 0 6px 26px rgba(139,95,199,0.35);
+  transition: transform .15s, filter .15s;
+}
+.finalcta a:hover { transform: translateY(-1px); filter: brightness(1.06); }
+
+.footer { text-align: center; padding: 26px 20px 44px; }
+.footer p {
+  font-family: 'Space Mono', monospace; font-weight: 700; font-size: 10px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--viol);
+}
+.footer span { color: var(--mintDeep); }
+
+@media (prefers-reduced-motion: reduce) {
+  .spulse, .float, .gem, .ticker-track, .picon { animation: none !important; }
+  .cline.lit { stroke-dasharray: none; animation: none; }
+  * { transition-duration: 0.01s !important; }
+}
+</style>
+</head>
+<body>
+<div class="cosmos"></div>
+<canvas id="sparklefield"></canvas>
+
+<div class="ticker"><div class="ticker-track" id="tickerTrack"></div></div>
+
+<div class="page">
+  <div class="header">
+    <div class="gem" style="left:8%; top:30%;"></div>
+    <div class="gem g2" style="left:16%; top:70%;"></div>
+    <div class="gem g3" style="right:18%; top:26%;"></div>
+    <div class="gem g4" style="right:9%; top:66%;"></div>
+    <div class="eyebrow">Glow Up with Amanda</div>
+    <h1>The Glow Up <em>Road Map</em></h1>
+    <p>Every classroom in this community is a stop on the same road. Answer the questions on the path, or tap any glowing destination to peek inside and open it in Skool.</p>
+  </div>
+  <div class="tap-hint">✦ TAP ANY STOP ON THE MAP TO EXPLORE IT ✦</div>
+
+  <div class="doors">
+    <div class="doors-label">Express Lanes · Skip the road entirely</div>
+    <div class="doors-grid">
+      <button class="door" onclick="openNode('x-start')">
+        <div class="door-q">Brand new and a little overwhelmed?</div>
+        <div class="door-dest">🧭 Start Here course <span class="arr">→</span></div>
+      </button>
+      <button class="door" onclick="openNode('d-audit')">
+        <div class="door-q">Want the one training to watch first?</div>
+        <div class="door-dest">🔮 The Audit Method Kickoff <span class="arr">→</span></div>
+      </button>
+      <button class="door" onclick="openNode('d-hdk')">
+        <div class="door-q">Curious how your design applies to business?</div>
+        <div class="door-dest">🌙 Human Design &amp; Kabbalistic Astrology <span class="arr">→</span></div>
+      </button>
+    </div>
+  </div>
+
+  <div class="map-panel-wrap">
+    <div class="map-area" id="mapArea">
+      <div class="map-scroll" id="mapScroll"></div>
+    </div>
+    <div class="right-panel" id="rightPanel">
+      <div class="panel-inner" id="panelInner"></div>
+    </div>
+  </div>
+
+  <div class="doors" style="margin-top:18px;">
+    <div class="doors-label">Anytime you need them</div>
+    <div class="doors-grid">
+      <a class="door" style="text-decoration:none;display:block" href="https://www.skool.com/glowup/welcome-to-monetize-faster-w-amanda-watch-this" target="_blank" rel="noopener">
+        <div class="door-q">Haven't watched the welcome video yet?</div>
+        <div class="door-dest">🎬 The START HERE post <span class="arr">↗</span></div>
+      </a>
+      <a class="door" style="text-decoration:none;display:block" href="https://aefieldi.github.io/freegift/" target="_blank" rel="noopener">
+        <div class="door-q">Want every free gem on one searchable page?</div>
+        <div class="door-dest">🎁 The A to Z Playbook <span class="arr">↗</span></div>
+      </a>
+      <a class="door" style="text-decoration:none;display:block" href="https://www.skool.com/amanda/plans" target="_blank" rel="noopener">
+        <div class="door-q">Want the Unlock Zone and the paid classrooms included?</div>
+        <div class="door-dest">🚪 Spiritual Business Skool plans <span class="arr">↗</span></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="below-map">
+    <div class="reset-wrap">
+      <button class="reset-btn" onclick="resetMap()">↺ &nbsp;Reset the map</button>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">How to read this map</div>
+      <div class="legend-grid">
+        <div class="legend-row"><div class="ldot" style="background:var(--mint)"></div><p><strong>Mint roads are YES branches.</strong> When your honest answer is yes, follow the mint line and watch it flow toward your stop.</p></div>
+        <div class="legend-row"><div class="ldot" style="background:var(--viol)"></div><p><strong>Violet roads are NO branches.</strong> A no is never a failure here. It just means there is a classroom built for exactly that gap.</p></div>
+        <div class="legend-row"><div class="ldot" style="background:var(--orch)"></div><p><strong>Violet orbs are free classrooms.</strong> Free for every Glow Up member, forever. Tap one to see what is inside and open it in Skool.</p></div>
+        <div class="legend-row"><div class="ldot" style="background:var(--gold)"></div><p><strong>Gold is the Unlock Zone.</strong> Classrooms you can unlock here one time, and every one of them is included inside Spiritual Business Skool.</p></div>
+      </div>
+    </div>
+
+    <div class="finalcta">
+      <div class="tk">Walked the whole road?</div>
+      <h2>Ready for your <em>next level</em>?</h2>
+      <p>If you want eyes on your specific business, the 1:1 Strategy Audit is a private session with Amanda to find your number one bottleneck and your next three moves. If you want everything unlocked plus the paid classrooms, the live calls and the templates, that is Spiritual Business Skool.</p>
+      <a href="#" onclick="openNode('u-audit');return false;">Explore the 1:1 Strategy Audit ✦</a>
+      <a href="https://www.skool.com/amanda/plans" target="_blank" rel="noopener" style="margin-left:8px;margin-top:8px;background:transparent;color:var(--viol);border:1.5px solid rgba(139,95,199,0.45);box-shadow:none">See Spiritual Business Skool ↗</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Glow Up with Amanda <span>✦</span> The Glow Up Road Map</p>
+  </div>
+</div>
+
+<script>
+/* ═════════════════════════════════════════════════════
+   CLASSROOM LINKS (real Skool URLs, Glow Up with Amanda)
+   Prices stay off this page on purpose. Skool shows them on the lock.
+   ═════════════════════════════════════════════════════ */
+const LINKS = {
+  'x-start':   'https://aefieldi.github.io/GLOWUPSTART/',
+  'd-audit':   'https://www.skool.com/glowup/classroom/9d3b7e44?md=a6941d203a094d26a9983e59b2990460',
+  'd-skool':   'https://www.skool.com/glowup/classroom/712a1f28?md=ed6fbaf725c440c5bdf8bcc4aaf61a36',
+  'd-claude':  'https://www.skool.com/glowup/classroom/b82ded0e?md=c0e338ba8ec14917b36acee64a8311eb',
+  'd-hdk':     'https://www.skool.com/glowup/classroom/adf293bc?md=15619e69370f4be6a7e345f2c4114906',
+  'd-ads':     'https://www.skool.com/glowup/classroom/f951936e?md=e549576f026742cc850e57dcd2d372fa',
+  'u-audit':   'https://www.skool.com/glowup/classroom/8f98f994?md=1bfb6762cc01490d9c1a2f71b032749e',
+  'u-coach':   'https://www.skool.com/glowup/classroom/775dae6d?md=497de13a055341cda133960d54f21eae',
+  'u-tools':   'https://www.skool.com/glowup/classroom/af8033c0?md=3549ac4fab2b4600acc823e3f26041c6',
+  'u-oracle':  'https://www.skool.com/glowup/classroom/6da84c68?md=491582ba0b6347caaf9897275a9535a0',
+  'u-ccm':     'https://www.skool.com/glowup/classroom/42e440c3?md=6282c56e45b748278de71525042d66de',
+  'u-persona': 'https://www.skool.com/glowup/classroom/a04c72ad?md=483c795a07604f0d80b6fe3dfabbd36d'
+};
+const PLANS = 'https://www.skool.com/amanda/plans';
+
+const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ── TICKER ── */
+(function(){
+  const phrases = [
+    'The Glow Up Road Map',
+    'Find your perfect starting classroom',
+    'Mint roads = YES · Violet roads = NO',
+    'Five classrooms free forever',
+    'Gold = the Unlock Zone',
+    'Tap any stop to peek inside',
+    'Glow Up with Amanda'
+  ];
+  const track = document.getElementById('tickerTrack');
+  const oneSet = phrases.map(p=>'<span class="ticker-item">'+p+'</span>').join('');
+  track.innerHTML = oneSet + oneSet;
+})();
+
+/* ── SPARKLEFIELD ── */
+(function(){
+  const c = document.getElementById('sparklefield'), x = c.getContext('2d');
+  let sparks = [];
+  const cols = ['139,95,199','217,127,217','30,143,108','168,127,46'];
+  function size(){ c.width = innerWidth; c.height = innerHeight;
+    sparks = Array.from({length: 46}, () => ({
+      x: Math.random()*c.width, y: Math.random()*c.height,
+      s: Math.random()*9+6, p: Math.random()*Math.PI*2, v: Math.random()*0.8+0.3,
+      col: cols[Math.floor(Math.random()*cols.length)]
+    }));
+  }
+  size(); addEventListener('resize', size);
+  function drawStar(sx, sy, r, alpha, col){
+    x.save(); x.translate(sx, sy); x.globalAlpha = alpha;
+    x.fillStyle = 'rgb(' + col + ')';
+    x.beginPath();
+    x.moveTo(0, -r);
+    x.quadraticCurveTo(r*0.12, -r*0.12, r, 0);
+    x.quadraticCurveTo(r*0.12, r*0.12, 0, r);
+    x.quadraticCurveTo(-r*0.12, r*0.12, -r, 0);
+    x.quadraticCurveTo(-r*0.12, -r*0.12, 0, -r);
+    x.fill(); x.restore();
+  }
+  function draw(t){
+    x.clearRect(0,0,c.width,c.height);
+    for(const s of sparks){
+      const a = RM ? 0.16 : 0.05 + 0.2*Math.abs(Math.sin(t/1600*s.v + s.p));
+      drawStar(s.x, s.y, s.s, a, s.col);
+    }
+    if(!RM) requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
+
+/* ── QUESTION DATA ── */
+const Q = {
+  q1: { tag:'Q1', n:'1 of 6', x:280, y:470, label:'Skool set up?',
+    question:'Do you have a Skool community set up?',
+    why:'Your Skool is your home base, the place every gem and offer lives. Everything else on this road assumes you have one, so this is always the first gate.',
+    yes:{ target:'q2',      hint:'Continue the road' },
+    no: { target:'d-skool', hint:'Skool Setup, Growth & Monetization' } },
+  q2: { tag:'Q2', n:'2 of 6', x:480, y:470, label:'Selling high-ticket?',
+    question:'Do you sell, or want to sell, a high-ticket offer, a paid audit or a reading that turns into a client?',
+    why:'High-ticket changes the game plan, so it gets its own lane. One paid call that turns into a client on repeat is the fastest way most experts monetize, and the kickoff training shows you exactly how.',
+    yes:{ target:'d-audit', hint:'The Audit Method Kickoff' },
+    no: { target:'q3',      hint:'Continue the road' } },
+  q3: { tag:'Q3', n:'3 of 6', x:700, y:470, label:'Content converting?',
+    question:'Is your content consistently bringing in members, leads or sales?',
+    why:'Before you optimize or pay for traffic, your content needs to be turning watchers into members. If it is not yet, an AI content system is the skill to build first.',
+    yes:{ target:'q4',       hint:'Continue the road' },
+    no: { target:'d-claude', hint:'Claude AI Content Systems' } },
+  q4: { tag:'Q4', n:'4 of 6', x:920, y:470, label:'Know your design?',
+    question:'Do you know how you are designed to show up, market and sell?',
+    why:'There is no one right way, only your way and consistency. If you are copying someone else’s strategy and wondering why it feels off, your design is the missing piece.',
+    yes:{ target:'q5',    hint:'Continue the road' },
+    no: { target:'d-hdk', hint:'Human Design & Kabbalistic Astrology' } },
+  q5: { tag:'Q5', n:'5 of 6', x:1140, y:470, label:'Ready for paid ads?',
+    question:'Are you ready to send paid traffic to your Skool?',
+    why:'Ads amplify what already works. If your content converts and your offer is clear, paid traffic pours fuel on it.',
+    yes:{ target:'d-ads', hint:'Meta Ads' },
+    no: { target:'q6',    hint:'Continue the road' } },
+  q6: { tag:'Q6', n:'6 of 6', x:1350, y:470, label:'Offer ready to sell?',
+    question:'Do you have an offer or digital product ready to sell right now?',
+    why:'This is the last fork. No offer yet means building one is the move. An offer ready to go means the fastest next step is Amanda’s eyes on it.',
+    yes:{ target:'u-audit', hint:'1:1 Strategy Audit' },
+    no: { target:'u-ccm',   hint:'Claude Community Maxxing' } }
+};
+
+const MAIN_PATH_NODES = ['start','q1','q2','q3','q4','q5','q6'];
+const MAIN_PATH_LINES = ['l-s-q1','l-q1-q2','l-q2-q3','l-q3-q4','l-q4-q5','l-q5-q6'];
+const ROAD = (n) => ({ nodes: MAIN_PATH_NODES.slice(0, n+1), lines: MAIN_PATH_LINES.slice(0, n) });
+
+const FREE = 'Free forever · Glow Up with Amanda';
+const UNLOCK_SBS = 'One-time unlock here, or included inside Spiritual Business Skool';
+const UNLOCK_PREM = 'One-time unlock here, upgrade to Premium, or included inside Spiritual Business Skool';
+
+/* ── DESTINATION DATA ── */
+const D = {
+  'x-start': { express:true, icon:'🧭', name:'Start Here', sub:'Express Lane · 7-day course', access:'Free · the Start Here course for Glow Up',
+    tagline:'Your compass for the whole community.',
+    inside:'A 7-day orientation course with the Choose Your Execution Path quiz. Six questions, about four minutes, and you leave with the one free classroom to open first, the gem to grab, and where that path goes deeper.',
+    why:'If you are brand new or feeling overwhelmed, do not white-knuckle the map. Start Here hands you a personalized route so you can relax and follow it.',
+    cta:'Open the Start Here course ↗' },
+  'd-skool': { x:280, y:690, icon:'🏝️', name:'Skool Setup, Growth & Monetization', sub:'Free Classroom', access:FREE,
+    tagline:'Start, set up, grow and monetize your Skool.',
+    inside:'All of Amanda’s free resources for setting up your Skool, growing it, and monetizing it, from scratch and in the order she actually does it.',
+    why:'No Skool yet means no home base for your gems and offers. Start here and you will have a real community set up, priced and ready to grow.',
+    route:[['START'],['Q1','n']], nodes:['start','q1','d-skool'], lines:['l-s-q1','l-q1-skool'] },
+  'd-audit': { x:480, y:290, icon:'🔮', name:'The Audit Method Kickoff', sub:'High-Ticket Lane · Free Training', access:'Free · only inside this community, not available to the public',
+    tagline:'One paid call, clients on demand, on repeat.',
+    inside:'The kickoff training for The Audit Method: how to turn one paid 60 to 90-minute call into clients on demand, on repeat. It is free, and it only lives here inside this community.',
+    why:'You already have the skill. This is the ask around it. Watch it even if high ticket is not your path yet, because it reframes how you sell everything.',
+    route:[['START'],['Q1','y'],['Q2','y']], nodes:['start','q1','q2','d-audit'], lines:['l-s-q1','l-q1-q2','l-q2-audit'],
+    next:{ target:'u-audit', label:'Want it done with you? 1:1 Strategy Audit →' } },
+  'd-claude': { x:700, y:690, icon:'🤖', name:'Claude AI Content Systems', sub:'Free Classroom', access:FREE,
+    tagline:'AI content systems to blow up your personal brand.',
+    inside:'How to create AI content systems that blow up your personal brand, using Poppy, Claude and the rest of Amanda’s stack. Artifacts, content plans and the systems behind them.',
+    why:'If content is not converting yet, more posting will not fix it. A system will. This is how you show up consistently without it eating your week.',
+    route:[['START'],['Q1','y'],['Q2','n'],['Q3','n']], nodes:['start','q1','q2','q3','d-claude'], lines:['l-s-q1','l-q1-q2','l-q2-q3','l-q3-claude'] },
+  'd-hdk': { x:920, y:690, icon:'🌙', name:'Human Design & Kabbalistic Astrology', sub:'Free Classroom', access:FREE,
+    tagline:'Discover why you are really here.',
+    inside:'All of Amanda’s free Human Design and Kabbalistic Astrology resources: getting started with Human Design, Projectors, Generators, Manifesting Generators, Manifestors and Reflectors, Kabbalah for your business, marketing and sales, the profile lines, and bonus resources.',
+    why:'Your design decides how you should market, sell and rest. Learn it and every other classroom lands deeper, because you build the business in a way that actually fits you.',
+    route:[['START'],['Q1','y'],['Q2','n'],['Q3','y'],['Q4','n']], nodes:['start','q1','q2','q3','q4','d-hdk'], lines:['l-s-q1','l-q1-q2','l-q2-q3','l-q3-q4','l-q4-hdk'] },
+  'd-ads': { x:1140, y:690, icon:'🎯', name:'Meta Ads', sub:'Free Classroom', access:FREE,
+    tagline:'Grow your Skool sales and members with ads.',
+    inside:'All of Amanda’s free videos and guides for growing your Skool sales and members using Meta ads: which campaigns to run, in what order, and whether you are ready to run them at all.',
+    why:'Everything upstream is working, so paid traffic is now an amplifier instead of a gamble. Learn the order before you spend the money.',
+    route:[['START'],['Q1','y'],['Q2','n'],['Q3','y'],['Q4','y'],['Q5','y']], nodes:['start','q1','q2','q3','q4','q5','d-ads'], lines:['l-s-q1','l-q1-q2','l-q2-q3','l-q3-q4','l-q4-q5','l-q5-ads'] },
+  'u-ccm': { x:1560, y:340, unlock:true, icon:'💎', name:'Claude Community Maxxing', sub:'Unlock Zone · 90-Min Workshop', access:UNLOCK_SBS,
+    tagline:'Your first or next offer, in 90 minutes.',
+    inside:'Create your first or next digital product or mini offer in 90 minutes using Claude and AI artifacts. Ideate it, create it, deliver it, promote it.',
+    why:'No offer yet is a build problem, not a marketing problem. Ninety minutes here and you walk out holding something you can actually sell.',
+    route:[['START'],['Q1','y'],['Q2','n'],['Q3','y'],['Q4','y'],['Q5','n'],['Q6','n']], nodes:MAIN_PATH_NODES.concat(['u-ccm']), lines:MAIN_PATH_LINES.concat(['l-q6-ccm']) },
+  'u-audit': { x:1560, y:575, unlock:true, icon:'🔍', name:'1:1 Strategy Audit', sub:'Unlock Zone · 60 min with Amanda', access:'Book it here in the classroom · limited availability',
+    tagline:'Your business, Amanda’s eyes, one map forward.',
+    inside:'A 60-minute 1:1 audit of your offer, positioning, pricing, ads and funnel. Amanda goes through your business before the call, and you leave with your number one bottleneck, your next one to three highest-leverage moves, and a Strategy Audit document that is yours to keep. Built for experts and established creators with an audience and proven client results.',
+    why:'When you want a route built for your exact business instead of the general map, this is the room where that happens. If you decide to keep working together on the call, your audit applies toward it.',
+    route:[['START'],['Q1','y'],['Q2','n'],['Q3','y'],['Q4','y'],['Q5','n'],['Q6','y']], nodes:MAIN_PATH_NODES.concat(['u-audit']), lines:MAIN_PATH_LINES.concat(['l-q6-audit']) },
+  'u-coach': { x:520, y:985, unlock:true, zone:true, icon:'🧠', name:'24/7 Spiritual Business Coach', sub:'Unlock Zone · AI Coach', access:UNLOCK_SBS,
+    tagline:'A coach in your pocket, any hour of the day.',
+    inside:'Amanda’s AI business coach. Ask it anything about your offers, content, pricing or next move, any time, and get an answer shaped by how Amanda coaches.',
+    why:'For the 11pm question that cannot wait for a call. Grab it when you want a thinking partner between the trainings.' },
+  'u-oracle': { x:780, y:985, unlock:true, zone:true, icon:'🔮', name:'CEO Oracle GPT', sub:'Unlock Zone · Custom GPT', access:UNLOCK_PREM,
+    tagline:'Business guidance written in your chart.',
+    inside:'Plug in your Human Design and Kabbalistic Astrology chart and get personalized, real-time business guidance from a custom GPT built around your actual design.',
+    why:'Whenever a decision feels foggy, ask the Oracle. It answers through your own placements, so the guidance fits the business you were designed to build.' },
+  'u-persona': { x:1040, y:985, unlock:true, zone:true, icon:'🪞', name:'Find Your Online Persona', sub:'Unlock Zone · Human Design', access:UNLOCK_PREM,
+    tagline:'How you are meant to show up online.',
+    inside:'Identify how you are meant to show up online in alignment with your Human Design: the version of you your audience actually needs to see, and how you shine.',
+    why:'If content feels like a costume, this is the fix. When your persona matches your design, visibility stops draining you and starts compounding.' },
+  'u-tools': { x:1300, y:985, unlock:true, zone:true, icon:'🗝️', name:'A-Z Tools & Platform Library', sub:'Unlock Zone · Library', access:UNLOCK_PREM,
+    tagline:'Your complete spiritual business arsenal.',
+    inside:'All of Amanda’s A to Z spiritual business tools (hypnosis and subliminals, cheat sheets, the Daily Design System, DM sales flow, freebie idea bank, journaling prompts and more), every AI platform and tool she uses with her recommendations, and the AI and prompt library.',
+    why:'Grab this when you are executing and want the exact tools, templates and prompts instead of building them from scratch.' }
+};
+
+/* ── BUILD SVG ── */
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+function splitName(name){
+  const words = name.split(' ');
+  if(words.length < 3) return [name];
+  const mid = Math.ceil(words.length/2);
+  return [words.slice(0,mid).join(' '), words.slice(mid).join(' ')];
+}
+
+function buildSVG(){
+  const MINT = '#3FBF95', MINTD = '#1E8F6C', VIOL = '#8B5FC7', GOLD = '#C9A24B', LAV = '#A99BD6', NAVY = '#1A1A2E';
+  let s = '';
+  s += '<svg id="treeSvg" viewBox="0 0 1660 1090" xmlns="http://www.w3.org/2000/svg">';
+  s += '<defs>';
+  s += '<filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>';
+  s += '<radialGradient id="gStart" cx="50%" cy="42%" r="60%"><stop offset="0%" stop-color="#7EECD4"/><stop offset="100%" stop-color="#1E8F6C"/></radialGradient>';
+  s += '<radialGradient id="gD" cx="50%" cy="40%" r="62%"><stop offset="0%" stop-color="#C9A0F2"/><stop offset="100%" stop-color="#8B5FC7"/></radialGradient>';
+  s += '<radialGradient id="gGold" cx="50%" cy="40%" r="62%"><stop offset="0%" stop-color="#F2DCA0"/><stop offset="100%" stop-color="#C9A24B"/></radialGradient>';
+  s += '</defs>';
+
+  /* High-ticket lane */
+  s += '<rect x="330" y="200" width="300" height="190" rx="22" fill="rgba(139,95,199,0.05)" stroke="'+VIOL+'" stroke-opacity="0.22" stroke-dasharray="7 7" stroke-width="1.4"/>';
+  s += '<text x="480" y="186" text-anchor="middle" fill="'+VIOL+'" fill-opacity="0.8" font-family="Space Mono, monospace" font-size="12.5" font-weight="700" letter-spacing="4">✦ THE HIGH-TICKET LANE ✦</text>';
+
+  /* Unlock zone band */
+  s += '<rect x="380" y="880" width="1060" height="180" rx="22" fill="rgba(232,200,122,0.1)" stroke="'+GOLD+'" stroke-opacity="0.5" stroke-dasharray="7 7" stroke-width="1.5"/>';
+  s += '<text x="910" y="914" text-anchor="middle" fill="#A87F2E" font-family="Space Mono, monospace" font-size="12.5" font-weight="700" letter-spacing="4">✦ THE UNLOCK ZONE · ALSO INCLUDED IN SPIRITUAL BUSINESS SKOOL ✦</text>';
+  /* Unlock zone on the right edge */
+  s += '<text x="1560" y="250" text-anchor="middle" fill="#A87F2E" font-family="Space Mono, monospace" font-size="11" font-weight="700" letter-spacing="3">✦ UNLOCK ✦</text>';
+
+  /* Lines */
+  const lines = [
+    ['l-s-q1',      [121,470,246,470], LAV, ''],
+    ['l-q1-q2',     [312,470,446,470], MINT, ''],
+    ['l-q1-skool',  [280,502,280,646], VIOL, ''],
+    ['l-q2-audit',  [480,438,480,334], MINT, ''],
+    ['l-q2-q3',     [512,470,666,470], VIOL, ''],
+    ['l-q3-q4',     [732,470,886,470], MINT, ''],
+    ['l-q3-claude', [700,502,700,646], VIOL, ''],
+    ['l-q4-q5',     [952,470,1106,470], MINT, ''],
+    ['l-q4-hdk',    [920,502,920,646], VIOL, ''],
+    ['l-q5-q6',     [1172,470,1316,470], VIOL, ''],
+    ['l-q5-ads',    [1140,502,1140,646], MINT, ''],
+    ['l-q6-ccm',    [1378,452,1518,368], VIOL, ''],
+    ['l-q6-audit',  [1378,490,1518,552], MINT, ''],
+    ['l-q6-zone',   [1350,505,1350,872], GOLD, '6 7']
+  ];
+  for(const [id,geo,col,dash] of lines){
+    s += '<line class="cline" id="'+id+'" x1="'+geo[0]+'" y1="'+geo[1]+'" x2="'+geo[2]+'" y2="'+geo[3]+'" stroke="'+col+'" stroke-width="2.8"'+(dash?' stroke-dasharray="'+dash+'"':'')+' stroke-linecap="round" stroke-opacity="0.6"/>';
+  }
+
+  /* Branch labels */
+  const blabels = [
+    ['l-s-q1',      184,456, 'BEGIN', LAV],
+    ['l-q1-q2',     380,456, 'YES', MINTD],
+    ['l-q1-skool',  253,584, 'NO', VIOL],
+    ['l-q2-audit',  448,392, 'YES', MINTD],
+    ['l-q2-q3',     590,456, 'NO', VIOL],
+    ['l-q3-q4',     810,456, 'YES', MINTD],
+    ['l-q3-claude', 673,584, 'NO', VIOL],
+    ['l-q4-q5',     1030,456, 'YES', MINTD],
+    ['l-q4-hdk',    893,584, 'NO', VIOL],
+    ['l-q5-q6',     1244,456, 'NO', VIOL],
+    ['l-q5-ads',    1112,584, 'YES', MINTD],
+    ['l-q6-ccm',    1466,394, 'NO', VIOL],
+    ['l-q6-audit',  1466,540, 'YES', MINTD]
+  ];
+  for(const [lid,x,y,t,col] of blabels){
+    s += '<text class="blabel" data-lid="'+lid+'" x="'+x+'" y="'+y+'" text-anchor="middle" fill="'+col+'" font-family="Space Mono, monospace" font-size="12.5" font-weight="700" letter-spacing="2">'+t+'</text>';
+  }
+
+  /* START node */
+  s += '<g class="node-group" id="n-start" onclick="openNode(\'start\')">';
+  s += '<circle class="spulse" cx="85" cy="470" r="44" fill="none" stroke="#1E8F6C" stroke-width="1.6" opacity="0.28"/>';
+  s += '<circle class="node-circle" cx="85" cy="470" r="36" fill="url(#gStart)" filter="url(#glow)"/>';
+  s += '<circle class="node-ring" cx="85" cy="470" r="41" fill="none" stroke="#1E8F6C" stroke-width="1.6" stroke-opacity="0.4"/>';
+  s += '<text x="85" y="476" text-anchor="middle" fill="#FFFFFF" font-family="Outfit, sans-serif" font-size="14.5" font-weight="900" letter-spacing="1.5">START</text>';
+  s += '<text x="85" y="534" text-anchor="middle" fill="'+VIOL+'" font-family="Outfit, sans-serif" font-size="13.5" font-weight="500" font-style="italic">Every road begins here</text>';
+  s += '</g>';
+
+  /* Question nodes */
+  for(const [qid,q] of Object.entries(Q)){
+    s += '<g class="node-group" id="n-'+qid+'" onclick="openNode(\''+qid+'\')">';
+    s += '<circle class="node-circle" cx="'+q.x+'" cy="'+q.y+'" r="31" fill="#FFFFFF" filter="url(#glow)"/>';
+    s += '<circle class="node-ring" cx="'+q.x+'" cy="'+q.y+'" r="31" fill="none" stroke="'+VIOL+'" stroke-width="2" stroke-opacity="0.65"/>';
+    s += '<text x="'+q.x+'" y="'+(q.y+6)+'" text-anchor="middle" fill="'+VIOL+'" font-family="Space Mono, monospace" font-size="15.5" font-weight="700">'+q.tag+'</text>';
+    s += '<text x="'+q.x+'" y="'+(q.y-44)+'" text-anchor="middle" fill="'+NAVY+'" fill-opacity="0.62" font-family="Outfit, sans-serif" font-size="12.5" font-weight="600">'+esc(q.label)+'</text>';
+    s += '</g>';
+  }
+
+  /* Destination + unlock nodes */
+  let fi = 0;
+  for(const [did,d] of Object.entries(D)){
+    if(d.express) continue;
+    const gold = !!d.unlock;
+    const r = d.zone ? 32 : 37;
+    const nameLines = splitName(d.name);
+    const labelAbove = (did === 'd-audit' || did === 'u-ccm');
+    s += '<g class="node-group float" style="animation-delay:'+((fi++)*0.55)+'s" id="n-'+did+'" onclick="openNode(\''+did+'\')">';
+    s += '<circle class="node-circle" cx="'+d.x+'" cy="'+d.y+'" r="'+r+'" fill="url(#'+(gold?'gGold':'gD')+')" filter="url(#glow)"/>';
+    s += '<circle class="node-ring" cx="'+d.x+'" cy="'+d.y+'" r="'+(r+5)+'" fill="none" stroke="'+(gold?'#C9A24B':'#D97FD9')+'" stroke-width="1.6" stroke-opacity="0.45"/>';
+    s += '<text x="'+d.x+'" y="'+(d.y+8)+'" text-anchor="middle" font-size="24">'+d.icon+'</text>';
+    let ty = labelAbove ? d.y - r - (nameLines.length===2 ? 36 : 20) : d.y + r + 24;
+    for(const ln of nameLines){
+      s += '<text x="'+d.x+'" y="'+ty+'" text-anchor="middle" fill="'+(gold?'#A87F2E':NAVY)+'" font-family="Outfit, sans-serif" font-size="14.5" font-weight="800">'+esc(ln)+'</text>';
+      ty += 17;
+    }
+    s += '</g>';
+  }
+
+  s += '</svg>';
+  document.getElementById('mapScroll').innerHTML = s;
+}
+
+/* ── HIGHLIGHTING ── */
+function lightPath(nodeIds, lineIds){
+  document.querySelectorAll('.node-group').forEach(g=>{
+    const id = g.id.slice(2);
+    g.classList.toggle('dimmed', !nodeIds.includes(id));
+    g.classList.toggle('lit', nodeIds.includes(id));
+  });
+  document.querySelectorAll('.cline').forEach(l=>{
+    l.classList.toggle('dim', !lineIds.includes(l.id));
+    l.classList.toggle('lit', lineIds.includes(l.id));
+  });
+  document.querySelectorAll('.blabel').forEach(t=>{
+    t.classList.toggle('dim', !lineIds.includes(t.dataset.lid));
+  });
+}
+function clearHighlights(){
+  document.querySelectorAll('.node-group').forEach(g=>g.classList.remove('dimmed','lit'));
+  document.querySelectorAll('.cline').forEach(l=>l.classList.remove('dim','lit'));
+  document.querySelectorAll('.blabel').forEach(t=>t.classList.remove('dim'));
+}
+function ripple(id){
+  const svg = document.getElementById('treeSvg');
+  let cx, cy;
+  if(id==='start'){ cx=85; cy=470; }
+  else if(Q[id]){ cx=Q[id].x; cy=Q[id].y; }
+  else if(D[id] && !D[id].express){ cx=D[id].x; cy=D[id].y; }
+  else return;
+  const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  c.setAttribute('cx',cx); c.setAttribute('cy',cy); c.setAttribute('r',44);
+  c.setAttribute('fill','none'); c.setAttribute('stroke','#D97FD9'); c.setAttribute('stroke-width','2');
+  c.setAttribute('class','ripple');
+  svg.appendChild(c);
+  setTimeout(()=>c.remove(), 750);
+}
+
+/* ── PANEL ── */
+const panel = () => document.getElementById('rightPanel');
+const inner = () => document.getElementById('panelInner');
+
+function routeHTML(route){
+  let h = '<div class="route">';
+  route.forEach((step,i)=>{
+    if(i>0) h += '<span class="sep">→</span>';
+    const cls = step[1]==='y' ? ' y' : (step[1]==='n' ? ' n' : '');
+    const txt = step[1]==='y' ? step[0]+' YES' : (step[1]==='n' ? step[0]+' NO' : step[0]);
+    h += '<span class="step'+cls+'">'+txt+'</span>';
+  });
+  return h + '</div>';
+}
+
+function openNode(id){
+  if(id === 'start'){ renderStart(); }
+  else if(Q[id]){ renderQuestion(id); }
+  else if(D[id]){ renderDest(id); }
+  if(!RM) ripple(id);
+  panel().classList.add('open');
+}
+function closePanel(){ panel().classList.remove('open'); }
+function resetMap(){ clearHighlights(); closePanel(); }
+
+function headerHTML(iconHTML, iconCls, name, sub, subCls){
+  return '<div class="ptop"><div class="picon '+iconCls+'">'+iconHTML+'</div>'
+    + '<div class="ptitles"><div class="pname">'+name+'</div><div class="psub '+(subCls||'')+'">'+sub+'</div></div>'
+    + '<button class="pclose" onclick="resetMap()">✕</button></div>';
+}
+
+function renderStart(){
+  const allD = Object.keys(D).filter(k=>!D[k].express && !D[k].zone);
+  const allL = ['l-q1-skool','l-q2-audit','l-q3-claude','l-q4-hdk','l-q5-ads','l-q6-ccm','l-q6-audit'];
+  lightPath(MAIN_PATH_NODES.concat(allD), MAIN_PATH_LINES.concat(allL));
+  inner().innerHTML =
+    headerHTML('🧭','q','The Road Begins','Start · Checkpoint 0')
+    + '<div class="ptagline">Six honest questions stand between you and your perfect starting classroom.</div>'
+    + '<div class="psections"><div class="psec"><div class="psec-label">How it works</div>'
+    + '<p>Walk the road one checkpoint at a time. Each question routes you down a mint YES road or a violet NO road, and every road ends at a classroom built for exactly where you are. The violet stops are free forever. The gold stops are the Unlock Zone. Ready?</p></div></div>'
+    + '<div class="pbtns"><button class="pbtn primary" onclick="openNode(\'q1\')">Start with Question 1 →</button>'
+    + '<button class="pbtn ghost" onclick="resetMap()">Just let me explore</button></div>';
+}
+
+function renderQuestion(qid){
+  const q = Q[qid];
+  const r = ROAD(MAIN_PATH_NODES.indexOf(qid));
+  lightPath(r.nodes, r.lines);
+  inner().innerHTML =
+    headerHTML(q.tag,'q','Checkpoint '+q.tag.replace('Q',''),'Question '+q.n)
+    + '<div class="ptagline">'+esc(q.question)+'</div>'
+    + '<div class="psections"><div class="psec"><div class="psec-label">Why this gate matters</div><p>'+esc(q.why)+'</p></div>'
+    + '<div class="psec"><div class="psec-label v">Your honest answer</div>'
+    + '<div class="answers">'
+    + '<button class="abtn yes" onclick="answer(\''+qid+'\',\'yes\')">Yes<small>'+esc(q.yes.hint)+'</small></button>'
+    + '<button class="abtn no" onclick="answer(\''+qid+'\',\'no\')">No<small>'+esc(q.no.hint)+'</small></button>'
+    + '</div></div></div>';
+}
+
+function answer(qid, yn){ openNode(Q[qid][yn].target); }
+
+function renderDest(did){
+  const d = D[did];
+  if(d.express){ clearHighlights(); }
+  else if(d.zone){ lightPath(MAIN_PATH_NODES.concat([did]), MAIN_PATH_LINES.concat(['l-q6-zone'])); }
+  else { lightPath(d.nodes, d.lines); }
+  const gold = !!d.unlock;
+  let h = headerHTML(d.icon, gold?'gold':'', esc(d.name), d.sub, gold?'gold':'')
+    + '<div class="ptagline">'+esc(d.tagline)+'</div>'
+    + '<div class="psections">'
+    + '<div class="psec"><div class="psec-label">Access</div><p><strong>'+esc(d.access)+'</strong></p></div>'
+    + '<div class="psec"><div class="psec-label">What’s inside</div><p>'+esc(d.inside)+'</p></div>'
+    + '<div class="psec"><div class="psec-label v">Why start here</div><p>'+esc(d.why)+'</p></div>';
+  if(d.route){
+    h += '<div class="psec"><div class="psec-label">Your route</div>'+routeHTML(d.route)+'</div>';
+  }
+  h += '</div><div class="pbtns">'
+    + '<a class="pbtn '+(gold?'gold':'primary')+'" href="'+LINKS[did]+'" target="_blank" rel="noopener">'+(d.cta || 'Open this classroom ↗')+'</a>';
+  if(d.next){
+    h += '<button class="pbtn ghost" onclick="openNode(\''+d.next.target+'\')">'+d.next.label+'</button>';
+  }
+  if(gold && did !== 'u-audit'){
+    h += '<a class="pbtn ghost" href="'+PLANS+'" target="_blank" rel="noopener" style="text-decoration:none;text-align:center">Included in Spiritual Business Skool ↗</a>';
+  }
+  h += '<button class="pbtn ghost" onclick="resetMap()">Back to the full map</button></div>';
+  inner().innerHTML = h;
+}
+
+buildSVG();
+</script>
+</body>
+</html>
