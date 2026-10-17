@@ -2092,7 +2092,13 @@ const LINKS = {
   ytGuide:   "https://claude.ai/public/artifacts/823a5817-e4e6-4921-b330-67895856efe8",
   planners:  "https://claude.ai/public/artifacts/83a81580-361d-415f-8161-b0a28d1079ba",
   eight:     "https://claude.ai/public/artifacts/08788b51-5f51-467c-b18d-6ca3af973f1c",
-  fourStages: "https://aefieldi.github.io/4-stages-of-ads/"
+  fourStages: "https://aefieldi.github.io/4-stages-of-ads/",
+  startPost: "https://www.skool.com/glowup/welcome-to-monetize-faster-w-amanda-watch-this",
+  catGroupChat: "https://www.skool.com/glowup?c=5cf9d5fa838c48828a42eeedea40af23&s=newest-cm&fl=",
+  catQuestions: "https://www.skool.com/glowup?c=8a15b70d908f467ca4cb714ae0f2a0ac&s=newest-cm&fl=",
+  catLibra: "https://www.skool.com/glowup?c=13f6bdf5abd94e64b89b177efee5f11b&s=newest-cm&fl=",
+  catClaude: "https://www.skool.com/glowup?c=6626d80096964726a553c38f67ea1362&s=newest-cm&fl=",
+  catSkool: "https://www.skool.com/glowup?c=0b328fe790114da0bb27671eb7cb02db&s=newest-cm&fl="
 };
 
 /* One line to edit when the doors status changes. Leave note empty to hide the banner. */
@@ -2102,28 +2108,33 @@ const DOORS = {
 
 const lessons = [
   {
-    id: 0, title: "Welcome In", accent: "In", dur: "7 min", emoji: "🤗", hasVideo: true,
+    id: 0, title: "Welcome In", accent: "In", dur: "10 min", emoji: "🤗", hasVideo: true,
+    launchLink: { url: LINKS.startPost, emoji: "🎬", label: "Watch the welcome video in the START HERE post", sub: "10 minutes. The tour: what's free, what's paid, and how to get the best support in here. Opens in Skool." },
     overview: {
-      desc: "This is the free side of my world. Every free training, gem and video I've made for spiritual entrepreneurs and online experts to monetize faster with Claude, content and community, in one place, sorted by what you're working on. No gatekeeping. This mini course exists so you make the most of it from Day 1 instead of opening every classroom at once and finishing none of them.",
-      hero: "When the teacher is ready, the student appears. When the student is ready, the teacher appears.",
-      blocks: ["mission","bargain","values","philosophy","room","fire"]
+      desc: "This is the home for every free thing I've made to help coaches, experts and creators monetize faster with Claude, AI content systems, Meta ads and Skool, plus the Human Design and astrology that runs underneath all of it. I never felt spiritual enough for the spiritual people or business enough for the business people, so I created the community I wished existed. This mini course exists so you find the right free training for your situation and implement it, instead of opening every classroom at once and finishing none of them.",
+      hero: "Scaling isn't about doing more. Scaling is about subtraction. Do less, and make it the high-priority thing that actually moves the needle.",
+      blocks: ["freeVsPaid","categories","values","mission","bargain","fire"]
     },
     concepts: [
       { type: "callout", style: "white", headline: "The power of mindful intention ✨", body: "You want to get the most return on your energetic investment. The reason most women fail to make real progress isn't a lack of inherent value, knowing, or ability. It's listening to too many differing perspectives, being overstimulated, and not knowing which path is actually theirs. It's like trying to put together 100 different puzzles at once and wondering why the pieces don't fit. Your offer is a vessel for your magic. Your offer plus your visibility is how you manifest your external vision. That's why those two things are the foundation of everything in here. We're about simplicity. People think scaling is about doing more. It's actually about doing less of everything else and more of the things in your zone of genius." },
       { type: "pullquote", text: "Doing the right thing at the wrong time is still the wrong thing. We're not here to hit $10k months once. We're here to build something you can actually hold." },
       { type: "accordion", headline: "This is a Role Model space", icon: "💜", body: "I'm here on this journey along with you, sharing what's working for me as I build. Every woman in here brings her own wealth of perspective and life experience, so this isn't just my space, it's ours. I created the community I wished existed when I was getting started. You coming in here is already part of what makes it work." },
-      { type: "accordion", headline: "Free here, paid inside Spiritual Business Skool", icon: "🚪", body: "Everything in this classroom is free and it's the real thing, not a teaser. The paid versions live inside Spiritual Business Skool: the templates, the 7-day and 28-day challenges, the 36+ done-for-you artifacts, the 13-step Audit Method classroom, the live calls and the daily homework. A few trainings in this classroom are unlocks you can buy here one time, and every one of them is included inside Spiritual Business Skool. Day 7 of this course walks you through what's inside each tier, and the plans page always has the current details." },
+      { type: "accordion", headline: "What's free for you, forever", icon: "🎁", body: "As a free member you have The Audit Method bonus training (the kickoff masterclass I recorded for my paid members, not available to the general public), plus four classrooms that are free forever: Skool Setup, Growth & Monetization, Claude AI & content systems, Meta Ads to grow your Skool, and Human Design x Kabbalah for business.\n\nWhen I drop a new workshop, talk or training, it lands in here too. Sometimes for a limited time, sometimes it stays open.\n\nEverything else you see in the classroom is part of my paid mentorship. Some of it you can unlock with a one-time payment. The rest comes with Spiritual Business Skool, or with working together after a Strategy Audit. Day 7 walks you through it." },
+      { type: "accordion", headline: "How to get the best support", icon: "🙋", body: "Post in the feed and tag me with @Amanda. That's the best way to reach me, and the whole community gets to learn from the answer. Questions go in the Questions category.\n\nYou can DM me, but I'm not on top of my DMs. I get a lot of them on Skool. If your question is really specific to your situation, like whether a Strategy Audit or Spiritual Business Skool is the better fit for you, a DM is fine.\n\nI'll do my best on questions in here, but I can't promise to personally answer every one. That level of support is what happens inside Spiritual Business Skool." },
+      { type: "accordion", headline: "No free calls in here, on purpose", icon: "📞", body: "I don't offer free calls inside this community. I just don't believe in that. Every call I run is inside Spiritual Business Skool: the VIP group coaching calls and the astrology visibility audits, with every replay and recording in the vault." },
+      { type: "accordion", headline: "The one rule", icon: "🛡️", body: "Be respectful to everyone. Bots, low-value comments, and promoting your own community without adding any value get deleted and blocked. Generosity is the growth strategy in here. Give first." },
       { type: "accordion", headline: "Attraction over persuasion", icon: "✨", body: "This is anti-bro-marketing. No fake scarcity. No hype. No convincing. Pull marketing, not push marketing. The more you show up in alignment with who you are, speaking your truth, the more the right people get magnetized to you. You don't have to chase. You have to be findable." },
       { type: "pullquote", text: "We all have a magnetic monopole in our center that's constantly attracting the right people, places, and opportunities to us. The seed you plant today is not a fig tree tomorrow." }
     ],
     actions: [
+      "Watch the welcome video in the START HERE post. 10 minutes, and it answers most of the questions people ask in their first week. " + LINKS.startPost,
       "Download the Skool app on your phone (iOS or Android) so you get the notification the second a new training drops in here. Single highest-leverage thing you can do in your first 5 minutes.",
-      "Take a tour of the top nav: Community (feed), Classroom (every free training, by category), Calendar, Members, Leaderboards.",
-      "Introduce yourself in the comments of the START HERE post: your platform, your follower count, and the ONE thing you want to monetize faster. I read every single one. Use the prompt below if you want help writing it.",
+      "Introduce yourself in the comments of the START HERE post: your number one platform, your follower count, and the ONE thing you want to monetize faster or get from this community. I read every single one. Use the prompt below if you want help writing it.",
+      "Open the five feed categories once (Group Chat, Questions, Libra Rising Support, Claude & AI Funsies, Skool Growth + support) so you know where to post what.",
       "Grab The Ultimate A to Z Spiritual Business Marketing Playbook: every free gem and training I've made, in one page. " + LINKS.playbook,
       "Start building your 🔥 streak today. Comment on 2 to 3 posts from other members right now to begin earning your fire emoji."
     ],
-    prompt: "I just joined Glow Up with Amanda, the free community for spiritual entrepreneurs and online experts who want to monetize faster. Help me write a short, warm introduction comment for the START HERE post. I want it to feel real and grounded, not a pitch. Include: where I create (my platform and handle), roughly how many followers I have, what I do, and the ONE thing I want to monetize faster in the next 90 days. Keep it under 120 words and make it feel like me, not a resume."
+    prompt: "I just joined Glow Up with Amanda, the free community for spiritual entrepreneurs and online experts who want to monetize faster. Help me write a short, warm introduction comment for the START HERE post. I want it to feel real and grounded, not a pitch. Include: my number one platform and handle, roughly how many followers I have, what I do, and the ONE thing I want to monetize faster (or get from this community) in the next 90 days. Keep it under 120 words and make it feel like me, not a resume."
   },
   {
     id: 1, title: "The 4-Minute Soul Diagnostic", accent: "Soul Diagnostic", dur: "4 min", emoji: "🔮",
@@ -2196,7 +2207,7 @@ const lessons = [
     prompt: "I just took the Choose Your Execution Path quiz inside Glow Up with Amanda (the free community) and I want a reality check on where I actually am.\n\nMy quiz archetype: [YOUR ARCHETYPE]\nThe free classroom it pointed me to: [THAT CLASSROOM]\nWhat I currently have built: [NO SKOOL / QUIET SKOOL / ACTIVE COMMUNITY / OFFER BUT NO TRAFFIC / TRAFFIC BUT NO OFFER]\nWhat I want to sell in the next 90 days: [MEMBERSHIP / HIGH TICKET / MINI OFFERS / STILL DECIDING]\n\nThe levels are: Level 0 Foundation, Level 1 Home Base, Level 2 Drive Traffic, Level 3 Offers and Challenges, Level 4 Tools and Support.\n\nTell me honestly which level I am actually operating on, and whether anything on a level below mine is still unfinished and quietly undermining the work I am trying to do above it. Then give me the single classroom to focus on for the next 30 days and one sentence on what I should deliberately ignore until that is done. Be direct with me. I would rather hear that my foundation is shaky now than in three months."
   },
   {
-    id: 4, title: "Soul-Aligned Strategy", accent: "Strategy", dur: "8 min", emoji: "🔮", hasVideo: true,
+    id: 4, title: "Soul-Aligned Strategy", accent: "Strategy", dur: "8 min", emoji: "🔮",
     overview: {
       desc: "Strategy without alignment is just high-performing hustle bro-marketing. And we don't do that. This lesson is what makes everything else sustainable. You'll meet the core concepts behind Human Design and Kabbalistic Astrology, and the free classroom in this community that lets you personalize every business decision to your actual wiring.",
       hero: "You were not a mistake of timing. You were perfectly scheduled.",
@@ -2218,9 +2229,10 @@ const lessons = [
       "Open the Human Design x Kabbalistic Astrology classroom here. It's free. Start with the Human Design Business Playbook video, then run the North Node Business Simulator: " + LINKS.northNode,
       "Want it personalized? CEO Oracle GPT plugs in your full HD + Kabbalistic Astrology chart for real-time strategic feedback on every business decision. It's an unlock in this classroom and it's included inside Spiritual Business Skool, where the Visibility by Design Challenge turns your design into exactly how you're meant to show up online.",
       "Name one strategy you've been forcing that your design is asking you to stop. Actually stop it.",
+      "Libra Rising? There's a whole category for you in the feed, and the survival guide is free. " + LINKS.catLibra,
       "(Optional but recommended) Follow me where I share behind-the-scenes builds and real-time strategy: Instagram @amandafielding.smith · TikTok @amandafieldingsmith · YouTube @amandafieldingsmith."
     ],
-    prompt: "I'm a [HUMAN DESIGN TYPE] with [AUTHORITY] authority, my profile is [PROFILE], and my North Node in Kabbalistic Astrology is in [SIGN/HOUSE if known].\n\nBased on this, help me write a short post for the Glow Up with Amanda community feed. The headline of the post should be: My Soul Aligned Strategy ✨\n\nThe post should share:\n1. One strategy I've been forcing that my design is actually telling me to stop 🛑\n2. What I'm going to do instead this month 🌿\n3. A question at the end that invites other women to share what THEIR design is asking them to release 💬\n\nUse emojis naturally where they add warmth or rhythm, not stacked or decorative. Voice: grounded, real, slightly vulnerable, not preachy or guru-ish. No hashtags. Under 150 words. Make it feel like me thinking out loud with the community, not a polished lesson."
+    prompt: "I'm a [HUMAN DESIGN TYPE] with [AUTHORITY] authority, my profile is [PROFILE], and my North Node in Kabbalistic Astrology is in [SIGN/HOUSE if known].\n\nBased on this, help me write a short post for the Group Chat category of the Glow Up with Amanda community feed. The headline of the post should be: My Soul Aligned Strategy ✨\n\nThe post should share:\n1. One strategy I've been forcing that my design is actually telling me to stop 🛑\n2. What I'm going to do instead this month 🌿\n3. A question at the end that invites other women to share what THEIR design is asking them to release 💬\n\nUse emojis naturally where they add warmth or rhythm, not stacked or decorative. Voice: grounded, real, slightly vulnerable, not preachy or guru-ish. No hashtags. Under 150 words. Make it feel like me thinking out loud with the community, not a polished lesson."
   },
   {
     id: 5, title: "Your First Win", accent: "First Win", dur: "6 min", emoji: "🏆",
@@ -2233,18 +2245,18 @@ const lessons = [
       { type: "pullquote", text: "It doesn't count unless it ships. Momentum over perfection." },
       { type: "accordion", headline: "Your first week ships ONE thing", icon: "🏁", body: "Pick one win. Commit to a ship date. Actually hit publish. Not: keep tweaking, keep building, keep 'almost ready' for weeks while nobody knows you exist. Shipping is how momentum starts. Everything else is procrastination in a trenchcoat. I had to relearn this myself. It's really easy to build and tweak behind the scenes without sharing. Don't do that." },
       { type: "callout", style: "white", headline: "Doing the right thing at the wrong time is still the wrong thing", body: "We're not shipping for the sake of shipping. We're shipping so that the thing actually builds on itself. A $10k month you can't hold isn't a win. A launch that burns you out for three months isn't a win. A first win that you can keep compounding from? That's the goal. That's what sustainable, soul-aligned business actually looks like." },
-      { type: "accordion", headline: "Posting your commitment IS the execution", icon: "💫", body: "Posting publicly in the community isn't optional social stuff. It's the accountability layer. Public commitment equals faster shipping equals momentum from day one. You can also use your commitment post to request what you want built next. An artifact, a training, a topic. I read every single one, and your requests shape what drops in here next. Tag @Amanda Smith if you want to guarantee I see it." },
+      { type: "accordion", headline: "Posting your commitment IS the execution", icon: "💫", body: "Posting publicly in the community isn't optional social stuff. It's the accountability layer. Public commitment equals faster shipping equals momentum from day one. You can also use your commitment post to request what you want built next. An artifact, a training, a topic. I read every single one, and your requests shape what drops in here next. Tag @Amanda if you want to guarantee I see it." },
       { type: "callout", style: "gradient", headline: "Encouragement is the currency", body: "The fastest way to get the most out of this space: show up for other members first. Leave real comments on at least 3 other posts today. The Role Model framework only works if we cheer each other on out loud. This community isn't a static library of my stuff. We're building it together." },
-      { type: "accordion", headline: "Loom is your unstuck button", icon: "🎥", body: "If you ever hit a wall anywhere in here (a gem, a tech thing, a customization question), record a quick Loom (loom.com, free up to 5 min). Go to Loom, click New Video, then Record Video, and select FULL SCREEN (not camera only, so I can actually see what you're looking at). Walk through what you're stuck on. Post it in the community. Real feedback from the women in here instead of staying stuck for days. This is literally how I record these lessons." },
+      { type: "accordion", headline: "Loom is your unstuck button", icon: "🎥", body: "If you ever hit a wall anywhere in here (a gem, a tech thing, a customization question), record a quick Loom (loom.com, free up to 5 min). Go to Loom, click New Video, then Record Video, and select FULL SCREEN (not camera only, so I can actually see what you're looking at). Walk through what you're stuck on. Post it in Questions and tag @Amanda. Real feedback from the women in here instead of staying stuck for days. This is literally how I record these lessons." },
       { type: "accordion", headline: "When you're ready for more support", icon: "🚪", body: "When you want the templates, the live calls, the daily homework and my eyes on what you're building, that's Spiritual Business Skool. Day 7 walks you through what's inside each tier, and the plans page always has the current format and availability. No pressure, no pitch. The door is open whenever you're ready, and it'll still be open when you're not." }
     ],
     actions: [
       "Open your First Win Commitment Card: " + LINKS.card + " Fill it out with your archetype, biggest aha, first win, and ship date.",
       "Screenshot the result (or copy the text, both work).",
-      "Post it in the community. Tag @Amanda Smith if you want to make sure I catch it.",
+      "Post it in Group Chat. Tag @Amanda if you want to make sure I catch it. " + LINKS.catGroupChat,
       "Comment on at least 3 other members' posts today. Real comments, not just 'love this!'. Encouragement compounds.",
       "Ship your first win by the date you committed to.",
-      "Share the result in the community when it's live. That's how you become someone the community recognizes."
+      "Share the result in Group Chat when it's live. That's how you become someone the community recognizes."
     ]
   },
   {
@@ -2258,6 +2270,7 @@ const lessons = [
       { type: "accordion", headline: "Standard: everything inside, the live calls, the daily homework", icon: "🌱", body: "The Skool Launch Challenge (7 days, templates for every step), the Visibility by Design Challenge (28 days, in alignment with your design), the AI Marketing Treasure Chest (36+ done-for-you artifacts and skills), Human Design x Kabbalah for Business, Claude Community Maxxing, Create Your Own Infinite Challenge, the 5 Day Client Challenge, the Skool Glow Up Gems, and the live calls with daily homework. If you're executing one path from this course, Standard holds the full version of it." },
       { type: "accordion", headline: "Premium: the annual, plus three bonuses you can't buy separately", icon: "💎", body: "Everything in Standard for the year, plus the Spiritual CEO Business Oracle (CEO Oracle GPT and the 24/7 Spiritual Business Coach merged into one), the automated 30-day content plan, and The Audit Method 13-step classroom. Premium members submit their questions and I answer them on the call." },
       { type: "accordion", headline: "VIP: for established creators with a platform and proven client results", icon: "🔥", body: "Built for creators with 5k+ and client results who want the room that pays them on repeat. Three live group coaching calls a month with me, a custom ads strategy for your offers, AI systems for your personal brand, and the VIP Vault with every replay and VIP tool. It's also the container every 1:1 client moves into after their 90 days." },
+      { type: "accordion", headline: "Where the calls are", icon: "📞", body: "There are no free calls in this community. Every call I run is inside Spiritual Business Skool: the VIP group coaching calls and the astrology visibility audits, which happen multiple times a month. Every replay and recording lives in the vault, so you never miss one." },
       { type: "accordion", headline: "What stays free, forever", icon: "💚", body: "This community. Every training in this classroom. The A to Z Playbook with every free gem. New trainings drop in here first, and you get the notification. Nothing about Spiritual Business Skool makes this room smaller. It's the next room, not a replacement for this one." },
       { type: "pullquote", text: "There's no one right way, there's only your way and consistency." },
       { type: "accordion", headline: "Want personalized support before the doors open?", icon: "🔮", body: "The 1:1 Strategy Audit is how I do it with people right now. 60 minutes, 1:1. I go through your offers, content and community before we ever get on the call, and you leave with your #1 bottleneck, your next 3 moves for the next 90 days, your custom game plan and the replay with my full notes. Built for experts with an audience and proven client results. Limited availability. Say yes on the call and the audit applies to the 90-day container, and Spiritual Business Skool, every tier, comes with it." }
@@ -2267,6 +2280,7 @@ const lessons = [
       "Match the tier to the path you chose on Day 3. Standard holds the full version of every free classroom in here. Premium adds the Oracle, the automated content plan and The Audit Method. VIP is for creators with 5k+ and client results.",
       "If you have an audience and proven client results and you want eyes on your business now, book a Strategy Audit. Limited availability. " + LINKS.audit,
       "Run the readiness prompt below. It's not a sales prompt. It's a numbers prompt, so you decide from evidence, not from FOMO.",
+      "Not sure whether a Strategy Audit or Spiritual Business Skool is the better fit? DM me. That's exactly what DMs are for.",
       "Whatever you decide, keep executing your one path in here. The free room is the foundation either way."
     ],
     prompt: "I'm deciding whether now is the right time to join Spiritual Business Skool (a paid community for spiritual entrepreneurs and online experts who want to monetize faster with Claude, content and community), or whether to keep executing the free trainings in Glow Up with Amanda first.\n\nWhere I am:\n- Platform and follower count: [PLATFORM / FOLLOWERS]\n- Current monthly revenue: [NUMBER]\n- What I sell right now: [OFFER / NOTHING YET]\n- Clients or members I've had in the last 90 days: [NUMBER]\n- Hours a week I can actually give this: [NUMBER]\n- The free classroom I committed to on Day 3 and how far I've gotten: [CLASSROOM / PROGRESS]\n- The tier I'm considering: [STANDARD / PREMIUM / VIP]\n\nBe direct and evidence-driven. Tell me: 1) whether I've actually done the free version of my path yet, or whether I'm looking at the paid room to avoid finishing the free one, 2) what one result in the next 30 days would prove I'm ready to invest, and 3) if I am ready, which tier matches where I am and why. No hype, no hustle-culture framing. Give me the number, not the encouragement."
@@ -2275,14 +2289,21 @@ const lessons = [
 
 /* ---------- Day 1 blocks ---------- */
 const values = [
-  { icon:"🕊️", over:"Simplicity", under:"complexity", body:"Scaling isn't doing more. It's doing less of everything outside your zone of genius. One clear path beats seventeen open tabs.", accent:"pink" },
-  { icon:"🌿", over:"Freedom", under:"hustle", body:"Sustainable visibility over burnout. You're not here to prove you can grind. You're here to get paid to exist.", accent:"mint" },
-  { icon:"⚡", over:"Momentum", under:"perfection", body:"It doesn't count unless it ships. The seed you plant today is not a fig tree tomorrow. Show up, build in public, let the compounding happen.", accent:"cyan" }
+  { icon:"🎁", over:"Generosity", under:"gatekeeping", body:"Generosity is the growth strategy. Give first, give the real thing, and the right people find their way to you.", accent:"pink" },
+  { icon:"🌙", over:"Your way", under:"the one right way", body:"There's no one right way. There's only your way and consistency. That's why the Human Design and astrology piece is in here.", accent:"mint" },
+  { icon:"🕊️", over:"Subtraction", under:"doing more", body:"Everybody thinks scaling is about doing more. Scaling is about doing less, and focusing on the high-priority things that actually move the needle.", accent:"cyan" }
 ];
 const philosophy = [
   { emoji:"🌿", label:"Sustainable", sub:"Aligned, anti-hustle, built to hold" },
   { emoji:"⚡", label:"Shipped", sub:"Real visibility, real results" },
   { emoji:"💜", label:"Role Model", sub:"Building alongside, not above" }
+];
+const categoryCards = [
+  { emoji:"🐼", name:"Group Chat", desc:"The main discussion. Intros, connection, feedback on your about page or sales campaign, find an accountability buddy", color:"pink", url:LINKS.catGroupChat },
+  { emoji:"🙋", name:"Questions", desc:"Ask anything. Tag @Amanda so I see it. Answers help everyone who comes after you", color:"cyan", url:LINKS.catQuestions },
+  { emoji:"♎", name:"Libra Rising Support", desc:"For my fellow Libra Risings. Yes, it needs its own category", color:"purple", url:LINKS.catLibra },
+  { emoji:"🤖", name:"Claude & AI Funsies", desc:"What you built with Claude, artifacts, prompts, tools, wins and what broke", color:"mint", url:LINKS.catClaude },
+  { emoji:"🌱", name:"Skool Growth + support", desc:"Setup, about pages, pricing, Growth Boost, engagement. Everything Skool", color:"lime", url:LINKS.catSkool }
 ];
 const roomCards = [
   { emoji:"📌", name:"The START HERE post", desc:"Introduce yourself in the comments: platform, follower count, the ONE thing you want to monetize faster", color:"pink" },
@@ -2333,13 +2354,12 @@ const pathOptions = [
 /* ---------- Day 4 lineup ---------- */
 const freeClassrooms = [
   { e:"🧭", n:"Start Here", d:"You are here", here:true },
-  { e:"🔮", n:"The Audit Method", d:"The kickoff training: one paid audit or reading that turns into a 90-day client" },
+  { e:"🔮", n:"The Audit Method", d:"The bonus kickoff training: one paid audit or reading that turns into a 90-day client. Not available to the public" },
   { e:"🎯", n:"1:1 Strategy Audit", d:"What you walk away with, and how to book. Limited availability" },
   { e:"🏫", n:"Skool Setup, Growth & Monetization", d:"Start, set up, grow and monetize a Skool from scratch, in order" },
   { e:"💜", n:"Claude AI", d:"Artifacts and content systems to blow up your personal brand" },
   { e:"🌟", n:"Human Design x Kabbalistic Astrology", d:"Why you're really here, and the business that serves your soul's purpose" },
   { e:"📣", n:"Meta Ads", d:"To increase traffic, sales and visibility" },
-  { e:"💫", n:"Offers By Design", d:"Scale your offers in alignment with your design" }
 ];
 const unlockClassrooms = [
   { e:"🤖", n:"24/7 Spiritual Business Coach", d:"Your coach in your pocket, trained on everything in here" },
@@ -2360,7 +2380,8 @@ const paidClassrooms = [
   { e:"🛠️", n:"Premium Skills Treasure Chest", d:"Skills, templates, trackers, dashboards" },
   { e:"🎙️", n:"Premium+ Q&A", d:"Submit your question, watch it answered on the call" },
   { e:"✨", n:"Astrology x Visibility", d:"Visibility audits by your chart" },
-  { e:"👑", n:"VIP Vault", d:"Every replay and VIP tool" }
+  { e:"👑", n:"VIP Vault", d:"Every replay and VIP tool" },
+  { e:"💫", n:"Offers By Design", d:"Scale your offers in alignment with your design" }
 ];
 const treasure = [
   ["🎥","YouTube Studio"],["📝","Content Engine"],["🌀","Visibility Tracker"],["🔥","Hot Take Miner"],["📸","Carousel Creator"],
@@ -2473,6 +2494,30 @@ const blocks = {
     </div>`).join("")}
     <div class="triad-ring" aria-hidden="true"></div>
   </div>
+</div>`,
+
+  categories: () => `
+<div class="catmap-wrap reveal" style="animation-delay:300ms">
+  <div class="catmap-badge">✦ Where to post what</div>
+  <div class="catmap-title">The 5 feed categories</div>
+  <div class="catmap-grid">${categoryCards.map((c,i)=>`
+    <a class="catmap-card catmap-${c.color} reveal" href="${c.url}" target="_blank" rel="noopener noreferrer" style="animation-delay:${380+i*90}ms;display:block;text-decoration:none;color:inherit">
+      <div class="catmap-emoji">${c.emoji}</div><div class="catmap-name">${c.name} →</div><div class="catmap-desc">${c.desc}</div>
+    </a>`).join("")}
+  </div>
+</div>`,
+
+  freeVsPaid: () => `
+<div class="ps-wrap reveal" style="animation-delay:280ms">
+  <div class="ps-badge">✦ What you have access to</div>
+  <div class="ps-cards three">
+    <div class="ps-card ps-primary"><div class="ps-card-label">FREE · FOREVER</div><div class="ps-card-title">Five classrooms</div><div class="ps-card-body">The Audit Method bonus training, Skool Setup, Growth &amp; Monetization, Claude AI &amp; content systems, Meta Ads, and Human Design x Kabbalah.</div></div>
+    <div class="ps-connector"><div class="ps-plus">+</div></div>
+    <div class="ps-card ps-support"><div class="ps-card-label">ONE-TIME UNLOCK</div><div class="ps-card-title">Pick and choose</div><div class="ps-card-body">A few classrooms you can unlock here with a one-time payment. Every one of them is included inside Spiritual Business Skool.</div></div>
+    <div class="ps-connector"><div class="ps-plus">+</div></div>
+    <div class="ps-card ps-paid"><div class="ps-card-label">PAID MENTORSHIP</div><div class="ps-card-title">Everything else</div><div class="ps-card-body">The templates, challenges, calls and replays. Inside Spiritual Business Skool, or when we work together after a Strategy Audit.</div></div>
+  </div>
+  <div class="ps-footer">New workshops and trainings drop in here too. You'll get the notification.</div>
 </div>`,
 
   room: () => `
